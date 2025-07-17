@@ -16,6 +16,8 @@ class UserRewardsGranted {
     this.basic = const [],
     this.credit = const [],
     this.offerCode = const [],
+    this.revenuecatEntitlement = const [],
+    this.revenuecatOffering = const [],
   });
 
   /// The referral user basic rewards
@@ -27,27 +29,39 @@ class UserRewardsGranted {
   /// The referral user offer code rewards
   List<UserOfferCodeRewardActive> offerCode;
 
+  /// The referral user RevenueCat entitlement rewards
+  List<UserRevenueCatEntitlementRewardActive> revenuecatEntitlement;
+
+  /// The referral user RevenueCat offering rewards
+  List<UserRevenueCatOfferingRewardActive> revenuecatOffering;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserRewardsGranted &&
     _deepEquality.equals(other.basic, basic) &&
     _deepEquality.equals(other.credit, credit) &&
-    _deepEquality.equals(other.offerCode, offerCode);
+    _deepEquality.equals(other.offerCode, offerCode) &&
+    _deepEquality.equals(other.revenuecatEntitlement, revenuecatEntitlement) &&
+    _deepEquality.equals(other.revenuecatOffering, revenuecatOffering);
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (basic.hashCode) +
     (credit.hashCode) +
-    (offerCode.hashCode);
+    (offerCode.hashCode) +
+    (revenuecatEntitlement.hashCode) +
+    (revenuecatOffering.hashCode);
 
   @override
-  String toString() => 'UserRewardsGranted[basic=$basic, credit=$credit, offerCode=$offerCode]';
+  String toString() => 'UserRewardsGranted[basic=$basic, credit=$credit, offerCode=$offerCode, revenuecatEntitlement=$revenuecatEntitlement, revenuecatOffering=$revenuecatOffering]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'basic'] = this.basic;
       json[r'credit'] = this.credit;
       json[r'offer_code'] = this.offerCode;
+      json[r'revenuecat_entitlement'] = this.revenuecatEntitlement;
+      json[r'revenuecat_offering'] = this.revenuecatOffering;
     return json;
   }
 
@@ -73,6 +87,8 @@ class UserRewardsGranted {
         basic: UserBasicRewardActive.listFromJson(json[r'basic']),
         credit: UserCreditRewardActive.listFromJson(json[r'credit']),
         offerCode: UserOfferCodeRewardActive.listFromJson(json[r'offer_code']),
+        revenuecatEntitlement: UserRevenueCatEntitlementRewardActive.listFromJson(json[r'revenuecat_entitlement']),
+        revenuecatOffering: UserRevenueCatOfferingRewardActive.listFromJson(json[r'revenuecat_offering']),
       );
     }
     return null;
@@ -123,6 +139,8 @@ class UserRewardsGranted {
     'basic',
     'credit',
     'offer_code',
+    'revenuecat_entitlement',
+    'revenuecat_offering',
   };
 }
 

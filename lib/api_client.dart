@@ -204,88 +204,132 @@ class ApiClient {
           return OfferCodeReward.fromJson(value);
         case 'OfferCodeValue':
           return OfferCodeValue.fromJson(value);
-        case 'Program':
-          return Program.fromJson(value);
-        case 'ProgramReceiverBasicReward':
-          return ProgramReceiverBasicReward.fromJson(value);
-        case 'ProgramReceiverBasicRewardActivation':
-          return ProgramReceiverBasicRewardActivation.fromJson(value);
-        case 'ProgramReceiverBasicRewardDeactivation':
-          return ProgramReceiverBasicRewardDeactivation.fromJson(value);
-        case 'ProgramReceiverBasicRewardIntervalDeactivation':
-          return ProgramReceiverBasicRewardIntervalDeactivation.fromJson(value);
-        case 'ProgramReceiverBasicRewardNeverDeactivation':
-          return ProgramReceiverBasicRewardNeverDeactivation.fromJson(value);
-        case 'ProgramReceiverCreditReward':
-          return ProgramReceiverCreditReward.fromJson(value);
-        case 'ProgramReceiverCreditRewardActivation':
-          return ProgramReceiverCreditRewardActivation.fromJson(value);
-        case 'ProgramReceiverCreditRewardDeactivation':
-          return ProgramReceiverCreditRewardDeactivation.fromJson(value);
-        case 'ProgramReceiverCreditRewardIntervalDeactivation':
-          return ProgramReceiverCreditRewardIntervalDeactivation.fromJson(value);
-        case 'ProgramReceiverCreditRewardNeverDeactivation':
-          return ProgramReceiverCreditRewardNeverDeactivation.fromJson(value);
-        case 'ProgramReceiverOfferCodeReward':
-          return ProgramReceiverOfferCodeReward.fromJson(value);
-        case 'ProgramReceiverOfferCodeRewardActivation':
-          return ProgramReceiverOfferCodeRewardActivation.fromJson(value);
-        case 'ProgramReceiverOfferCodeRewardDeactivation':
-          return ProgramReceiverOfferCodeRewardDeactivation.fromJson(value);
-        case 'ProgramReceiverOfferCodeRewardIntervalDeactivation':
-          return ProgramReceiverOfferCodeRewardIntervalDeactivation.fromJson(value);
-        case 'ProgramReceiverOfferCodeRewardNeverDeactivation':
-          return ProgramReceiverOfferCodeRewardNeverDeactivation.fromJson(value);
-        case 'ProgramReceiverRewards':
-          return ProgramReceiverRewards.fromJson(value);
-        case 'ProgramRewards':
-          return ProgramRewards.fromJson(value);
-        case 'ProgramSenderBasicReward':
-          return ProgramSenderBasicReward.fromJson(value);
-        case 'ProgramSenderBasicRewardActivation':
-          return ProgramSenderBasicRewardActivation.fromJson(value);
-        case 'ProgramSenderBasicRewardDeactivation':
-          return ProgramSenderBasicRewardDeactivation.fromJson(value);
-        case 'ProgramSenderBasicRewardIntervalDeactivation':
-          return ProgramSenderBasicRewardIntervalDeactivation.fromJson(value);
-        case 'ProgramSenderBasicRewardNeverDeactivation':
-          return ProgramSenderBasicRewardNeverDeactivation.fromJson(value);
-        case 'ProgramSenderCreditReward':
-          return ProgramSenderCreditReward.fromJson(value);
-        case 'ProgramSenderCreditRewardActivation':
-          return ProgramSenderCreditRewardActivation.fromJson(value);
-        case 'ProgramSenderCreditRewardDeactivation':
-          return ProgramSenderCreditRewardDeactivation.fromJson(value);
-        case 'ProgramSenderCreditRewardIntervalDeactivation':
-          return ProgramSenderCreditRewardIntervalDeactivation.fromJson(value);
-        case 'ProgramSenderCreditRewardNeverDeactivation':
-          return ProgramSenderCreditRewardNeverDeactivation.fromJson(value);
-        case 'ProgramSenderOfferCodeReward':
-          return ProgramSenderOfferCodeReward.fromJson(value);
-        case 'ProgramSenderOfferCodeRewardActivation':
-          return ProgramSenderOfferCodeRewardActivation.fromJson(value);
-        case 'ProgramSenderOfferCodeRewardDeactivation':
-          return ProgramSenderOfferCodeRewardDeactivation.fromJson(value);
-        case 'ProgramSenderOfferCodeRewardIntervalDeactivation':
-          return ProgramSenderOfferCodeRewardIntervalDeactivation.fromJson(value);
-        case 'ProgramSenderOfferCodeRewardNeverDeactivation':
-          return ProgramSenderOfferCodeRewardNeverDeactivation.fromJson(value);
-        case 'ProgramSenderRewards':
-          return ProgramSenderRewards.fromJson(value);
+        case 'ReferralProgram':
+          return ReferralProgram.fromJson(value);
+        case 'ReferralProgramReceiverBasicReward':
+          return ReferralProgramReceiverBasicReward.fromJson(value);
+        case 'ReferralProgramReceiverBasicRewardActivation':
+          return ReferralProgramReceiverBasicRewardActivation.fromJson(value);
+        case 'ReferralProgramReceiverBasicRewardDeactivation':
+          return ReferralProgramReceiverBasicRewardDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverBasicRewardIntervalDeactivation':
+          return ReferralProgramReceiverBasicRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverBasicRewardNeverDeactivation':
+          return ReferralProgramReceiverBasicRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverCreditReward':
+          return ReferralProgramReceiverCreditReward.fromJson(value);
+        case 'ReferralProgramReceiverCreditRewardActivation':
+          return ReferralProgramReceiverCreditRewardActivation.fromJson(value);
+        case 'ReferralProgramReceiverCreditRewardDeactivation':
+          return ReferralProgramReceiverCreditRewardDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverCreditRewardIntervalDeactivation':
+          return ReferralProgramReceiverCreditRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverCreditRewardNeverDeactivation':
+          return ReferralProgramReceiverCreditRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverOfferCodeReward':
+          return ReferralProgramReceiverOfferCodeReward.fromJson(value);
+        case 'ReferralProgramReceiverOfferCodeRewardActivation':
+          return ReferralProgramReceiverOfferCodeRewardActivation.fromJson(value);
+        case 'ReferralProgramReceiverOfferCodeRewardDeactivation':
+          return ReferralProgramReceiverOfferCodeRewardDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverOfferCodeRewardIntervalDeactivation':
+          return ReferralProgramReceiverOfferCodeRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverOfferCodeRewardNeverDeactivation':
+          return ReferralProgramReceiverOfferCodeRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatEntitlementReward':
+          return ReferralProgramReceiverRevenueCatEntitlementReward.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatEntitlementRewardActivation':
+          return ReferralProgramReceiverRevenueCatEntitlementRewardActivation.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatEntitlementRewardDeactivation':
+          return ReferralProgramReceiverRevenueCatEntitlementRewardDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatEntitlementRewardIntervalDeactivation':
+          return ReferralProgramReceiverRevenueCatEntitlementRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatEntitlementRewardNeverDeactivation':
+          return ReferralProgramReceiverRevenueCatEntitlementRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatOfferingReward':
+          return ReferralProgramReceiverRevenueCatOfferingReward.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatOfferingRewardActivation':
+          return ReferralProgramReceiverRevenueCatOfferingRewardActivation.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatOfferingRewardDeactivation':
+          return ReferralProgramReceiverRevenueCatOfferingRewardDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatOfferingRewardIntervalDeactivation':
+          return ReferralProgramReceiverRevenueCatOfferingRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverRevenueCatOfferingRewardNeverDeactivation':
+          return ReferralProgramReceiverRevenueCatOfferingRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramReceiverRewards':
+          return ReferralProgramReceiverRewards.fromJson(value);
+        case 'ReferralProgramRewards':
+          return ReferralProgramRewards.fromJson(value);
+        case 'ReferralProgramSenderBasicReward':
+          return ReferralProgramSenderBasicReward.fromJson(value);
+        case 'ReferralProgramSenderBasicRewardActivation':
+          return ReferralProgramSenderBasicRewardActivation.fromJson(value);
+        case 'ReferralProgramSenderBasicRewardDeactivation':
+          return ReferralProgramSenderBasicRewardDeactivation.fromJson(value);
+        case 'ReferralProgramSenderBasicRewardIntervalDeactivation':
+          return ReferralProgramSenderBasicRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramSenderBasicRewardNeverDeactivation':
+          return ReferralProgramSenderBasicRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramSenderCreditReward':
+          return ReferralProgramSenderCreditReward.fromJson(value);
+        case 'ReferralProgramSenderCreditRewardActivation':
+          return ReferralProgramSenderCreditRewardActivation.fromJson(value);
+        case 'ReferralProgramSenderCreditRewardDeactivation':
+          return ReferralProgramSenderCreditRewardDeactivation.fromJson(value);
+        case 'ReferralProgramSenderCreditRewardIntervalDeactivation':
+          return ReferralProgramSenderCreditRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramSenderCreditRewardNeverDeactivation':
+          return ReferralProgramSenderCreditRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramSenderOfferCodeReward':
+          return ReferralProgramSenderOfferCodeReward.fromJson(value);
+        case 'ReferralProgramSenderOfferCodeRewardActivation':
+          return ReferralProgramSenderOfferCodeRewardActivation.fromJson(value);
+        case 'ReferralProgramSenderOfferCodeRewardDeactivation':
+          return ReferralProgramSenderOfferCodeRewardDeactivation.fromJson(value);
+        case 'ReferralProgramSenderOfferCodeRewardIntervalDeactivation':
+          return ReferralProgramSenderOfferCodeRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramSenderOfferCodeRewardNeverDeactivation':
+          return ReferralProgramSenderOfferCodeRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatEntitlementReward':
+          return ReferralProgramSenderRevenueCatEntitlementReward.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatEntitlementRewardActivation':
+          return ReferralProgramSenderRevenueCatEntitlementRewardActivation.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatEntitlementRewardDeactivation':
+          return ReferralProgramSenderRevenueCatEntitlementRewardDeactivation.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatEntitlementRewardIntervalDeactivation':
+          return ReferralProgramSenderRevenueCatEntitlementRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatEntitlementRewardNeverDeactivation':
+          return ReferralProgramSenderRevenueCatEntitlementRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatOfferingReward':
+          return ReferralProgramSenderRevenueCatOfferingReward.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatOfferingRewardActivation':
+          return ReferralProgramSenderRevenueCatOfferingRewardActivation.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatOfferingRewardDeactivation':
+          return ReferralProgramSenderRevenueCatOfferingRewardDeactivation.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatOfferingRewardIntervalDeactivation':
+          return ReferralProgramSenderRevenueCatOfferingRewardIntervalDeactivation.fromJson(value);
+        case 'ReferralProgramSenderRevenueCatOfferingRewardNeverDeactivation':
+          return ReferralProgramSenderRevenueCatOfferingRewardNeverDeactivation.fromJson(value);
+        case 'ReferralProgramSenderRewards':
+          return ReferralProgramSenderRewards.fromJson(value);
+        case 'RevenueCatEntitlementReward':
+          return RevenueCatEntitlementReward.fromJson(value);
+        case 'RevenueCatOfferingReward':
+          return RevenueCatOfferingReward.fromJson(value);
         case 'User':
           return User.fromJson(value);
         case 'UserBasicRewardActive':
           return UserBasicRewardActive.fromJson(value);
         case 'UserBasicRewardExpired':
           return UserBasicRewardExpired.fromJson(value);
+        case 'UserClaimCodeDataResponse':
+          return UserClaimCodeDataResponse.fromJson(value);
         case 'UserClaimCodeEligibility':
           return UserClaimCodeEligibility.fromJson(value);
-        case 'UserClaimReferralCodeDataResponse':
-          return UserClaimReferralCodeDataResponse.fromJson(value);
-        case 'UserClaimReferralCodeRequest':
-          return UserClaimReferralCodeRequest.fromJson(value);
-        case 'UserClaimReferralCodeResponse':
-          return UserClaimReferralCodeResponse.fromJson(value);
+        case 'UserClaimCodeRequest':
+          return UserClaimCodeRequest.fromJson(value);
+        case 'UserClaimCodeResponse':
+          return UserClaimCodeResponse.fromJson(value);
         case 'UserCreateRequest':
           return UserCreateRequest.fromJson(value);
         case 'UserCreditRewardActive':
@@ -300,6 +344,14 @@ class ApiClient {
           return UserOfferCodeRewardExpired.fromJson(value);
         case 'UserResponse':
           return UserResponse.fromJson(value);
+        case 'UserRevenueCatEntitlementRewardActive':
+          return UserRevenueCatEntitlementRewardActive.fromJson(value);
+        case 'UserRevenueCatEntitlementRewardExpired':
+          return UserRevenueCatEntitlementRewardExpired.fromJson(value);
+        case 'UserRevenueCatOfferingRewardActive':
+          return UserRevenueCatOfferingRewardActive.fromJson(value);
+        case 'UserRevenueCatOfferingRewardExpired':
+          return UserRevenueCatOfferingRewardExpired.fromJson(value);
         case 'UserRewards':
           return UserRewards.fromJson(value);
         case 'UserRewardsActive':

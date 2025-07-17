@@ -14,8 +14,8 @@ class User {
   /// Returns a new [User] instance.
   User({
     required this.appUserId,
-    required this.code,
-    required this.previewLink,
+    required this.referralCode,
+    required this.referralCodeLink,
     required this.isPremium,
     required this.firstSeenAt,
     required this.lastSeenAt,
@@ -23,17 +23,17 @@ class User {
     required this.claimCodeEligibility,
     required this.stats,
     required this.rewards,
-    required this.program,
+    required this.referralProgram,
   });
 
   /// The unique identifier of the user in your app.
   String appUserId;
 
   /// The referral code of the user.
-  String? code;
+  String? referralCode;
 
-  /// The preview link of the user.
-  String? previewLink;
+  /// The referral code link of the user.
+  String? referralCodeLink;
 
   /// Whether the user is a premium user.
   bool? isPremium;
@@ -57,13 +57,13 @@ class User {
   UserRewards rewards;
 
   /// The program of the user.
-  Program? program;
+  ReferralProgram? referralProgram;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is User &&
     other.appUserId == appUserId &&
-    other.code == code &&
-    other.previewLink == previewLink &&
+    other.referralCode == referralCode &&
+    other.referralCodeLink == referralCodeLink &&
     other.isPremium == isPremium &&
     other.firstSeenAt == firstSeenAt &&
     other.lastSeenAt == lastSeenAt &&
@@ -71,14 +71,14 @@ class User {
     other.claimCodeEligibility == claimCodeEligibility &&
     other.stats == stats &&
     other.rewards == rewards &&
-    other.program == program;
+    other.referralProgram == referralProgram;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (appUserId.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (previewLink == null ? 0 : previewLink!.hashCode) +
+    (referralCode == null ? 0 : referralCode!.hashCode) +
+    (referralCodeLink == null ? 0 : referralCodeLink!.hashCode) +
     (isPremium == null ? 0 : isPremium!.hashCode) +
     (firstSeenAt == null ? 0 : firstSeenAt!.hashCode) +
     (lastSeenAt == null ? 0 : lastSeenAt!.hashCode) +
@@ -86,23 +86,23 @@ class User {
     (claimCodeEligibility.hashCode) +
     (stats.hashCode) +
     (rewards.hashCode) +
-    (program == null ? 0 : program!.hashCode);
+    (referralProgram == null ? 0 : referralProgram!.hashCode);
 
   @override
-  String toString() => 'User[appUserId=$appUserId, code=$code, previewLink=$previewLink, isPremium=$isPremium, firstSeenAt=$firstSeenAt, lastSeenAt=$lastSeenAt, metadata=$metadata, claimCodeEligibility=$claimCodeEligibility, stats=$stats, rewards=$rewards, program=$program]';
+  String toString() => 'User[appUserId=$appUserId, referralCode=$referralCode, referralCodeLink=$referralCodeLink, isPremium=$isPremium, firstSeenAt=$firstSeenAt, lastSeenAt=$lastSeenAt, metadata=$metadata, claimCodeEligibility=$claimCodeEligibility, stats=$stats, rewards=$rewards, referralProgram=$referralProgram]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'app_user_id'] = this.appUserId;
-    if (this.code != null) {
-      json[r'code'] = this.code;
+    if (this.referralCode != null) {
+      json[r'referral_code'] = this.referralCode;
     } else {
-      json[r'code'] = null;
+      json[r'referral_code'] = null;
     }
-    if (this.previewLink != null) {
-      json[r'preview_link'] = this.previewLink;
+    if (this.referralCodeLink != null) {
+      json[r'referral_code_link'] = this.referralCodeLink;
     } else {
-      json[r'preview_link'] = null;
+      json[r'referral_code_link'] = null;
     }
     if (this.isPremium != null) {
       json[r'is_premium'] = this.isPremium;
@@ -127,10 +127,10 @@ class User {
       json[r'claim_code_eligibility'] = this.claimCodeEligibility;
       json[r'stats'] = this.stats;
       json[r'rewards'] = this.rewards;
-    if (this.program != null) {
-      json[r'program'] = this.program;
+    if (this.referralProgram != null) {
+      json[r'referral_program'] = this.referralProgram;
     } else {
-      json[r'program'] = null;
+      json[r'referral_program'] = null;
     }
     return json;
   }
@@ -155,8 +155,8 @@ class User {
 
       return User(
         appUserId: mapValueOfType<String>(json, r'app_user_id')!,
-        code: mapValueOfType<String>(json, r'code'),
-        previewLink: mapValueOfType<String>(json, r'preview_link'),
+        referralCode: mapValueOfType<String>(json, r'referral_code'),
+        referralCodeLink: mapValueOfType<String>(json, r'referral_code_link'),
         isPremium: mapValueOfType<bool>(json, r'is_premium'),
         firstSeenAt: mapDateTime(json, r'first_seen_at', r''),
         lastSeenAt: mapDateTime(json, r'last_seen_at', r''),
@@ -164,7 +164,7 @@ class User {
         claimCodeEligibility: UserClaimCodeEligibility.fromJson(json[r'claim_code_eligibility'])!,
         stats: UserStats.fromJson(json[r'stats'])!,
         rewards: UserRewards.fromJson(json[r'rewards'])!,
-        program: Program.fromJson(json[r'program']),
+        referralProgram: ReferralProgram.fromJson(json[r'referral_program']),
       );
     }
     return null;
@@ -213,8 +213,8 @@ class User {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'app_user_id',
-    'code',
-    'preview_link',
+    'referral_code',
+    'referral_code_link',
     'is_premium',
     'first_seen_at',
     'last_seen_at',
@@ -222,7 +222,7 @@ class User {
     'claim_code_eligibility',
     'stats',
     'rewards',
-    'program',
+    'referral_program',
   };
 }
 

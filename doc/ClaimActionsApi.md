@@ -9,30 +9,30 @@ All URIs are relative to *https://api-v1.winwinkit.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**claimReferralCode**](ClaimActionsApi.md#claimreferralcode) | **POST** /users/{app_user_id}/claim/referral-code | Claim Referral Code
+[**claimCode**](ClaimActionsApi.md#claimcode) | **POST** /users/{app_user_id}/claim-code | Claim Code
 
 
-# **claimReferralCode**
-> UserClaimReferralCodeDataResponse claimReferralCode(appUserId, xApiKey, userClaimReferralCodeRequest)
+# **claimCode**
+> UserClaimCodeDataResponse claimCode(appUserId, xApiKey, userClaimCodeRequest)
 
-Claim Referral Code
+Claim Code
 
-Claims a referral code for a user.
+Claims a code for a user. Code can be affiliate, promo or referral code.
 
 ### Example
 ```dart
 import 'package:WinWinKit/api.dart';
 
 final api_instance = ClaimActionsApi();
-final appUserId = appUserId_example; // String | The app user id of the user to claim the referral code for.
+final appUserId = appUserId_example; // String | The app user id of the user to claim the code for.
 final xApiKey = xApiKey_example; // String | The API key to authenticate with.
-final userClaimReferralCodeRequest = UserClaimReferralCodeRequest(); // UserClaimReferralCodeRequest | 
+final userClaimCodeRequest = UserClaimCodeRequest(); // UserClaimCodeRequest | 
 
 try {
-    final result = api_instance.claimReferralCode(appUserId, xApiKey, userClaimReferralCodeRequest);
+    final result = api_instance.claimCode(appUserId, xApiKey, userClaimCodeRequest);
     print(result);
 } catch (e) {
-    print('Exception when calling ClaimActionsApi->claimReferralCode: $e\n');
+    print('Exception when calling ClaimActionsApi->claimCode: $e\n');
 }
 ```
 
@@ -40,13 +40,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appUserId** | **String**| The app user id of the user to claim the referral code for. | 
+ **appUserId** | **String**| The app user id of the user to claim the code for. | 
  **xApiKey** | **String**| The API key to authenticate with. | 
- **userClaimReferralCodeRequest** | [**UserClaimReferralCodeRequest**](UserClaimReferralCodeRequest.md)|  | 
+ **userClaimCodeRequest** | [**UserClaimCodeRequest**](UserClaimCodeRequest.md)|  | 
 
 ### Return type
 
-[**UserClaimReferralCodeDataResponse**](UserClaimReferralCodeDataResponse.md)
+[**UserClaimCodeDataResponse**](UserClaimCodeDataResponse.md)
 
 ### Authorization
 

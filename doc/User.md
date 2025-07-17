@@ -9,8 +9,8 @@ import 'package:WinWinKit/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appUserId** | **String** | The unique identifier of the user in your app. | 
-**code** | **String** | The referral code of the user. | 
-**previewLink** | **String** | The preview link of the user. | 
+**referralCode** | **String** | The referral code of the user. | 
+**referralCodeLink** | **String** | The referral code link of the user. | 
 **isPremium** | **bool** | Whether the user is a premium user. | 
 **firstSeenAt** | [**DateTime**](DateTime.md) | The date when the user was first seen at. | 
 **lastSeenAt** | [**DateTime**](DateTime.md) | The date when the user was last seen at. | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **claimCodeEligibility** | [**UserClaimCodeEligibility**](UserClaimCodeEligibility.md) | The claim code eligibility of the user. | 
 **stats** | [**UserStats**](UserStats.md) | The stats of the user. | 
 **rewards** | [**UserRewards**](UserRewards.md) | The rewards of the user. | 
-**program** | [**Program**](Program.md) | The program of the user. | 
+**referralProgram** | [**ReferralProgram**](ReferralProgram.md) | The program of the user. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

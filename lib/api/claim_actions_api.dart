@@ -16,28 +16,28 @@ class ClaimActionsApi {
 
   final ApiClient apiClient;
 
-  /// Claim Referral Code
+  /// Claim Code
   ///
-  /// Claims a referral code for a user.
+  /// Claims a code for a user. Code can be affiliate, promo or referral code.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [String] appUserId (required):
-  ///   The app user id of the user to claim the referral code for.
+  ///   The app user id of the user to claim the code for.
   ///
   /// * [String] xApiKey (required):
   ///   The API key to authenticate with.
   ///
-  /// * [UserClaimReferralCodeRequest] userClaimReferralCodeRequest (required):
-  Future<Response> claimReferralCodeWithHttpInfo(String appUserId, String xApiKey, UserClaimReferralCodeRequest userClaimReferralCodeRequest,) async {
+  /// * [UserClaimCodeRequest] userClaimCodeRequest (required):
+  Future<Response> claimCodeWithHttpInfo(String appUserId, String xApiKey, UserClaimCodeRequest userClaimCodeRequest,) async {
     // ignore: prefer_const_declarations
-    final path = r'/users/{app_user_id}/claim/referral-code'
+    final path = r'/users/{app_user_id}/claim-code'
       .replaceAll('{app_user_id}', appUserId);
 
     // ignore: prefer_final_locals
-    Object? postBody = userClaimReferralCodeRequest;
+    Object? postBody = userClaimCodeRequest;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -59,21 +59,21 @@ class ClaimActionsApi {
     );
   }
 
-  /// Claim Referral Code
+  /// Claim Code
   ///
-  /// Claims a referral code for a user.
+  /// Claims a code for a user. Code can be affiliate, promo or referral code.
   ///
   /// Parameters:
   ///
   /// * [String] appUserId (required):
-  ///   The app user id of the user to claim the referral code for.
+  ///   The app user id of the user to claim the code for.
   ///
   /// * [String] xApiKey (required):
   ///   The API key to authenticate with.
   ///
-  /// * [UserClaimReferralCodeRequest] userClaimReferralCodeRequest (required):
-  Future<UserClaimReferralCodeDataResponse?> claimReferralCode(String appUserId, String xApiKey, UserClaimReferralCodeRequest userClaimReferralCodeRequest,) async {
-    final response = await claimReferralCodeWithHttpInfo(appUserId, xApiKey, userClaimReferralCodeRequest,);
+  /// * [UserClaimCodeRequest] userClaimCodeRequest (required):
+  Future<UserClaimCodeDataResponse?> claimCode(String appUserId, String xApiKey, UserClaimCodeRequest userClaimCodeRequest,) async {
+    final response = await claimCodeWithHttpInfo(appUserId, xApiKey, userClaimCodeRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -81,7 +81,7 @@ class ClaimActionsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserClaimReferralCodeDataResponse',) as UserClaimReferralCodeDataResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserClaimCodeDataResponse',) as UserClaimCodeDataResponse;
     
     }
     return null;
