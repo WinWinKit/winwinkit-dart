@@ -72,7 +72,7 @@ class ClaimActionsApi {
   ///   The API key to authenticate with.
   ///
   /// * [UserClaimCodeRequest] userClaimCodeRequest (required):
-  Future<UserClaimCodeDataResponse?> claimCode(String appUserId, String xApiKey, UserClaimCodeRequest userClaimCodeRequest,) async {
+  Future<UserClaimCodeResponse?> claimCode(String appUserId, String xApiKey, UserClaimCodeRequest userClaimCodeRequest,) async {
     final response = await claimCodeWithHttpInfo(appUserId, xApiKey, userClaimCodeRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -81,7 +81,7 @@ class ClaimActionsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserClaimCodeDataResponse',) as UserClaimCodeDataResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserClaimCodeResponse',) as UserClaimCodeResponse;
     
     }
     return null;

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **withdrawCredits**
-> UserWithdrawCreditsDataResponse withdrawCredits(appUserId, xApiKey, userWithdrawCreditsRequest)
+> UserWithdrawCreditsResponse withdrawCredits(appUserId, xApiKey, userWithdrawCreditsRequest)
 
 Withdraw Credits
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserWithdrawCreditsDataResponse**](UserWithdrawCreditsDataResponse.md)
+[**UserWithdrawCreditsResponse**](UserWithdrawCreditsResponse.md)
 
 ### Authorization
 

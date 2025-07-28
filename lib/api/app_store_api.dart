@@ -68,7 +68,7 @@ class AppStoreApi {
   ///
   /// * [String] xApiKey (required):
   ///   The API key to authenticate with.
-  Future<OfferCodeDataResponse?> getOfferCode(String offerCodeId, String xApiKey,) async {
+  Future<OfferCodeResponse?> getOfferCode(String offerCodeId, String xApiKey,) async {
     final response = await getOfferCodeWithHttpInfo(offerCodeId, xApiKey,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -77,7 +77,7 @@ class AppStoreApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'OfferCodeDataResponse',) as OfferCodeDataResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'OfferCodeResponse',) as OfferCodeResponse;
     
     }
     return null;

@@ -72,7 +72,7 @@ class RewardsActionsApi {
   ///   The API key to authenticate with.
   ///
   /// * [UserWithdrawCreditsRequest] userWithdrawCreditsRequest (required):
-  Future<UserWithdrawCreditsDataResponse?> withdrawCredits(String appUserId, String xApiKey, UserWithdrawCreditsRequest userWithdrawCreditsRequest,) async {
+  Future<UserWithdrawCreditsResponse?> withdrawCredits(String appUserId, String xApiKey, UserWithdrawCreditsRequest userWithdrawCreditsRequest,) async {
     final response = await withdrawCreditsWithHttpInfo(appUserId, xApiKey, userWithdrawCreditsRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -81,7 +81,7 @@ class RewardsActionsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserWithdrawCreditsDataResponse',) as UserWithdrawCreditsDataResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserWithdrawCreditsResponse',) as UserWithdrawCreditsResponse;
     
     }
     return null;

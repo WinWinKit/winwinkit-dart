@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **claimCode**
-> UserClaimCodeDataResponse claimCode(appUserId, xApiKey, userClaimCodeRequest)
+> UserClaimCodeResponse claimCode(appUserId, xApiKey, userClaimCodeRequest)
 
 Claim Code
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserClaimCodeDataResponse**](UserClaimCodeDataResponse.md)
+[**UserClaimCodeResponse**](UserClaimCodeResponse.md)
 
 ### Authorization
 

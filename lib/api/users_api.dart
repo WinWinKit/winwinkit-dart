@@ -65,7 +65,7 @@ class UsersApi {
   ///   The API key to authenticate with.
   ///
   /// * [UserCreateRequest] userCreateRequest (required):
-  Future<UserDataResponse?> createOrUpdateUser(String xApiKey, UserCreateRequest userCreateRequest,) async {
+  Future<UserResponse?> createOrUpdateUser(String xApiKey, UserCreateRequest userCreateRequest,) async {
     final response = await createOrUpdateUserWithHttpInfo(xApiKey, userCreateRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -74,7 +74,7 @@ class UsersApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserDataResponse',) as UserDataResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserResponse',) as UserResponse;
     
     }
     return null;
@@ -132,7 +132,7 @@ class UsersApi {
   ///
   /// * [String] xApiKey (required):
   ///   The API key to authenticate with.
-  Future<UserDataResponse?> getUser(String appUserId, String xApiKey,) async {
+  Future<UserResponse?> getUser(String appUserId, String xApiKey,) async {
     final response = await getUserWithHttpInfo(appUserId, xApiKey,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -141,7 +141,7 @@ class UsersApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserDataResponse',) as UserDataResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserResponse',) as UserResponse;
     
     }
     return null;

@@ -13,27 +13,26 @@ part of openapi.api;
 class UserResponse {
   /// Returns a new [UserResponse] instance.
   UserResponse({
-    required this.user,
+    required this.data,
   });
 
-  /// The user
-  User user;
+  UserResponseData data;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserResponse &&
-    other.user == user;
+    other.data == data;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (user.hashCode);
+    (data.hashCode);
 
   @override
-  String toString() => 'UserResponse[user=$user]';
+  String toString() => 'UserResponse[data=$data]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'user'] = this.user;
+      json[r'data'] = this.data;
     return json;
   }
 
@@ -56,7 +55,7 @@ class UserResponse {
       }());
 
       return UserResponse(
-        user: User.fromJson(json[r'user'])!,
+        data: UserResponseData.fromJson(json[r'data'])!,
       );
     }
     return null;
@@ -104,7 +103,7 @@ class UserResponse {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'user',
+    'data',
   };
 }
 

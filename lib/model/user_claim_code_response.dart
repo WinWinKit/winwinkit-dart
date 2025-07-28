@@ -13,34 +13,26 @@ part of openapi.api;
 class UserClaimCodeResponse {
   /// Returns a new [UserClaimCodeResponse] instance.
   UserClaimCodeResponse({
-    required this.rewardsGranted,
-    required this.user,
+    required this.data,
   });
 
-  /// The rewards granted to the user.
-  UserRewardsGranted rewardsGranted;
-
-  /// The updated user.
-  User user;
+  UserClaimCodeResponseData data;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserClaimCodeResponse &&
-    other.rewardsGranted == rewardsGranted &&
-    other.user == user;
+    other.data == data;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (rewardsGranted.hashCode) +
-    (user.hashCode);
+    (data.hashCode);
 
   @override
-  String toString() => 'UserClaimCodeResponse[rewardsGranted=$rewardsGranted, user=$user]';
+  String toString() => 'UserClaimCodeResponse[data=$data]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'rewards_granted'] = this.rewardsGranted;
-      json[r'user'] = this.user;
+      json[r'data'] = this.data;
     return json;
   }
 
@@ -63,8 +55,7 @@ class UserClaimCodeResponse {
       }());
 
       return UserClaimCodeResponse(
-        rewardsGranted: UserRewardsGranted.fromJson(json[r'rewards_granted'])!,
-        user: User.fromJson(json[r'user'])!,
+        data: UserClaimCodeResponseData.fromJson(json[r'data'])!,
       );
     }
     return null;
@@ -112,8 +103,7 @@ class UserClaimCodeResponse {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'rewards_granted',
-    'user',
+    'data',
   };
 }
 

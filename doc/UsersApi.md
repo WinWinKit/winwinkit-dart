@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createOrUpdateUser**
-> UserDataResponse createOrUpdateUser(xApiKey, userCreateRequest)
+> UserResponse createOrUpdateUser(xApiKey, userCreateRequest)
 
 Create or Update User
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserDataResponse**](UserDataResponse.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUser**
-> UserDataResponse getUser(appUserId, xApiKey)
+> UserResponse getUser(appUserId, xApiKey)
 
 Get User
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserDataResponse**](UserDataResponse.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 

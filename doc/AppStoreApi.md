@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getOfferCode**
-> OfferCodeDataResponse getOfferCode(offerCodeId, xApiKey)
+> OfferCodeResponse getOfferCode(offerCodeId, xApiKey)
 
 Get Offer Code
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OfferCodeDataResponse**](OfferCodeDataResponse.md)
+[**OfferCodeResponse**](OfferCodeResponse.md)
 
 ### Authorization
 

@@ -196,10 +196,10 @@ class ApiClient {
           return ErrorObject.fromJson(value);
         case 'ErrorsResponse':
           return ErrorsResponse.fromJson(value);
-        case 'OfferCodeDataResponse':
-          return OfferCodeDataResponse.fromJson(value);
         case 'OfferCodeResponse':
           return OfferCodeResponse.fromJson(value);
+        case 'OfferCodeResponseData':
+          return OfferCodeResponseData.fromJson(value);
         case 'OfferCodeReward':
           return OfferCodeReward.fromJson(value);
         case 'OfferCodeValue':
@@ -322,28 +322,28 @@ class ApiClient {
           return UserBasicRewardActive.fromJson(value);
         case 'UserBasicRewardExpired':
           return UserBasicRewardExpired.fromJson(value);
-        case 'UserClaimCodeDataResponse':
-          return UserClaimCodeDataResponse.fromJson(value);
         case 'UserClaimCodeEligibility':
           return UserClaimCodeEligibility.fromJson(value);
         case 'UserClaimCodeRequest':
           return UserClaimCodeRequest.fromJson(value);
         case 'UserClaimCodeResponse':
           return UserClaimCodeResponse.fromJson(value);
+        case 'UserClaimCodeResponseData':
+          return UserClaimCodeResponseData.fromJson(value);
         case 'UserCreateRequest':
           return UserCreateRequest.fromJson(value);
         case 'UserCreditRewardActive':
           return UserCreditRewardActive.fromJson(value);
         case 'UserCreditRewardExpired':
           return UserCreditRewardExpired.fromJson(value);
-        case 'UserDataResponse':
-          return UserDataResponse.fromJson(value);
         case 'UserOfferCodeRewardActive':
           return UserOfferCodeRewardActive.fromJson(value);
         case 'UserOfferCodeRewardExpired':
           return UserOfferCodeRewardExpired.fromJson(value);
         case 'UserResponse':
           return UserResponse.fromJson(value);
+        case 'UserResponseData':
+          return UserResponseData.fromJson(value);
         case 'UserRevenueCatEntitlementRewardActive':
           return UserRevenueCatEntitlementRewardActive.fromJson(value);
         case 'UserRevenueCatEntitlementRewardExpired':
@@ -362,12 +362,12 @@ class ApiClient {
           return UserRewardsGranted.fromJson(value);
         case 'UserStats':
           return UserStats.fromJson(value);
-        case 'UserWithdrawCreditsDataResponse':
-          return UserWithdrawCreditsDataResponse.fromJson(value);
         case 'UserWithdrawCreditsRequest':
           return UserWithdrawCreditsRequest.fromJson(value);
         case 'UserWithdrawCreditsResponse':
           return UserWithdrawCreditsResponse.fromJson(value);
+        case 'UserWithdrawCreditsResponseData':
+          return UserWithdrawCreditsResponseData.fromJson(value);
         case 'UserWithdrawCreditsResult':
           return UserWithdrawCreditsResult.fromJson(value);
         default:

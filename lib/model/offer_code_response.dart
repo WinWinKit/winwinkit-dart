@@ -13,34 +13,26 @@ part of openapi.api;
 class OfferCodeResponse {
   /// Returns a new [OfferCodeResponse] instance.
   OfferCodeResponse({
-    required this.offerCode,
-    required this.subscription,
+    required this.data,
   });
 
-  /// The offer code
-  AppStoreOfferCode offerCode;
-
-  /// The subscription
-  AppStoreSubscription subscription;
+  OfferCodeResponseData data;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is OfferCodeResponse &&
-    other.offerCode == offerCode &&
-    other.subscription == subscription;
+    other.data == data;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (offerCode.hashCode) +
-    (subscription.hashCode);
+    (data.hashCode);
 
   @override
-  String toString() => 'OfferCodeResponse[offerCode=$offerCode, subscription=$subscription]';
+  String toString() => 'OfferCodeResponse[data=$data]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'offerCode'] = this.offerCode;
-      json[r'subscription'] = this.subscription;
+      json[r'data'] = this.data;
     return json;
   }
 
@@ -63,8 +55,7 @@ class OfferCodeResponse {
       }());
 
       return OfferCodeResponse(
-        offerCode: AppStoreOfferCode.fromJson(json[r'offerCode'])!,
-        subscription: AppStoreSubscription.fromJson(json[r'subscription'])!,
+        data: OfferCodeResponseData.fromJson(json[r'data'])!,
       );
     }
     return null;
@@ -112,8 +103,7 @@ class OfferCodeResponse {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'offerCode',
-    'subscription',
+    'data',
   };
 }
 
