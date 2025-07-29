@@ -11,7 +11,7 @@
 part of openapi.api;
 
 class ApiClient {
-  ApiClient({this.basePath = 'https://api-v1.winwinkit.com', this.authentication,});
+  ApiClient({this.basePath = 'https://api.winwinkit.com', this.authentication,});
 
   final String basePath;
   final Authentication? authentication;

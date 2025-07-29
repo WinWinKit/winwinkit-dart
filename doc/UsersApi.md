@@ -5,7 +5,7 @@
 import 'package:WinWinKit/api.dart';
 ```
 
-All URIs are relative to *https://api-v1.winwinkit.com*
+All URIs are relative to *https://api.winwinkit.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
