@@ -23,14 +23,14 @@ Get an offer code with subscription and prices by the offer code id.
 ```dart
 import 'package:WinWinKit/api.dart';
 
-final api_instance = AppStoreApi();
-final offerCodeId = offerCodeId_example; // String | The offer code id to retrieve.
-final xApiKey = xApiKey_example; // String | The API key to authenticate with.
+final api = WinWinKit().getAppStoreApi();
+final String offerCodeId = offerCodeId_example; // String | The offer code id to retrieve.
+final String xApiKey = xApiKey_example; // String | The API key to authenticate with.
 
 try {
-    final result = api_instance.getOfferCode(offerCodeId, xApiKey);
-    print(result);
-} catch (e) {
+    final response = api.getOfferCode(offerCodeId, xApiKey);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling AppStoreApi->getOfferCode: $e\n');
 }
 ```

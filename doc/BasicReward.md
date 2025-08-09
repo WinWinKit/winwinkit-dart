@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **key** | **String** | The key of the reward | 
 **name** | **String** | The name of the reward | 
 **description** | **String** | The description of the reward | 
-**metadata** | [**Object**](.md) | The metadata of the reward | 
+**metadata** | [**JsonObject**](.md) | The metadata of the reward | 
 **createdAt** | [**DateTime**](DateTime.md) | The created at of the reward | 
 **updatedAt** | [**DateTime**](DateTime.md) | The updated at of the reward | 
 

@@ -8,11 +8,11 @@ import 'package:WinWinKit/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**basic** | [**List<UserBasicRewardActive>**](UserBasicRewardActive.md) | The referral user basic rewards | [default to const []]
-**credit** | [**List<UserCreditRewardActive>**](UserCreditRewardActive.md) | The referral user credit rewards | [default to const []]
-**offerCode** | [**List<UserOfferCodeRewardActive>**](UserOfferCodeRewardActive.md) | The referral user offer code rewards | [default to const []]
-**revenuecatEntitlement** | [**List<UserRevenueCatEntitlementRewardActive>**](UserRevenueCatEntitlementRewardActive.md) | The referral user RevenueCat entitlement rewards | [default to const []]
-**revenuecatOffering** | [**List<UserRevenueCatOfferingRewardActive>**](UserRevenueCatOfferingRewardActive.md) | The referral user RevenueCat offering rewards | [default to const []]
+**basic** | [**BuiltList&lt;UserBasicRewardActive&gt;**](UserBasicRewardActive.md) | The referral user basic rewards | 
+**credit** | [**BuiltList&lt;UserCreditRewardActive&gt;**](UserCreditRewardActive.md) | The referral user credit rewards | 
+**offerCode** | [**BuiltList&lt;UserOfferCodeRewardActive&gt;**](UserOfferCodeRewardActive.md) | The referral user offer code rewards | 
+**revenuecatEntitlement** | [**BuiltList&lt;UserRevenueCatEntitlementRewardActive&gt;**](UserRevenueCatEntitlementRewardActive.md) | The referral user RevenueCat entitlement rewards | 
+**revenuecatOffering** | [**BuiltList&lt;UserRevenueCatOfferingRewardActive&gt;**](UserRevenueCatOfferingRewardActive.md) | The referral user RevenueCat offering rewards | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

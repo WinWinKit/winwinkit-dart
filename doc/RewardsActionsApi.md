@@ -23,15 +23,15 @@ Withdraws credits from a user.
 ```dart
 import 'package:WinWinKit/api.dart';
 
-final api_instance = RewardsActionsApi();
-final appUserId = appUserId_example; // String | The app user id of the user to withdraw credits from.
-final xApiKey = xApiKey_example; // String | The API key to authenticate with.
-final userWithdrawCreditsRequest = UserWithdrawCreditsRequest(); // UserWithdrawCreditsRequest | 
+final api = WinWinKit().getRewardsActionsApi();
+final String appUserId = appUserId_example; // String | The app user id of the user to withdraw credits from.
+final String xApiKey = xApiKey_example; // String | The API key to authenticate with.
+final UserWithdrawCreditsRequest userWithdrawCreditsRequest = ; // UserWithdrawCreditsRequest | 
 
 try {
-    final result = api_instance.withdrawCredits(appUserId, xApiKey, userWithdrawCreditsRequest);
-    print(result);
-} catch (e) {
+    final response = api.withdrawCredits(appUserId, xApiKey, userWithdrawCreditsRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling RewardsActionsApi->withdrawCredits: $e\n');
 }
 ```

@@ -1,119 +1,126 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:WinWinKit/./model/referral_program_receiver_rewards.dart';
+import 'package:WinWinKit/./model/referral_program_sender_rewards.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'referral_program_rewards.g.dart';
 
-class ReferralProgramRewards {
-  /// Returns a new [ReferralProgramRewards] instance.
-  ReferralProgramRewards({
-    required this.sender,
-    required this.receiver,
-  });
-
+/// ReferralProgramRewards
+///
+/// Properties:
+/// * [sender] - The program sender rewards
+/// * [receiver] - The program receiver rewards
+@BuiltValue()
+abstract class ReferralProgramRewards implements Built<ReferralProgramRewards, ReferralProgramRewardsBuilder> {
   /// The program sender rewards
-  ReferralProgramSenderRewards sender;
+  @BuiltValueField(wireName: r'sender')
+  ReferralProgramSenderRewards get sender;
 
   /// The program receiver rewards
-  ReferralProgramReceiverRewards receiver;
+  @BuiltValueField(wireName: r'receiver')
+  ReferralProgramReceiverRewards get receiver;
+
+  ReferralProgramRewards._();
+
+  factory ReferralProgramRewards([void updates(ReferralProgramRewardsBuilder b)]) = _$ReferralProgramRewards;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferralProgramRewardsBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ReferralProgramRewards> get serializer => _$ReferralProgramRewardsSerializer();
+}
+
+class _$ReferralProgramRewardsSerializer implements PrimitiveSerializer<ReferralProgramRewards> {
+  @override
+  final Iterable<Type> types = const [ReferralProgramRewards, _$ReferralProgramRewards];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ReferralProgramRewards &&
-    other.sender == sender &&
-    other.receiver == receiver;
+  final String wireName = r'ReferralProgramRewards';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ReferralProgramRewards object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'sender';
+    yield serializers.serialize(
+      object.sender,
+      specifiedType: const FullType(ReferralProgramSenderRewards),
+    );
+    yield r'receiver';
+    yield serializers.serialize(
+      object.receiver,
+      specifiedType: const FullType(ReferralProgramReceiverRewards),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (sender.hashCode) +
-    (receiver.hashCode);
+  Object serialize(
+    Serializers serializers,
+    ReferralProgramRewards object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ReferralProgramRewardsBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'sender':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramSenderRewards),
+          ) as ReferralProgramSenderRewards;
+          result.sender.replace(valueDes);
+          break;
+        case r'receiver':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramReceiverRewards),
+          ) as ReferralProgramReceiverRewards;
+          result.receiver.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'ReferralProgramRewards[sender=$sender, receiver=$receiver]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'sender'] = this.sender;
-      json[r'receiver'] = this.receiver;
-    return json;
+  ReferralProgramRewards deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ReferralProgramRewardsBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [ReferralProgramRewards] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static ReferralProgramRewards? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReferralProgramRewards[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReferralProgramRewards[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return ReferralProgramRewards(
-        sender: ReferralProgramSenderRewards.fromJson(json[r'sender'])!,
-        receiver: ReferralProgramReceiverRewards.fromJson(json[r'receiver'])!,
-      );
-    }
-    return null;
-  }
-
-  static List<ReferralProgramRewards> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramRewards>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramRewards.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, ReferralProgramRewards> mapFromJson(dynamic json) {
-    final map = <String, ReferralProgramRewards>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = ReferralProgramRewards.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of ReferralProgramRewards-objects as value to a dart map
-  static Map<String, List<ReferralProgramRewards>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ReferralProgramRewards>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = ReferralProgramRewards.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'sender',
-    'receiver',
-  };
 }
 

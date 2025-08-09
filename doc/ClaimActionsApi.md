@@ -23,15 +23,15 @@ Claims a code for a user. Code can be affiliate, promo or referral code.
 ```dart
 import 'package:WinWinKit/api.dart';
 
-final api_instance = ClaimActionsApi();
-final appUserId = appUserId_example; // String | The app user id of the user to claim the code for.
-final xApiKey = xApiKey_example; // String | The API key to authenticate with.
-final userClaimCodeRequest = UserClaimCodeRequest(); // UserClaimCodeRequest | 
+final api = WinWinKit().getClaimActionsApi();
+final String appUserId = appUserId_example; // String | The app user id of the user to claim the code for.
+final String xApiKey = xApiKey_example; // String | The API key to authenticate with.
+final UserClaimCodeRequest userClaimCodeRequest = ; // UserClaimCodeRequest | 
 
 try {
-    final result = api_instance.claimCode(appUserId, xApiKey, userClaimCodeRequest);
-    print(result);
-} catch (e) {
+    final response = api.claimCode(appUserId, xApiKey, userClaimCodeRequest);
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling ClaimActionsApi->claimCode: $e\n');
 }
 ```

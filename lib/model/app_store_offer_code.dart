@@ -1,422 +1,304 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:WinWinKit/./model/app_store_price.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'app_store_offer_code.g.dart';
 
-class AppStoreOfferCode {
-  /// Returns a new [AppStoreOfferCode] instance.
-  AppStoreOfferCode({
-    required this.id,
-    required this.name,
-    this.customerEligibilities = const [],
-    required this.offerEligibility,
-    required this.duration,
-    required this.offerMode,
-    required this.numberOfPeriods,
-    this.prices = const [],
-  });
-
+/// The offer code
+///
+/// Properties:
+/// * [id] - The offer code id.
+/// * [name] - The offer code name.
+/// * [customerEligibilities] - The offer code customer eligibilities.
+/// * [offerEligibility] - The offer code offer eligibility.
+/// * [duration] - The offer code duration.
+/// * [offerMode] - The offer code offer mode.
+/// * [numberOfPeriods] - The offer code number of periods.
+/// * [prices] - The offer code prices.
+@BuiltValue()
+abstract class AppStoreOfferCode implements Built<AppStoreOfferCode, AppStoreOfferCodeBuilder> {
   /// The offer code id.
-  String id;
+  @BuiltValueField(wireName: r'id')
+  String get id;
 
   /// The offer code name.
-  String name;
+  @BuiltValueField(wireName: r'name')
+  String get name;
 
   /// The offer code customer eligibilities.
-  List<String> customerEligibilities;
+  @BuiltValueField(wireName: r'customer_eligibilities')
+  BuiltList<String> get customerEligibilities;
 
   /// The offer code offer eligibility.
-  AppStoreOfferCodeOfferEligibilityEnum offerEligibility;
+  @BuiltValueField(wireName: r'offer_eligibility')
+  AppStoreOfferCodeOfferEligibilityEnum get offerEligibility;
+  // enum offerEligibilityEnum {  STACK_WITH_INTRO_OFFERS,  REPLACE_INTRO_OFFERS,  };
 
   /// The offer code duration.
-  AppStoreOfferCodeDurationEnum duration;
+  @BuiltValueField(wireName: r'duration')
+  AppStoreOfferCodeDurationEnum get duration;
+  // enum durationEnum {  THREE_DAYS,  ONE_WEEK,  TWO_WEEKS,  ONE_MONTH,  TWO_MONTHS,  THREE_MONTHS,  SIX_MONTHS,  ONE_YEAR,  };
 
   /// The offer code offer mode.
-  AppStoreOfferCodeOfferModeEnum offerMode;
+  @BuiltValueField(wireName: r'offer_mode')
+  AppStoreOfferCodeOfferModeEnum get offerMode;
+  // enum offerModeEnum {  PAY_AS_YOU_GO,  PAY_UP_FRONT,  FREE_TRIAL,  };
 
   /// The offer code number of periods.
-  int numberOfPeriods;
+  @BuiltValueField(wireName: r'number_of_periods')
+  int get numberOfPeriods;
 
   /// The offer code prices.
-  List<AppStorePrice>? prices;
+  @BuiltValueField(wireName: r'prices')
+  BuiltList<AppStorePrice>? get prices;
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is AppStoreOfferCode &&
-    other.id == id &&
-    other.name == name &&
-    _deepEquality.equals(other.customerEligibilities, customerEligibilities) &&
-    other.offerEligibility == offerEligibility &&
-    other.duration == duration &&
-    other.offerMode == offerMode &&
-    other.numberOfPeriods == numberOfPeriods &&
-    _deepEquality.equals(other.prices, prices);
+  AppStoreOfferCode._();
 
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (id.hashCode) +
-    (name.hashCode) +
-    (customerEligibilities.hashCode) +
-    (offerEligibility.hashCode) +
-    (duration.hashCode) +
-    (offerMode.hashCode) +
-    (numberOfPeriods.hashCode) +
-    (prices == null ? 0 : prices!.hashCode);
+  factory AppStoreOfferCode([void updates(AppStoreOfferCodeBuilder b)]) = _$AppStoreOfferCode;
 
-  @override
-  String toString() => 'AppStoreOfferCode[id=$id, name=$name, customerEligibilities=$customerEligibilities, offerEligibility=$offerEligibility, duration=$duration, offerMode=$offerMode, numberOfPeriods=$numberOfPeriods, prices=$prices]';
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AppStoreOfferCodeBuilder b) => b;
 
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'id'] = this.id;
-      json[r'name'] = this.name;
-      json[r'customer_eligibilities'] = this.customerEligibilities;
-      json[r'offer_eligibility'] = this.offerEligibility;
-      json[r'duration'] = this.duration;
-      json[r'offer_mode'] = this.offerMode;
-      json[r'number_of_periods'] = this.numberOfPeriods;
-    if (this.prices != null) {
-      json[r'prices'] = this.prices;
-    } else {
-      json[r'prices'] = null;
-    }
-    return json;
-  }
-
-  /// Returns a new [AppStoreOfferCode] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static AppStoreOfferCode? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AppStoreOfferCode[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AppStoreOfferCode[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return AppStoreOfferCode(
-        id: mapValueOfType<String>(json, r'id')!,
-        name: mapValueOfType<String>(json, r'name')!,
-        customerEligibilities: json[r'customer_eligibilities'] is Iterable
-            ? (json[r'customer_eligibilities'] as Iterable).cast<String>().toList(growable: false)
-            : const [],
-        offerEligibility: AppStoreOfferCodeOfferEligibilityEnum.fromJson(json[r'offer_eligibility'])!,
-        duration: AppStoreOfferCodeDurationEnum.fromJson(json[r'duration'])!,
-        offerMode: AppStoreOfferCodeOfferModeEnum.fromJson(json[r'offer_mode'])!,
-        numberOfPeriods: mapValueOfType<int>(json, r'number_of_periods')!,
-        prices: AppStorePrice.listFromJson(json[r'prices']),
-      );
-    }
-    return null;
-  }
-
-  static List<AppStoreOfferCode> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <AppStoreOfferCode>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = AppStoreOfferCode.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, AppStoreOfferCode> mapFromJson(dynamic json) {
-    final map = <String, AppStoreOfferCode>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = AppStoreOfferCode.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of AppStoreOfferCode-objects as value to a dart map
-  static Map<String, List<AppStoreOfferCode>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<AppStoreOfferCode>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = AppStoreOfferCode.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'id',
-    'name',
-    'customer_eligibilities',
-    'offer_eligibility',
-    'duration',
-    'offer_mode',
-    'number_of_periods',
-    'prices',
-  };
+  @BuiltValueSerializer(custom: true)
+  static Serializer<AppStoreOfferCode> get serializer => _$AppStoreOfferCodeSerializer();
 }
 
-/// The offer code offer eligibility.
-class AppStoreOfferCodeOfferEligibilityEnum {
-  /// Instantiate a new enum with the provided [value].
-  const AppStoreOfferCodeOfferEligibilityEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final String value;
+class _$AppStoreOfferCodeSerializer implements PrimitiveSerializer<AppStoreOfferCode> {
+  @override
+  final Iterable<Type> types = const [AppStoreOfferCode, _$AppStoreOfferCode];
 
   @override
-  String toString() => value;
+  final String wireName = r'AppStoreOfferCode';
 
-  String toJson() => value;
-
-  static const STACK_WITH_INTRO_OFFERS = AppStoreOfferCodeOfferEligibilityEnum._(r'STACK_WITH_INTRO_OFFERS');
-  static const REPLACE_INTRO_OFFERS = AppStoreOfferCodeOfferEligibilityEnum._(r'REPLACE_INTRO_OFFERS');
-
-  /// List of all possible values in this [enum][AppStoreOfferCodeOfferEligibilityEnum].
-  static const values = <AppStoreOfferCodeOfferEligibilityEnum>[
-    STACK_WITH_INTRO_OFFERS,
-    REPLACE_INTRO_OFFERS,
-  ];
-
-  static AppStoreOfferCodeOfferEligibilityEnum? fromJson(dynamic value) => AppStoreOfferCodeOfferEligibilityEnumTypeTransformer().decode(value);
-
-  static List<AppStoreOfferCodeOfferEligibilityEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <AppStoreOfferCodeOfferEligibilityEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = AppStoreOfferCodeOfferEligibilityEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    AppStoreOfferCode object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'customer_eligibilities';
+    yield serializers.serialize(
+      object.customerEligibilities,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
+    yield r'offer_eligibility';
+    yield serializers.serialize(
+      object.offerEligibility,
+      specifiedType: const FullType(AppStoreOfferCodeOfferEligibilityEnum),
+    );
+    yield r'duration';
+    yield serializers.serialize(
+      object.duration,
+      specifiedType: const FullType(AppStoreOfferCodeDurationEnum),
+    );
+    yield r'offer_mode';
+    yield serializers.serialize(
+      object.offerMode,
+      specifiedType: const FullType(AppStoreOfferCodeOfferModeEnum),
+    );
+    yield r'number_of_periods';
+    yield serializers.serialize(
+      object.numberOfPeriods,
+      specifiedType: const FullType(int),
+    );
+    yield r'prices';
+    yield object.prices == null ? null : serializers.serialize(
+      object.prices,
+      specifiedType: const FullType.nullable(BuiltList, [FullType(AppStorePrice)]),
+    );
   }
-}
 
-/// Transformation class that can [encode] an instance of [AppStoreOfferCodeOfferEligibilityEnum] to String,
-/// and [decode] dynamic data back to [AppStoreOfferCodeOfferEligibilityEnum].
-class AppStoreOfferCodeOfferEligibilityEnumTypeTransformer {
-  factory AppStoreOfferCodeOfferEligibilityEnumTypeTransformer() => _instance ??= const AppStoreOfferCodeOfferEligibilityEnumTypeTransformer._();
+  @override
+  Object serialize(
+    Serializers serializers,
+    AppStoreOfferCode object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
 
-  const AppStoreOfferCodeOfferEligibilityEnumTypeTransformer._();
-
-  String encode(AppStoreOfferCodeOfferEligibilityEnum data) => data.value;
-
-  /// Decodes a [dynamic value][data] to a AppStoreOfferCodeOfferEligibilityEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  AppStoreOfferCodeOfferEligibilityEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        case r'STACK_WITH_INTRO_OFFERS': return AppStoreOfferCodeOfferEligibilityEnum.STACK_WITH_INTRO_OFFERS;
-        case r'REPLACE_INTRO_OFFERS': return AppStoreOfferCodeOfferEligibilityEnum.REPLACE_INTRO_OFFERS;
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required AppStoreOfferCodeBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'customer_eligibilities':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.customerEligibilities.replace(valueDes);
+          break;
+        case r'offer_eligibility':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AppStoreOfferCodeOfferEligibilityEnum),
+          ) as AppStoreOfferCodeOfferEligibilityEnum;
+          result.offerEligibility = valueDes;
+          break;
+        case r'duration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AppStoreOfferCodeDurationEnum),
+          ) as AppStoreOfferCodeDurationEnum;
+          result.duration = valueDes;
+          break;
+        case r'offer_mode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AppStoreOfferCodeOfferModeEnum),
+          ) as AppStoreOfferCodeOfferModeEnum;
+          result.offerMode = valueDes;
+          break;
+        case r'number_of_periods':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.numberOfPeriods = valueDes;
+          break;
+        case r'prices':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(BuiltList, [FullType(AppStorePrice)]),
+          ) as BuiltList<AppStorePrice>?;
+          if (valueDes == null) continue;
+          result.prices.replace(valueDes);
+          break;
         default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
       }
     }
-    return null;
   }
-
-  /// Singleton [AppStoreOfferCodeOfferEligibilityEnumTypeTransformer] instance.
-  static AppStoreOfferCodeOfferEligibilityEnumTypeTransformer? _instance;
-}
-
-
-/// The offer code duration.
-class AppStoreOfferCodeDurationEnum {
-  /// Instantiate a new enum with the provided [value].
-  const AppStoreOfferCodeDurationEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final String value;
 
   @override
-  String toString() => value;
-
-  String toJson() => value;
-
-  static const THREE_DAYS = AppStoreOfferCodeDurationEnum._(r'THREE_DAYS');
-  static const ONE_WEEK = AppStoreOfferCodeDurationEnum._(r'ONE_WEEK');
-  static const TWO_WEEKS = AppStoreOfferCodeDurationEnum._(r'TWO_WEEKS');
-  static const ONE_MONTH = AppStoreOfferCodeDurationEnum._(r'ONE_MONTH');
-  static const TWO_MONTHS = AppStoreOfferCodeDurationEnum._(r'TWO_MONTHS');
-  static const THREE_MONTHS = AppStoreOfferCodeDurationEnum._(r'THREE_MONTHS');
-  static const SIX_MONTHS = AppStoreOfferCodeDurationEnum._(r'SIX_MONTHS');
-  static const ONE_YEAR = AppStoreOfferCodeDurationEnum._(r'ONE_YEAR');
-
-  /// List of all possible values in this [enum][AppStoreOfferCodeDurationEnum].
-  static const values = <AppStoreOfferCodeDurationEnum>[
-    THREE_DAYS,
-    ONE_WEEK,
-    TWO_WEEKS,
-    ONE_MONTH,
-    TWO_MONTHS,
-    THREE_MONTHS,
-    SIX_MONTHS,
-    ONE_YEAR,
-  ];
-
-  static AppStoreOfferCodeDurationEnum? fromJson(dynamic value) => AppStoreOfferCodeDurationEnumTypeTransformer().decode(value);
-
-  static List<AppStoreOfferCodeDurationEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <AppStoreOfferCodeDurationEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = AppStoreOfferCodeDurationEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
+  AppStoreOfferCode deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = AppStoreOfferCodeBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
 }
 
-/// Transformation class that can [encode] an instance of [AppStoreOfferCodeDurationEnum] to String,
-/// and [decode] dynamic data back to [AppStoreOfferCodeDurationEnum].
-class AppStoreOfferCodeDurationEnumTypeTransformer {
-  factory AppStoreOfferCodeDurationEnumTypeTransformer() => _instance ??= const AppStoreOfferCodeDurationEnumTypeTransformer._();
+class AppStoreOfferCodeOfferEligibilityEnum extends EnumClass {
 
-  const AppStoreOfferCodeDurationEnumTypeTransformer._();
+  /// The offer code offer eligibility.
+  @BuiltValueEnumConst(wireName: r'STACK_WITH_INTRO_OFFERS')
+  static const AppStoreOfferCodeOfferEligibilityEnum STACK_WITH_INTRO_OFFERS = _$appStoreOfferCodeOfferEligibilityEnum_STACK_WITH_INTRO_OFFERS;
+  /// The offer code offer eligibility.
+  @BuiltValueEnumConst(wireName: r'REPLACE_INTRO_OFFERS')
+  static const AppStoreOfferCodeOfferEligibilityEnum REPLACE_INTRO_OFFERS = _$appStoreOfferCodeOfferEligibilityEnum_REPLACE_INTRO_OFFERS;
 
-  String encode(AppStoreOfferCodeDurationEnum data) => data.value;
+  static Serializer<AppStoreOfferCodeOfferEligibilityEnum> get serializer => _$appStoreOfferCodeOfferEligibilityEnumSerializer;
 
-  /// Decodes a [dynamic value][data] to a AppStoreOfferCodeDurationEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  AppStoreOfferCodeDurationEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        case r'THREE_DAYS': return AppStoreOfferCodeDurationEnum.THREE_DAYS;
-        case r'ONE_WEEK': return AppStoreOfferCodeDurationEnum.ONE_WEEK;
-        case r'TWO_WEEKS': return AppStoreOfferCodeDurationEnum.TWO_WEEKS;
-        case r'ONE_MONTH': return AppStoreOfferCodeDurationEnum.ONE_MONTH;
-        case r'TWO_MONTHS': return AppStoreOfferCodeDurationEnum.TWO_MONTHS;
-        case r'THREE_MONTHS': return AppStoreOfferCodeDurationEnum.THREE_MONTHS;
-        case r'SIX_MONTHS': return AppStoreOfferCodeDurationEnum.SIX_MONTHS;
-        case r'ONE_YEAR': return AppStoreOfferCodeDurationEnum.ONE_YEAR;
-        default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
-      }
-    }
-    return null;
-  }
+  const AppStoreOfferCodeOfferEligibilityEnum._(String name): super(name);
 
-  /// Singleton [AppStoreOfferCodeDurationEnumTypeTransformer] instance.
-  static AppStoreOfferCodeDurationEnumTypeTransformer? _instance;
+  static BuiltSet<AppStoreOfferCodeOfferEligibilityEnum> get values => _$appStoreOfferCodeOfferEligibilityEnumValues;
+  static AppStoreOfferCodeOfferEligibilityEnum valueOf(String name) => _$appStoreOfferCodeOfferEligibilityEnumValueOf(name);
 }
 
+class AppStoreOfferCodeDurationEnum extends EnumClass {
 
-/// The offer code offer mode.
-class AppStoreOfferCodeOfferModeEnum {
-  /// Instantiate a new enum with the provided [value].
-  const AppStoreOfferCodeOfferModeEnum._(this.value);
+  /// The offer code duration.
+  @BuiltValueEnumConst(wireName: r'THREE_DAYS')
+  static const AppStoreOfferCodeDurationEnum THREE_DAYS = _$appStoreOfferCodeDurationEnum_THREE_DAYS;
+  /// The offer code duration.
+  @BuiltValueEnumConst(wireName: r'ONE_WEEK')
+  static const AppStoreOfferCodeDurationEnum ONE_WEEK = _$appStoreOfferCodeDurationEnum_ONE_WEEK;
+  /// The offer code duration.
+  @BuiltValueEnumConst(wireName: r'TWO_WEEKS')
+  static const AppStoreOfferCodeDurationEnum TWO_WEEKS = _$appStoreOfferCodeDurationEnum_TWO_WEEKS;
+  /// The offer code duration.
+  @BuiltValueEnumConst(wireName: r'ONE_MONTH')
+  static const AppStoreOfferCodeDurationEnum ONE_MONTH = _$appStoreOfferCodeDurationEnum_ONE_MONTH;
+  /// The offer code duration.
+  @BuiltValueEnumConst(wireName: r'TWO_MONTHS')
+  static const AppStoreOfferCodeDurationEnum TWO_MONTHS = _$appStoreOfferCodeDurationEnum_TWO_MONTHS;
+  /// The offer code duration.
+  @BuiltValueEnumConst(wireName: r'THREE_MONTHS')
+  static const AppStoreOfferCodeDurationEnum THREE_MONTHS = _$appStoreOfferCodeDurationEnum_THREE_MONTHS;
+  /// The offer code duration.
+  @BuiltValueEnumConst(wireName: r'SIX_MONTHS')
+  static const AppStoreOfferCodeDurationEnum SIX_MONTHS = _$appStoreOfferCodeDurationEnum_SIX_MONTHS;
+  /// The offer code duration.
+  @BuiltValueEnumConst(wireName: r'ONE_YEAR')
+  static const AppStoreOfferCodeDurationEnum ONE_YEAR = _$appStoreOfferCodeDurationEnum_ONE_YEAR;
 
-  /// The underlying value of this enum member.
-  final String value;
+  static Serializer<AppStoreOfferCodeDurationEnum> get serializer => _$appStoreOfferCodeDurationEnumSerializer;
 
-  @override
-  String toString() => value;
+  const AppStoreOfferCodeDurationEnum._(String name): super(name);
 
-  String toJson() => value;
-
-  static const PAY_AS_YOU_GO = AppStoreOfferCodeOfferModeEnum._(r'PAY_AS_YOU_GO');
-  static const PAY_UP_FRONT = AppStoreOfferCodeOfferModeEnum._(r'PAY_UP_FRONT');
-  static const FREE_TRIAL = AppStoreOfferCodeOfferModeEnum._(r'FREE_TRIAL');
-
-  /// List of all possible values in this [enum][AppStoreOfferCodeOfferModeEnum].
-  static const values = <AppStoreOfferCodeOfferModeEnum>[
-    PAY_AS_YOU_GO,
-    PAY_UP_FRONT,
-    FREE_TRIAL,
-  ];
-
-  static AppStoreOfferCodeOfferModeEnum? fromJson(dynamic value) => AppStoreOfferCodeOfferModeEnumTypeTransformer().decode(value);
-
-  static List<AppStoreOfferCodeOfferModeEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <AppStoreOfferCodeOfferModeEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = AppStoreOfferCodeOfferModeEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
+  static BuiltSet<AppStoreOfferCodeDurationEnum> get values => _$appStoreOfferCodeDurationEnumValues;
+  static AppStoreOfferCodeDurationEnum valueOf(String name) => _$appStoreOfferCodeDurationEnumValueOf(name);
 }
 
-/// Transformation class that can [encode] an instance of [AppStoreOfferCodeOfferModeEnum] to String,
-/// and [decode] dynamic data back to [AppStoreOfferCodeOfferModeEnum].
-class AppStoreOfferCodeOfferModeEnumTypeTransformer {
-  factory AppStoreOfferCodeOfferModeEnumTypeTransformer() => _instance ??= const AppStoreOfferCodeOfferModeEnumTypeTransformer._();
+class AppStoreOfferCodeOfferModeEnum extends EnumClass {
 
-  const AppStoreOfferCodeOfferModeEnumTypeTransformer._();
+  /// The offer code offer mode.
+  @BuiltValueEnumConst(wireName: r'PAY_AS_YOU_GO')
+  static const AppStoreOfferCodeOfferModeEnum PAY_AS_YOU_GO = _$appStoreOfferCodeOfferModeEnum_PAY_AS_YOU_GO;
+  /// The offer code offer mode.
+  @BuiltValueEnumConst(wireName: r'PAY_UP_FRONT')
+  static const AppStoreOfferCodeOfferModeEnum PAY_UP_FRONT = _$appStoreOfferCodeOfferModeEnum_PAY_UP_FRONT;
+  /// The offer code offer mode.
+  @BuiltValueEnumConst(wireName: r'FREE_TRIAL')
+  static const AppStoreOfferCodeOfferModeEnum FREE_TRIAL = _$appStoreOfferCodeOfferModeEnum_FREE_TRIAL;
 
-  String encode(AppStoreOfferCodeOfferModeEnum data) => data.value;
+  static Serializer<AppStoreOfferCodeOfferModeEnum> get serializer => _$appStoreOfferCodeOfferModeEnumSerializer;
 
-  /// Decodes a [dynamic value][data] to a AppStoreOfferCodeOfferModeEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  AppStoreOfferCodeOfferModeEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        case r'PAY_AS_YOU_GO': return AppStoreOfferCodeOfferModeEnum.PAY_AS_YOU_GO;
-        case r'PAY_UP_FRONT': return AppStoreOfferCodeOfferModeEnum.PAY_UP_FRONT;
-        case r'FREE_TRIAL': return AppStoreOfferCodeOfferModeEnum.FREE_TRIAL;
-        default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
-      }
-    }
-    return null;
-  }
+  const AppStoreOfferCodeOfferModeEnum._(String name): super(name);
 
-  /// Singleton [AppStoreOfferCodeOfferModeEnumTypeTransformer] instance.
-  static AppStoreOfferCodeOfferModeEnumTypeTransformer? _instance;
+  static BuiltSet<AppStoreOfferCodeOfferModeEnum> get values => _$appStoreOfferCodeOfferModeEnumValues;
+  static AppStoreOfferCodeOfferModeEnum valueOf(String name) => _$appStoreOfferCodeOfferModeEnumValueOf(name);
 }
-
 

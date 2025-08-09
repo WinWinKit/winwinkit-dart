@@ -1,144 +1,94 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+import 'package:dio/dio.dart';
+import 'package:built_value/serializer.dart';
+import 'package:WinWinKit/./serializers.dart';
+import 'package:WinWinKit/./auth/api_key_auth.dart';
+import 'package:WinWinKit/./auth/basic_auth.dart';
+import 'package:WinWinKit/./auth/bearer_auth.dart';
+import 'package:WinWinKit/./auth/oauth.dart';
+import 'package:WinWinKit/./api/app_store_api.dart';
+import 'package:WinWinKit/./api/claim_actions_api.dart';
+import 'package:WinWinKit/./api/rewards_actions_api.dart';
+import 'package:WinWinKit/./api/users_api.dart';
 
-library openapi.api;
+class WinWinKit {
+  static const String basePath = r'https://api.winwinkit.com';
 
-import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
+  final Dio dio;
+  final Serializers serializers;
 
-import 'package:collection/collection.dart';
-import 'package:http/http.dart';
-import 'package:intl/intl.dart';
-import 'package:meta/meta.dart';
+  WinWinKit({
+    Dio? dio,
+    Serializers? serializers,
+    String? basePathOverride,
+    List<Interceptor>? interceptors,
+  })  : this.serializers = serializers ?? standardSerializers,
+        this.dio = dio ??
+            Dio(BaseOptions(
+              baseUrl: basePathOverride ?? basePath,
+              connectTimeout: const Duration(milliseconds: 5000),
+              receiveTimeout: const Duration(milliseconds: 3000),
+            )) {
+    if (interceptors == null) {
+      this.dio.interceptors.addAll([
+        OAuthInterceptor(),
+        BasicAuthInterceptor(),
+        BearerAuthInterceptor(),
+        ApiKeyAuthInterceptor(),
+      ]);
+    } else {
+      this.dio.interceptors.addAll(interceptors);
+    }
+  }
 
-part 'api_client.dart';
-part 'api_helper.dart';
-part 'api_exception.dart';
-part 'auth/authentication.dart';
-part 'auth/api_key_auth.dart';
-part 'auth/oauth.dart';
-part 'auth/http_basic_auth.dart';
-part 'auth/http_bearer_auth.dart';
+  void setOAuthToken(String name, String token) {
+    if (this.dio.interceptors.any((i) => i is OAuthInterceptor)) {
+      (this.dio.interceptors.firstWhere((i) => i is OAuthInterceptor) as OAuthInterceptor).tokens[name] = token;
+    }
+  }
 
-part 'api/app_store_api.dart';
-part 'api/claim_actions_api.dart';
-part 'api/rewards_actions_api.dart';
-part 'api/users_api.dart';
+  void setBearerAuth(String name, String token) {
+    if (this.dio.interceptors.any((i) => i is BearerAuthInterceptor)) {
+      (this.dio.interceptors.firstWhere((i) => i is BearerAuthInterceptor) as BearerAuthInterceptor).tokens[name] = token;
+    }
+  }
 
-part 'model/app_store_offer_code.dart';
-part 'model/app_store_price.dart';
-part 'model/app_store_subscription.dart';
-part 'model/basic_reward.dart';
-part 'model/credit_reward.dart';
-part 'model/error_object.dart';
-part 'model/errors_response.dart';
-part 'model/offer_code_response.dart';
-part 'model/offer_code_response_data.dart';
-part 'model/offer_code_reward.dart';
-part 'model/offer_code_value.dart';
-part 'model/referral_program.dart';
-part 'model/referral_program_receiver_basic_reward.dart';
-part 'model/referral_program_receiver_basic_reward_activation.dart';
-part 'model/referral_program_receiver_basic_reward_deactivation.dart';
-part 'model/referral_program_receiver_basic_reward_interval_deactivation.dart';
-part 'model/referral_program_receiver_basic_reward_never_deactivation.dart';
-part 'model/referral_program_receiver_credit_reward.dart';
-part 'model/referral_program_receiver_credit_reward_activation.dart';
-part 'model/referral_program_receiver_credit_reward_deactivation.dart';
-part 'model/referral_program_receiver_credit_reward_interval_deactivation.dart';
-part 'model/referral_program_receiver_credit_reward_never_deactivation.dart';
-part 'model/referral_program_receiver_offer_code_reward.dart';
-part 'model/referral_program_receiver_offer_code_reward_activation.dart';
-part 'model/referral_program_receiver_offer_code_reward_deactivation.dart';
-part 'model/referral_program_receiver_offer_code_reward_interval_deactivation.dart';
-part 'model/referral_program_receiver_offer_code_reward_never_deactivation.dart';
-part 'model/referral_program_receiver_revenue_cat_entitlement_reward.dart';
-part 'model/referral_program_receiver_revenue_cat_entitlement_reward_activation.dart';
-part 'model/referral_program_receiver_revenue_cat_entitlement_reward_deactivation.dart';
-part 'model/referral_program_receiver_revenue_cat_entitlement_reward_interval_deactivation.dart';
-part 'model/referral_program_receiver_revenue_cat_entitlement_reward_never_deactivation.dart';
-part 'model/referral_program_receiver_revenue_cat_offering_reward.dart';
-part 'model/referral_program_receiver_revenue_cat_offering_reward_activation.dart';
-part 'model/referral_program_receiver_revenue_cat_offering_reward_deactivation.dart';
-part 'model/referral_program_receiver_revenue_cat_offering_reward_interval_deactivation.dart';
-part 'model/referral_program_receiver_revenue_cat_offering_reward_never_deactivation.dart';
-part 'model/referral_program_receiver_rewards.dart';
-part 'model/referral_program_rewards.dart';
-part 'model/referral_program_sender_basic_reward.dart';
-part 'model/referral_program_sender_basic_reward_activation.dart';
-part 'model/referral_program_sender_basic_reward_deactivation.dart';
-part 'model/referral_program_sender_basic_reward_interval_deactivation.dart';
-part 'model/referral_program_sender_basic_reward_never_deactivation.dart';
-part 'model/referral_program_sender_credit_reward.dart';
-part 'model/referral_program_sender_credit_reward_activation.dart';
-part 'model/referral_program_sender_credit_reward_deactivation.dart';
-part 'model/referral_program_sender_credit_reward_interval_deactivation.dart';
-part 'model/referral_program_sender_credit_reward_never_deactivation.dart';
-part 'model/referral_program_sender_offer_code_reward.dart';
-part 'model/referral_program_sender_offer_code_reward_activation.dart';
-part 'model/referral_program_sender_offer_code_reward_deactivation.dart';
-part 'model/referral_program_sender_offer_code_reward_interval_deactivation.dart';
-part 'model/referral_program_sender_offer_code_reward_never_deactivation.dart';
-part 'model/referral_program_sender_revenue_cat_entitlement_reward.dart';
-part 'model/referral_program_sender_revenue_cat_entitlement_reward_activation.dart';
-part 'model/referral_program_sender_revenue_cat_entitlement_reward_deactivation.dart';
-part 'model/referral_program_sender_revenue_cat_entitlement_reward_interval_deactivation.dart';
-part 'model/referral_program_sender_revenue_cat_entitlement_reward_never_deactivation.dart';
-part 'model/referral_program_sender_revenue_cat_offering_reward.dart';
-part 'model/referral_program_sender_revenue_cat_offering_reward_activation.dart';
-part 'model/referral_program_sender_revenue_cat_offering_reward_deactivation.dart';
-part 'model/referral_program_sender_revenue_cat_offering_reward_interval_deactivation.dart';
-part 'model/referral_program_sender_revenue_cat_offering_reward_never_deactivation.dart';
-part 'model/referral_program_sender_rewards.dart';
-part 'model/revenue_cat_entitlement_reward.dart';
-part 'model/revenue_cat_offering_reward.dart';
-part 'model/user.dart';
-part 'model/user_basic_reward_active.dart';
-part 'model/user_basic_reward_expired.dart';
-part 'model/user_claim_code_eligibility.dart';
-part 'model/user_claim_code_request.dart';
-part 'model/user_claim_code_response.dart';
-part 'model/user_claim_code_response_data.dart';
-part 'model/user_create_request.dart';
-part 'model/user_credit_reward_active.dart';
-part 'model/user_credit_reward_expired.dart';
-part 'model/user_offer_code_reward_active.dart';
-part 'model/user_offer_code_reward_expired.dart';
-part 'model/user_response.dart';
-part 'model/user_response_data.dart';
-part 'model/user_revenue_cat_entitlement_reward_active.dart';
-part 'model/user_revenue_cat_entitlement_reward_expired.dart';
-part 'model/user_revenue_cat_offering_reward_active.dart';
-part 'model/user_revenue_cat_offering_reward_expired.dart';
-part 'model/user_rewards.dart';
-part 'model/user_rewards_active.dart';
-part 'model/user_rewards_expired.dart';
-part 'model/user_rewards_granted.dart';
-part 'model/user_stats.dart';
-part 'model/user_withdraw_credits_request.dart';
-part 'model/user_withdraw_credits_response.dart';
-part 'model/user_withdraw_credits_response_data.dart';
-part 'model/user_withdraw_credits_result.dart';
+  void setBasicAuth(String name, String username, String password) {
+    if (this.dio.interceptors.any((i) => i is BasicAuthInterceptor)) {
+      (this.dio.interceptors.firstWhere((i) => i is BasicAuthInterceptor) as BasicAuthInterceptor).authInfo[name] = BasicAuthInfo(username, password);
+    }
+  }
 
+  void setApiKey(String name, String apiKey) {
+    if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
+      (this.dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor) as ApiKeyAuthInterceptor).apiKeys[name] = apiKey;
+    }
+  }
 
-/// An [ApiClient] instance that uses the default values obtained from
-/// the OpenAPI specification file.
-var defaultApiClient = ApiClient();
+  /// Get AppStoreApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AppStoreApi getAppStoreApi() {
+    return AppStoreApi(dio, serializers);
+  }
 
-const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
-const _dateEpochMarker = 'epoch';
-const _deepEquality = DeepCollectionEquality();
-final _dateFormatter = DateFormat('yyyy-MM-dd');
-final _regList = RegExp(r'^List<(.*)>$');
-final _regSet = RegExp(r'^Set<(.*)>$');
-final _regMap = RegExp(r'^Map<String,(.*)>$');
+  /// Get ClaimActionsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ClaimActionsApi getClaimActionsApi() {
+    return ClaimActionsApi(dio, serializers);
+  }
 
-bool _isEpochMarker(String? pattern) => pattern == _dateEpochMarker || pattern == '/$_dateEpochMarker/';
+  /// Get RewardsActionsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  RewardsActionsApi getRewardsActionsApi() {
+    return RewardsActionsApi(dio, serializers);
+  }
+
+  /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  UsersApi getUsersApi() {
+    return UsersApi(dio, serializers);
+  }
+}

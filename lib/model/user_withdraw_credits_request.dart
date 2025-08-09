@@ -1,121 +1,124 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'user_withdraw_credits_request.g.dart';
 
-class UserWithdrawCreditsRequest {
-  /// Returns a new [UserWithdrawCreditsRequest] instance.
-  UserWithdrawCreditsRequest({
-    required this.key,
-    required this.amount,
-  });
-
+/// UserWithdrawCreditsRequest
+///
+/// Properties:
+/// * [key] - The key of the credit reward to withdraw
+/// * [amount] - The amount of credits to withdraw
+@BuiltValue()
+abstract class UserWithdrawCreditsRequest implements Built<UserWithdrawCreditsRequest, UserWithdrawCreditsRequestBuilder> {
   /// The key of the credit reward to withdraw
-  String key;
+  @BuiltValueField(wireName: r'key')
+  String get key;
 
   /// The amount of credits to withdraw
-  ///
-  /// Minimum value: 1
-  int amount;
+  @BuiltValueField(wireName: r'amount')
+  int get amount;
+
+  UserWithdrawCreditsRequest._();
+
+  factory UserWithdrawCreditsRequest([void updates(UserWithdrawCreditsRequestBuilder b)]) = _$UserWithdrawCreditsRequest;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(UserWithdrawCreditsRequestBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<UserWithdrawCreditsRequest> get serializer => _$UserWithdrawCreditsRequestSerializer();
+}
+
+class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<UserWithdrawCreditsRequest> {
+  @override
+  final Iterable<Type> types = const [UserWithdrawCreditsRequest, _$UserWithdrawCreditsRequest];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UserWithdrawCreditsRequest &&
-    other.key == key &&
-    other.amount == amount;
+  final String wireName = r'UserWithdrawCreditsRequest';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    UserWithdrawCreditsRequest object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'key';
+    yield serializers.serialize(
+      object.key,
+      specifiedType: const FullType(String),
+    );
+    yield r'amount';
+    yield serializers.serialize(
+      object.amount,
+      specifiedType: const FullType(int),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (key.hashCode) +
-    (amount.hashCode);
+  Object serialize(
+    Serializers serializers,
+    UserWithdrawCreditsRequest object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required UserWithdrawCreditsRequestBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'key':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.key = valueDes;
+          break;
+        case r'amount':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.amount = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'UserWithdrawCreditsRequest[key=$key, amount=$amount]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'key'] = this.key;
-      json[r'amount'] = this.amount;
-    return json;
+  UserWithdrawCreditsRequest deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = UserWithdrawCreditsRequestBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [UserWithdrawCreditsRequest] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static UserWithdrawCreditsRequest? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserWithdrawCreditsRequest[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserWithdrawCreditsRequest[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return UserWithdrawCreditsRequest(
-        key: mapValueOfType<String>(json, r'key')!,
-        amount: mapValueOfType<int>(json, r'amount')!,
-      );
-    }
-    return null;
-  }
-
-  static List<UserWithdrawCreditsRequest> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <UserWithdrawCreditsRequest>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = UserWithdrawCreditsRequest.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, UserWithdrawCreditsRequest> mapFromJson(dynamic json) {
-    final map = <String, UserWithdrawCreditsRequest>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = UserWithdrawCreditsRequest.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of UserWithdrawCreditsRequest-objects as value to a dart map
-  static Map<String, List<UserWithdrawCreditsRequest>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<UserWithdrawCreditsRequest>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = UserWithdrawCreditsRequest.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'key',
-    'amount',
-  };
 }
 

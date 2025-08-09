@@ -1,181 +1,123 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'referral_program_receiver_offer_code_reward_never_deactivation.g.dart';
 
-class ReferralProgramReceiverOfferCodeRewardNeverDeactivation {
-  /// Returns a new [ReferralProgramReceiverOfferCodeRewardNeverDeactivation] instance.
-  ReferralProgramReceiverOfferCodeRewardNeverDeactivation({
-    required this.variant,
-  });
+/// ReferralProgramReceiverOfferCodeRewardNeverDeactivation
+///
+/// Properties:
+/// * [variant] - The variant of the deactivation configuration
+@BuiltValue()
+abstract class ReferralProgramReceiverOfferCodeRewardNeverDeactivation implements Built<ReferralProgramReceiverOfferCodeRewardNeverDeactivation, ReferralProgramReceiverOfferCodeRewardNeverDeactivationBuilder> {
+  /// The variant of the deactivation configuration
+  @BuiltValueField(wireName: r'variant')
+  ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum get variant;
+  // enum variantEnum {  never,  };
+
+  ReferralProgramReceiverOfferCodeRewardNeverDeactivation._();
+
+  factory ReferralProgramReceiverOfferCodeRewardNeverDeactivation([void updates(ReferralProgramReceiverOfferCodeRewardNeverDeactivationBuilder b)]) = _$ReferralProgramReceiverOfferCodeRewardNeverDeactivation;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferralProgramReceiverOfferCodeRewardNeverDeactivationBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ReferralProgramReceiverOfferCodeRewardNeverDeactivation> get serializer => _$ReferralProgramReceiverOfferCodeRewardNeverDeactivationSerializer();
+}
+
+class _$ReferralProgramReceiverOfferCodeRewardNeverDeactivationSerializer implements PrimitiveSerializer<ReferralProgramReceiverOfferCodeRewardNeverDeactivation> {
+  @override
+  final Iterable<Type> types = const [ReferralProgramReceiverOfferCodeRewardNeverDeactivation, _$ReferralProgramReceiverOfferCodeRewardNeverDeactivation];
+
+  @override
+  final String wireName = r'ReferralProgramReceiverOfferCodeRewardNeverDeactivation';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ReferralProgramReceiverOfferCodeRewardNeverDeactivation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'variant';
+    yield serializers.serialize(
+      object.variant,
+      specifiedType: const FullType(ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum),
+    );
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    ReferralProgramReceiverOfferCodeRewardNeverDeactivation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ReferralProgramReceiverOfferCodeRewardNeverDeactivationBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'variant':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum),
+          ) as ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum;
+          result.variant = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ReferralProgramReceiverOfferCodeRewardNeverDeactivation deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ReferralProgramReceiverOfferCodeRewardNeverDeactivationBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
+}
+
+class ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum extends EnumClass {
 
   /// The variant of the deactivation configuration
-  ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum variant;
+  @BuiltValueEnumConst(wireName: r'never')
+  static const ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum never = _$referralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum_never;
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is ReferralProgramReceiverOfferCodeRewardNeverDeactivation &&
-    other.variant == variant;
+  static Serializer<ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum> get serializer => _$referralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumSerializer;
 
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (variant.hashCode);
+  const ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum._(String name): super(name);
 
-  @override
-  String toString() => 'ReferralProgramReceiverOfferCodeRewardNeverDeactivation[variant=$variant]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'variant'] = this.variant;
-    return json;
-  }
-
-  /// Returns a new [ReferralProgramReceiverOfferCodeRewardNeverDeactivation] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static ReferralProgramReceiverOfferCodeRewardNeverDeactivation? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReferralProgramReceiverOfferCodeRewardNeverDeactivation[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReferralProgramReceiverOfferCodeRewardNeverDeactivation[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return ReferralProgramReceiverOfferCodeRewardNeverDeactivation(
-        variant: ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum.fromJson(json[r'variant'])!,
-      );
-    }
-    return null;
-  }
-
-  static List<ReferralProgramReceiverOfferCodeRewardNeverDeactivation> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramReceiverOfferCodeRewardNeverDeactivation>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramReceiverOfferCodeRewardNeverDeactivation.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, ReferralProgramReceiverOfferCodeRewardNeverDeactivation> mapFromJson(dynamic json) {
-    final map = <String, ReferralProgramReceiverOfferCodeRewardNeverDeactivation>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = ReferralProgramReceiverOfferCodeRewardNeverDeactivation.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of ReferralProgramReceiverOfferCodeRewardNeverDeactivation-objects as value to a dart map
-  static Map<String, List<ReferralProgramReceiverOfferCodeRewardNeverDeactivation>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ReferralProgramReceiverOfferCodeRewardNeverDeactivation>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = ReferralProgramReceiverOfferCodeRewardNeverDeactivation.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'variant',
-  };
+  static BuiltSet<ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum> get values => _$referralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumValues;
+  static ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum valueOf(String name) => _$referralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumValueOf(name);
 }
-
-/// The variant of the deactivation configuration
-class ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum {
-  /// Instantiate a new enum with the provided [value].
-  const ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final String value;
-
-  @override
-  String toString() => value;
-
-  String toJson() => value;
-
-  static const never = ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum._(r'never');
-
-  /// List of all possible values in this [enum][ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum].
-  static const values = <ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum>[
-    never,
-  ];
-
-  static ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum? fromJson(dynamic value) => ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumTypeTransformer().decode(value);
-
-  static List<ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-}
-
-/// Transformation class that can [encode] an instance of [ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum] to String,
-/// and [decode] dynamic data back to [ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum].
-class ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumTypeTransformer {
-  factory ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumTypeTransformer() => _instance ??= const ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumTypeTransformer._();
-
-  const ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumTypeTransformer._();
-
-  String encode(ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum data) => data.value;
-
-  /// Decodes a [dynamic value][data] to a ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        case r'never': return ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnum.never;
-        default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
-      }
-    }
-    return null;
-  }
-
-  /// Singleton [ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumTypeTransformer] instance.
-  static ReferralProgramReceiverOfferCodeRewardNeverDeactivationVariantEnumTypeTransformer? _instance;
-}
-
 

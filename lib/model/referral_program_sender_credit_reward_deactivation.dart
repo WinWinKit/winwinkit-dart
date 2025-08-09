@@ -1,276 +1,109 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:WinWinKit/./model/referral_program_sender_credit_reward_interval_deactivation.dart';
+import 'package:WinWinKit/./model/referral_program_sender_credit_reward_never_deactivation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+import 'package:one_of/one_of.dart';
 
-part of openapi.api;
+part 'referral_program_sender_credit_reward_deactivation.g.dart';
 
-class ReferralProgramSenderCreditRewardDeactivation {
-  /// Returns a new [ReferralProgramSenderCreditRewardDeactivation] instance.
-  ReferralProgramSenderCreditRewardDeactivation({
-    required this.variant,
-    required this.duration,
-    required this.period,
-  });
+/// The deactivation configuration
+///
+/// Properties:
+/// * [variant] - The variant of the deactivation configuration
+/// * [duration] - The duration of the deactivation configuration
+/// * [period] - The period of the deactivation configuration
+@BuiltValue()
+abstract class ReferralProgramSenderCreditRewardDeactivation implements Built<ReferralProgramSenderCreditRewardDeactivation, ReferralProgramSenderCreditRewardDeactivationBuilder> {
+  /// One Of [ReferralProgramSenderCreditRewardIntervalDeactivation], [ReferralProgramSenderCreditRewardNeverDeactivation]
+  OneOf get oneOf;
+
+  ReferralProgramSenderCreditRewardDeactivation._();
+
+  factory ReferralProgramSenderCreditRewardDeactivation([void updates(ReferralProgramSenderCreditRewardDeactivationBuilder b)]) = _$ReferralProgramSenderCreditRewardDeactivation;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferralProgramSenderCreditRewardDeactivationBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ReferralProgramSenderCreditRewardDeactivation> get serializer => _$ReferralProgramSenderCreditRewardDeactivationSerializer();
+}
+
+class _$ReferralProgramSenderCreditRewardDeactivationSerializer implements PrimitiveSerializer<ReferralProgramSenderCreditRewardDeactivation> {
+  @override
+  final Iterable<Type> types = const [ReferralProgramSenderCreditRewardDeactivation, _$ReferralProgramSenderCreditRewardDeactivation];
+
+  @override
+  final String wireName = r'ReferralProgramSenderCreditRewardDeactivation';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ReferralProgramSenderCreditRewardDeactivation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    ReferralProgramSenderCreditRewardDeactivation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final oneOf = object.oneOf;
+    return serializers.serialize(oneOf.value, specifiedType: FullType(oneOf.valueType))!;
+  }
+
+  @override
+  ReferralProgramSenderCreditRewardDeactivation deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ReferralProgramSenderCreditRewardDeactivationBuilder();
+    Object? oneOfDataSrc;
+    final targetType = const FullType(OneOf, [FullType(ReferralProgramSenderCreditRewardNeverDeactivation), FullType(ReferralProgramSenderCreditRewardIntervalDeactivation), ]);
+    oneOfDataSrc = serialized;
+    result.oneOf = serializers.deserialize(oneOfDataSrc, specifiedType: targetType) as OneOf;
+    return result.build();
+  }
+}
+
+class ReferralProgramSenderCreditRewardDeactivationVariantEnum extends EnumClass {
 
   /// The variant of the deactivation configuration
-  ReferralProgramSenderCreditRewardDeactivationVariantEnum variant;
+  @BuiltValueEnumConst(wireName: r'interval')
+  static const ReferralProgramSenderCreditRewardDeactivationVariantEnum interval = _$referralProgramSenderCreditRewardDeactivationVariantEnum_interval;
 
-  /// The duration of the deactivation configuration
-  int duration;
+  static Serializer<ReferralProgramSenderCreditRewardDeactivationVariantEnum> get serializer => _$referralProgramSenderCreditRewardDeactivationVariantEnumSerializer;
+
+  const ReferralProgramSenderCreditRewardDeactivationVariantEnum._(String name): super(name);
+
+  static BuiltSet<ReferralProgramSenderCreditRewardDeactivationVariantEnum> get values => _$referralProgramSenderCreditRewardDeactivationVariantEnumValues;
+  static ReferralProgramSenderCreditRewardDeactivationVariantEnum valueOf(String name) => _$referralProgramSenderCreditRewardDeactivationVariantEnumValueOf(name);
+}
+
+class ReferralProgramSenderCreditRewardDeactivationPeriodEnum extends EnumClass {
 
   /// The period of the deactivation configuration
-  ReferralProgramSenderCreditRewardDeactivationPeriodEnum period;
+  @BuiltValueEnumConst(wireName: r'days')
+  static const ReferralProgramSenderCreditRewardDeactivationPeriodEnum days = _$referralProgramSenderCreditRewardDeactivationPeriodEnum_days;
+  /// The period of the deactivation configuration
+  @BuiltValueEnumConst(wireName: r'months')
+  static const ReferralProgramSenderCreditRewardDeactivationPeriodEnum months = _$referralProgramSenderCreditRewardDeactivationPeriodEnum_months;
+  /// The period of the deactivation configuration
+  @BuiltValueEnumConst(wireName: r'years')
+  static const ReferralProgramSenderCreditRewardDeactivationPeriodEnum years = _$referralProgramSenderCreditRewardDeactivationPeriodEnum_years;
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is ReferralProgramSenderCreditRewardDeactivation &&
-    other.variant == variant &&
-    other.duration == duration &&
-    other.period == period;
+  static Serializer<ReferralProgramSenderCreditRewardDeactivationPeriodEnum> get serializer => _$referralProgramSenderCreditRewardDeactivationPeriodEnumSerializer;
 
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (variant.hashCode) +
-    (duration.hashCode) +
-    (period.hashCode);
+  const ReferralProgramSenderCreditRewardDeactivationPeriodEnum._(String name): super(name);
 
-  @override
-  String toString() => 'ReferralProgramSenderCreditRewardDeactivation[variant=$variant, duration=$duration, period=$period]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'variant'] = this.variant;
-      json[r'duration'] = this.duration;
-      json[r'period'] = this.period;
-    return json;
-  }
-
-  /// Returns a new [ReferralProgramSenderCreditRewardDeactivation] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static ReferralProgramSenderCreditRewardDeactivation? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReferralProgramSenderCreditRewardDeactivation[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReferralProgramSenderCreditRewardDeactivation[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return ReferralProgramSenderCreditRewardDeactivation(
-        variant: ReferralProgramSenderCreditRewardDeactivationVariantEnum.fromJson(json[r'variant'])!,
-        duration: mapValueOfType<int>(json, r'duration')!,
-        period: ReferralProgramSenderCreditRewardDeactivationPeriodEnum.fromJson(json[r'period'])!,
-      );
-    }
-    return null;
-  }
-
-  static List<ReferralProgramSenderCreditRewardDeactivation> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderCreditRewardDeactivation>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderCreditRewardDeactivation.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, ReferralProgramSenderCreditRewardDeactivation> mapFromJson(dynamic json) {
-    final map = <String, ReferralProgramSenderCreditRewardDeactivation>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = ReferralProgramSenderCreditRewardDeactivation.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of ReferralProgramSenderCreditRewardDeactivation-objects as value to a dart map
-  static Map<String, List<ReferralProgramSenderCreditRewardDeactivation>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ReferralProgramSenderCreditRewardDeactivation>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = ReferralProgramSenderCreditRewardDeactivation.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'variant',
-    'duration',
-    'period',
-  };
+  static BuiltSet<ReferralProgramSenderCreditRewardDeactivationPeriodEnum> get values => _$referralProgramSenderCreditRewardDeactivationPeriodEnumValues;
+  static ReferralProgramSenderCreditRewardDeactivationPeriodEnum valueOf(String name) => _$referralProgramSenderCreditRewardDeactivationPeriodEnumValueOf(name);
 }
-
-/// The variant of the deactivation configuration
-class ReferralProgramSenderCreditRewardDeactivationVariantEnum {
-  /// Instantiate a new enum with the provided [value].
-  const ReferralProgramSenderCreditRewardDeactivationVariantEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final String value;
-
-  @override
-  String toString() => value;
-
-  String toJson() => value;
-
-  static const interval = ReferralProgramSenderCreditRewardDeactivationVariantEnum._(r'interval');
-
-  /// List of all possible values in this [enum][ReferralProgramSenderCreditRewardDeactivationVariantEnum].
-  static const values = <ReferralProgramSenderCreditRewardDeactivationVariantEnum>[
-    interval,
-  ];
-
-  static ReferralProgramSenderCreditRewardDeactivationVariantEnum? fromJson(dynamic value) => ReferralProgramSenderCreditRewardDeactivationVariantEnumTypeTransformer().decode(value);
-
-  static List<ReferralProgramSenderCreditRewardDeactivationVariantEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderCreditRewardDeactivationVariantEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderCreditRewardDeactivationVariantEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-}
-
-/// Transformation class that can [encode] an instance of [ReferralProgramSenderCreditRewardDeactivationVariantEnum] to String,
-/// and [decode] dynamic data back to [ReferralProgramSenderCreditRewardDeactivationVariantEnum].
-class ReferralProgramSenderCreditRewardDeactivationVariantEnumTypeTransformer {
-  factory ReferralProgramSenderCreditRewardDeactivationVariantEnumTypeTransformer() => _instance ??= const ReferralProgramSenderCreditRewardDeactivationVariantEnumTypeTransformer._();
-
-  const ReferralProgramSenderCreditRewardDeactivationVariantEnumTypeTransformer._();
-
-  String encode(ReferralProgramSenderCreditRewardDeactivationVariantEnum data) => data.value;
-
-  /// Decodes a [dynamic value][data] to a ReferralProgramSenderCreditRewardDeactivationVariantEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  ReferralProgramSenderCreditRewardDeactivationVariantEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        case r'interval': return ReferralProgramSenderCreditRewardDeactivationVariantEnum.interval;
-        default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
-      }
-    }
-    return null;
-  }
-
-  /// Singleton [ReferralProgramSenderCreditRewardDeactivationVariantEnumTypeTransformer] instance.
-  static ReferralProgramSenderCreditRewardDeactivationVariantEnumTypeTransformer? _instance;
-}
-
-
-/// The period of the deactivation configuration
-class ReferralProgramSenderCreditRewardDeactivationPeriodEnum {
-  /// Instantiate a new enum with the provided [value].
-  const ReferralProgramSenderCreditRewardDeactivationPeriodEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final String value;
-
-  @override
-  String toString() => value;
-
-  String toJson() => value;
-
-  static const days = ReferralProgramSenderCreditRewardDeactivationPeriodEnum._(r'days');
-  static const months = ReferralProgramSenderCreditRewardDeactivationPeriodEnum._(r'months');
-  static const years = ReferralProgramSenderCreditRewardDeactivationPeriodEnum._(r'years');
-
-  /// List of all possible values in this [enum][ReferralProgramSenderCreditRewardDeactivationPeriodEnum].
-  static const values = <ReferralProgramSenderCreditRewardDeactivationPeriodEnum>[
-    days,
-    months,
-    years,
-  ];
-
-  static ReferralProgramSenderCreditRewardDeactivationPeriodEnum? fromJson(dynamic value) => ReferralProgramSenderCreditRewardDeactivationPeriodEnumTypeTransformer().decode(value);
-
-  static List<ReferralProgramSenderCreditRewardDeactivationPeriodEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderCreditRewardDeactivationPeriodEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderCreditRewardDeactivationPeriodEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-}
-
-/// Transformation class that can [encode] an instance of [ReferralProgramSenderCreditRewardDeactivationPeriodEnum] to String,
-/// and [decode] dynamic data back to [ReferralProgramSenderCreditRewardDeactivationPeriodEnum].
-class ReferralProgramSenderCreditRewardDeactivationPeriodEnumTypeTransformer {
-  factory ReferralProgramSenderCreditRewardDeactivationPeriodEnumTypeTransformer() => _instance ??= const ReferralProgramSenderCreditRewardDeactivationPeriodEnumTypeTransformer._();
-
-  const ReferralProgramSenderCreditRewardDeactivationPeriodEnumTypeTransformer._();
-
-  String encode(ReferralProgramSenderCreditRewardDeactivationPeriodEnum data) => data.value;
-
-  /// Decodes a [dynamic value][data] to a ReferralProgramSenderCreditRewardDeactivationPeriodEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  ReferralProgramSenderCreditRewardDeactivationPeriodEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        case r'days': return ReferralProgramSenderCreditRewardDeactivationPeriodEnum.days;
-        case r'months': return ReferralProgramSenderCreditRewardDeactivationPeriodEnum.months;
-        case r'years': return ReferralProgramSenderCreditRewardDeactivationPeriodEnum.years;
-        default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
-      }
-    }
-    return null;
-  }
-
-  /// Singleton [ReferralProgramSenderCreditRewardDeactivationPeriodEnumTypeTransformer] instance.
-  static ReferralProgramSenderCreditRewardDeactivationPeriodEnumTypeTransformer? _instance;
-}
-
 

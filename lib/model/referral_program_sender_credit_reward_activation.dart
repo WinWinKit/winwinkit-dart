@@ -1,202 +1,160 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'referral_program_sender_credit_reward_activation.g.dart';
 
-class ReferralProgramSenderCreditRewardActivation {
-  /// Returns a new [ReferralProgramSenderCreditRewardActivation] instance.
-  ReferralProgramSenderCreditRewardActivation({
-    required this.variant,
-    required this.amount,
-    required this.limit,
-  });
-
+/// ReferralProgramSenderCreditRewardActivation
+///
+/// Properties:
+/// * [variant] - The variant of the activation configuration
+/// * [amount] - The amount of the activation configuration
+/// * [limit] - The limit of the activation configuration
+@BuiltValue()
+abstract class ReferralProgramSenderCreditRewardActivation implements Built<ReferralProgramSenderCreditRewardActivation, ReferralProgramSenderCreditRewardActivationBuilder> {
   /// The variant of the activation configuration
-  ReferralProgramSenderCreditRewardActivationVariantEnum variant;
+  @BuiltValueField(wireName: r'variant')
+  ReferralProgramSenderCreditRewardActivationVariantEnum get variant;
+  // enum variantEnum {  claim,  conversion,  };
 
   /// The amount of the activation configuration
-  int amount;
+  @BuiltValueField(wireName: r'amount')
+  int get amount;
 
   /// The limit of the activation configuration
-  int limit;
+  @BuiltValueField(wireName: r'limit')
+  int get limit;
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is ReferralProgramSenderCreditRewardActivation &&
-    other.variant == variant &&
-    other.amount == amount &&
-    other.limit == limit;
+  ReferralProgramSenderCreditRewardActivation._();
 
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (variant.hashCode) +
-    (amount.hashCode) +
-    (limit.hashCode);
+  factory ReferralProgramSenderCreditRewardActivation([void updates(ReferralProgramSenderCreditRewardActivationBuilder b)]) = _$ReferralProgramSenderCreditRewardActivation;
 
-  @override
-  String toString() => 'ReferralProgramSenderCreditRewardActivation[variant=$variant, amount=$amount, limit=$limit]';
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferralProgramSenderCreditRewardActivationBuilder b) => b;
 
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'variant'] = this.variant;
-      json[r'amount'] = this.amount;
-      json[r'limit'] = this.limit;
-    return json;
-  }
-
-  /// Returns a new [ReferralProgramSenderCreditRewardActivation] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static ReferralProgramSenderCreditRewardActivation? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReferralProgramSenderCreditRewardActivation[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReferralProgramSenderCreditRewardActivation[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return ReferralProgramSenderCreditRewardActivation(
-        variant: ReferralProgramSenderCreditRewardActivationVariantEnum.fromJson(json[r'variant'])!,
-        amount: mapValueOfType<int>(json, r'amount')!,
-        limit: mapValueOfType<int>(json, r'limit')!,
-      );
-    }
-    return null;
-  }
-
-  static List<ReferralProgramSenderCreditRewardActivation> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderCreditRewardActivation>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderCreditRewardActivation.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, ReferralProgramSenderCreditRewardActivation> mapFromJson(dynamic json) {
-    final map = <String, ReferralProgramSenderCreditRewardActivation>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = ReferralProgramSenderCreditRewardActivation.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of ReferralProgramSenderCreditRewardActivation-objects as value to a dart map
-  static Map<String, List<ReferralProgramSenderCreditRewardActivation>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ReferralProgramSenderCreditRewardActivation>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = ReferralProgramSenderCreditRewardActivation.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'variant',
-    'amount',
-    'limit',
-  };
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ReferralProgramSenderCreditRewardActivation> get serializer => _$ReferralProgramSenderCreditRewardActivationSerializer();
 }
 
-/// The variant of the activation configuration
-class ReferralProgramSenderCreditRewardActivationVariantEnum {
-  /// Instantiate a new enum with the provided [value].
-  const ReferralProgramSenderCreditRewardActivationVariantEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final String value;
+class _$ReferralProgramSenderCreditRewardActivationSerializer implements PrimitiveSerializer<ReferralProgramSenderCreditRewardActivation> {
+  @override
+  final Iterable<Type> types = const [ReferralProgramSenderCreditRewardActivation, _$ReferralProgramSenderCreditRewardActivation];
 
   @override
-  String toString() => value;
+  final String wireName = r'ReferralProgramSenderCreditRewardActivation';
 
-  String toJson() => value;
-
-  static const claim = ReferralProgramSenderCreditRewardActivationVariantEnum._(r'claim');
-  static const conversion = ReferralProgramSenderCreditRewardActivationVariantEnum._(r'conversion');
-
-  /// List of all possible values in this [enum][ReferralProgramSenderCreditRewardActivationVariantEnum].
-  static const values = <ReferralProgramSenderCreditRewardActivationVariantEnum>[
-    claim,
-    conversion,
-  ];
-
-  static ReferralProgramSenderCreditRewardActivationVariantEnum? fromJson(dynamic value) => ReferralProgramSenderCreditRewardActivationVariantEnumTypeTransformer().decode(value);
-
-  static List<ReferralProgramSenderCreditRewardActivationVariantEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderCreditRewardActivationVariantEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderCreditRewardActivationVariantEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ReferralProgramSenderCreditRewardActivation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'variant';
+    yield serializers.serialize(
+      object.variant,
+      specifiedType: const FullType(ReferralProgramSenderCreditRewardActivationVariantEnum),
+    );
+    yield r'amount';
+    yield serializers.serialize(
+      object.amount,
+      specifiedType: const FullType(int),
+    );
+    yield r'limit';
+    yield serializers.serialize(
+      object.limit,
+      specifiedType: const FullType(int),
+    );
   }
-}
 
-/// Transformation class that can [encode] an instance of [ReferralProgramSenderCreditRewardActivationVariantEnum] to String,
-/// and [decode] dynamic data back to [ReferralProgramSenderCreditRewardActivationVariantEnum].
-class ReferralProgramSenderCreditRewardActivationVariantEnumTypeTransformer {
-  factory ReferralProgramSenderCreditRewardActivationVariantEnumTypeTransformer() => _instance ??= const ReferralProgramSenderCreditRewardActivationVariantEnumTypeTransformer._();
+  @override
+  Object serialize(
+    Serializers serializers,
+    ReferralProgramSenderCreditRewardActivation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
 
-  const ReferralProgramSenderCreditRewardActivationVariantEnumTypeTransformer._();
-
-  String encode(ReferralProgramSenderCreditRewardActivationVariantEnum data) => data.value;
-
-  /// Decodes a [dynamic value][data] to a ReferralProgramSenderCreditRewardActivationVariantEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  ReferralProgramSenderCreditRewardActivationVariantEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        case r'claim': return ReferralProgramSenderCreditRewardActivationVariantEnum.claim;
-        case r'conversion': return ReferralProgramSenderCreditRewardActivationVariantEnum.conversion;
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ReferralProgramSenderCreditRewardActivationBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'variant':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramSenderCreditRewardActivationVariantEnum),
+          ) as ReferralProgramSenderCreditRewardActivationVariantEnum;
+          result.variant = valueDes;
+          break;
+        case r'amount':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.amount = valueDes;
+          break;
+        case r'limit':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.limit = valueDes;
+          break;
         default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
       }
     }
-    return null;
   }
 
-  /// Singleton [ReferralProgramSenderCreditRewardActivationVariantEnumTypeTransformer] instance.
-  static ReferralProgramSenderCreditRewardActivationVariantEnumTypeTransformer? _instance;
+  @override
+  ReferralProgramSenderCreditRewardActivation deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ReferralProgramSenderCreditRewardActivationBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 
+class ReferralProgramSenderCreditRewardActivationVariantEnum extends EnumClass {
+
+  /// The variant of the activation configuration
+  @BuiltValueEnumConst(wireName: r'claim')
+  static const ReferralProgramSenderCreditRewardActivationVariantEnum claim = _$referralProgramSenderCreditRewardActivationVariantEnum_claim;
+  /// The variant of the activation configuration
+  @BuiltValueEnumConst(wireName: r'conversion')
+  static const ReferralProgramSenderCreditRewardActivationVariantEnum conversion = _$referralProgramSenderCreditRewardActivationVariantEnum_conversion;
+
+  static Serializer<ReferralProgramSenderCreditRewardActivationVariantEnum> get serializer => _$referralProgramSenderCreditRewardActivationVariantEnumSerializer;
+
+  const ReferralProgramSenderCreditRewardActivationVariantEnum._(String name): super(name);
+
+  static BuiltSet<ReferralProgramSenderCreditRewardActivationVariantEnum> get values => _$referralProgramSenderCreditRewardActivationVariantEnumValues;
+  static ReferralProgramSenderCreditRewardActivationVariantEnum valueOf(String name) => _$referralProgramSenderCreditRewardActivationVariantEnumValueOf(name);
+}
 

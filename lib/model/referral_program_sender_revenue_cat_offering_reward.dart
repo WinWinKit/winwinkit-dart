@@ -1,127 +1,143 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:WinWinKit/./model/referral_program_sender_revenue_cat_offering_reward_activation.dart';
+import 'package:WinWinKit/./model/revenue_cat_offering_reward.dart';
+import 'package:WinWinKit/./model/referral_program_sender_revenue_cat_offering_reward_deactivation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'referral_program_sender_revenue_cat_offering_reward.g.dart';
 
-class ReferralProgramSenderRevenueCatOfferingReward {
-  /// Returns a new [ReferralProgramSenderRevenueCatOfferingReward] instance.
-  ReferralProgramSenderRevenueCatOfferingReward({
-    required this.reward,
-    required this.activation,
-    required this.deactivation,
-  });
-
+/// ReferralProgramSenderRevenueCatOfferingReward
+///
+/// Properties:
+/// * [reward] - The reward
+/// * [activation] - The activation configuration
+/// * [deactivation] 
+@BuiltValue()
+abstract class ReferralProgramSenderRevenueCatOfferingReward implements Built<ReferralProgramSenderRevenueCatOfferingReward, ReferralProgramSenderRevenueCatOfferingRewardBuilder> {
   /// The reward
-  RevenueCatOfferingReward reward;
+  @BuiltValueField(wireName: r'reward')
+  RevenueCatOfferingReward get reward;
 
   /// The activation configuration
-  ReferralProgramSenderRevenueCatOfferingRewardActivation activation;
+  @BuiltValueField(wireName: r'activation')
+  ReferralProgramSenderRevenueCatOfferingRewardActivation get activation;
 
-  ReferralProgramSenderRevenueCatOfferingRewardDeactivation deactivation;
+  @BuiltValueField(wireName: r'deactivation')
+  ReferralProgramSenderRevenueCatOfferingRewardDeactivation get deactivation;
+
+  ReferralProgramSenderRevenueCatOfferingReward._();
+
+  factory ReferralProgramSenderRevenueCatOfferingReward([void updates(ReferralProgramSenderRevenueCatOfferingRewardBuilder b)]) = _$ReferralProgramSenderRevenueCatOfferingReward;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferralProgramSenderRevenueCatOfferingRewardBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ReferralProgramSenderRevenueCatOfferingReward> get serializer => _$ReferralProgramSenderRevenueCatOfferingRewardSerializer();
+}
+
+class _$ReferralProgramSenderRevenueCatOfferingRewardSerializer implements PrimitiveSerializer<ReferralProgramSenderRevenueCatOfferingReward> {
+  @override
+  final Iterable<Type> types = const [ReferralProgramSenderRevenueCatOfferingReward, _$ReferralProgramSenderRevenueCatOfferingReward];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ReferralProgramSenderRevenueCatOfferingReward &&
-    other.reward == reward &&
-    other.activation == activation &&
-    other.deactivation == deactivation;
+  final String wireName = r'ReferralProgramSenderRevenueCatOfferingReward';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ReferralProgramSenderRevenueCatOfferingReward object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'reward';
+    yield serializers.serialize(
+      object.reward,
+      specifiedType: const FullType(RevenueCatOfferingReward),
+    );
+    yield r'activation';
+    yield serializers.serialize(
+      object.activation,
+      specifiedType: const FullType(ReferralProgramSenderRevenueCatOfferingRewardActivation),
+    );
+    yield r'deactivation';
+    yield serializers.serialize(
+      object.deactivation,
+      specifiedType: const FullType(ReferralProgramSenderRevenueCatOfferingRewardDeactivation),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (reward.hashCode) +
-    (activation.hashCode) +
-    (deactivation.hashCode);
+  Object serialize(
+    Serializers serializers,
+    ReferralProgramSenderRevenueCatOfferingReward object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ReferralProgramSenderRevenueCatOfferingRewardBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'reward':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RevenueCatOfferingReward),
+          ) as RevenueCatOfferingReward;
+          result.reward.replace(valueDes);
+          break;
+        case r'activation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramSenderRevenueCatOfferingRewardActivation),
+          ) as ReferralProgramSenderRevenueCatOfferingRewardActivation;
+          result.activation.replace(valueDes);
+          break;
+        case r'deactivation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramSenderRevenueCatOfferingRewardDeactivation),
+          ) as ReferralProgramSenderRevenueCatOfferingRewardDeactivation;
+          result.deactivation.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'ReferralProgramSenderRevenueCatOfferingReward[reward=$reward, activation=$activation, deactivation=$deactivation]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'reward'] = this.reward;
-      json[r'activation'] = this.activation;
-      json[r'deactivation'] = this.deactivation;
-    return json;
+  ReferralProgramSenderRevenueCatOfferingReward deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ReferralProgramSenderRevenueCatOfferingRewardBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [ReferralProgramSenderRevenueCatOfferingReward] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static ReferralProgramSenderRevenueCatOfferingReward? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReferralProgramSenderRevenueCatOfferingReward[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReferralProgramSenderRevenueCatOfferingReward[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return ReferralProgramSenderRevenueCatOfferingReward(
-        reward: RevenueCatOfferingReward.fromJson(json[r'reward'])!,
-        activation: ReferralProgramSenderRevenueCatOfferingRewardActivation.fromJson(json[r'activation'])!,
-        deactivation: ReferralProgramSenderRevenueCatOfferingRewardDeactivation.fromJson(json[r'deactivation'])!,
-      );
-    }
-    return null;
-  }
-
-  static List<ReferralProgramSenderRevenueCatOfferingReward> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderRevenueCatOfferingReward>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderRevenueCatOfferingReward.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, ReferralProgramSenderRevenueCatOfferingReward> mapFromJson(dynamic json) {
-    final map = <String, ReferralProgramSenderRevenueCatOfferingReward>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = ReferralProgramSenderRevenueCatOfferingReward.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of ReferralProgramSenderRevenueCatOfferingReward-objects as value to a dart map
-  static Map<String, List<ReferralProgramSenderRevenueCatOfferingReward>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ReferralProgramSenderRevenueCatOfferingReward>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = ReferralProgramSenderRevenueCatOfferingReward.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'reward',
-    'activation',
-    'deactivation',
-  };
 }
 

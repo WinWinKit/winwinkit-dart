@@ -1,109 +1,107 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:WinWinKit/./model/user_response_data.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'user_response.g.dart';
 
-class UserResponse {
-  /// Returns a new [UserResponse] instance.
-  UserResponse({
-    required this.data,
-  });
+/// UserResponse
+///
+/// Properties:
+/// * [data] 
+@BuiltValue()
+abstract class UserResponse implements Built<UserResponse, UserResponseBuilder> {
+  @BuiltValueField(wireName: r'data')
+  UserResponseData get data;
 
-  UserResponseData data;
+  UserResponse._();
+
+  factory UserResponse([void updates(UserResponseBuilder b)]) = _$UserResponse;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(UserResponseBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<UserResponse> get serializer => _$UserResponseSerializer();
+}
+
+class _$UserResponseSerializer implements PrimitiveSerializer<UserResponse> {
+  @override
+  final Iterable<Type> types = const [UserResponse, _$UserResponse];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UserResponse &&
-    other.data == data;
+  final String wireName = r'UserResponse';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    UserResponse object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'data';
+    yield serializers.serialize(
+      object.data,
+      specifiedType: const FullType(UserResponseData),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (data.hashCode);
+  Object serialize(
+    Serializers serializers,
+    UserResponse object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required UserResponseBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'data':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UserResponseData),
+          ) as UserResponseData;
+          result.data.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'UserResponse[data=$data]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'data'] = this.data;
-    return json;
+  UserResponse deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = UserResponseBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [UserResponse] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static UserResponse? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserResponse[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return UserResponse(
-        data: UserResponseData.fromJson(json[r'data'])!,
-      );
-    }
-    return null;
-  }
-
-  static List<UserResponse> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <UserResponse>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = UserResponse.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, UserResponse> mapFromJson(dynamic json) {
-    final map = <String, UserResponse>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = UserResponse.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of UserResponse-objects as value to a dart map
-  static Map<String, List<UserResponse>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<UserResponse>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = UserResponse.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'data',
-  };
 }
 

@@ -1,119 +1,126 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:WinWinKit/./model/app_store_subscription.dart';
+import 'package:WinWinKit/./model/app_store_offer_code.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'offer_code_response_data.g.dart';
 
-class OfferCodeResponseData {
-  /// Returns a new [OfferCodeResponseData] instance.
-  OfferCodeResponseData({
-    required this.offerCode,
-    required this.subscription,
-  });
-
+/// OfferCodeResponseData
+///
+/// Properties:
+/// * [offerCode] - The offer code
+/// * [subscription] - The subscription
+@BuiltValue()
+abstract class OfferCodeResponseData implements Built<OfferCodeResponseData, OfferCodeResponseDataBuilder> {
   /// The offer code
-  AppStoreOfferCode offerCode;
+  @BuiltValueField(wireName: r'offer_code')
+  AppStoreOfferCode get offerCode;
 
   /// The subscription
-  AppStoreSubscription subscription;
+  @BuiltValueField(wireName: r'subscription')
+  AppStoreSubscription get subscription;
+
+  OfferCodeResponseData._();
+
+  factory OfferCodeResponseData([void updates(OfferCodeResponseDataBuilder b)]) = _$OfferCodeResponseData;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(OfferCodeResponseDataBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<OfferCodeResponseData> get serializer => _$OfferCodeResponseDataSerializer();
+}
+
+class _$OfferCodeResponseDataSerializer implements PrimitiveSerializer<OfferCodeResponseData> {
+  @override
+  final Iterable<Type> types = const [OfferCodeResponseData, _$OfferCodeResponseData];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is OfferCodeResponseData &&
-    other.offerCode == offerCode &&
-    other.subscription == subscription;
+  final String wireName = r'OfferCodeResponseData';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    OfferCodeResponseData object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'offer_code';
+    yield serializers.serialize(
+      object.offerCode,
+      specifiedType: const FullType(AppStoreOfferCode),
+    );
+    yield r'subscription';
+    yield serializers.serialize(
+      object.subscription,
+      specifiedType: const FullType(AppStoreSubscription),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (offerCode.hashCode) +
-    (subscription.hashCode);
+  Object serialize(
+    Serializers serializers,
+    OfferCodeResponseData object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required OfferCodeResponseDataBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'offer_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AppStoreOfferCode),
+          ) as AppStoreOfferCode;
+          result.offerCode.replace(valueDes);
+          break;
+        case r'subscription':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AppStoreSubscription),
+          ) as AppStoreSubscription;
+          result.subscription.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'OfferCodeResponseData[offerCode=$offerCode, subscription=$subscription]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'offer_code'] = this.offerCode;
-      json[r'subscription'] = this.subscription;
-    return json;
+  OfferCodeResponseData deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = OfferCodeResponseDataBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [OfferCodeResponseData] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static OfferCodeResponseData? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "OfferCodeResponseData[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "OfferCodeResponseData[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return OfferCodeResponseData(
-        offerCode: AppStoreOfferCode.fromJson(json[r'offer_code'])!,
-        subscription: AppStoreSubscription.fromJson(json[r'subscription'])!,
-      );
-    }
-    return null;
-  }
-
-  static List<OfferCodeResponseData> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <OfferCodeResponseData>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = OfferCodeResponseData.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, OfferCodeResponseData> mapFromJson(dynamic json) {
-    final map = <String, OfferCodeResponseData>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = OfferCodeResponseData.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of OfferCodeResponseData-objects as value to a dart map
-  static Map<String, List<OfferCodeResponseData>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<OfferCodeResponseData>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = OfferCodeResponseData.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'offer_code',
-    'subscription',
-  };
 }
 

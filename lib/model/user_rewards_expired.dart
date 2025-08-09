@@ -1,146 +1,181 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:WinWinKit/./model/user_credit_reward_expired.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:WinWinKit/./model/user_offer_code_reward_expired.dart';
+import 'package:WinWinKit/./model/user_basic_reward_expired.dart';
+import 'package:WinWinKit/./model/user_revenue_cat_entitlement_reward_expired.dart';
+import 'package:WinWinKit/./model/user_revenue_cat_offering_reward_expired.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'user_rewards_expired.g.dart';
 
-class UserRewardsExpired {
-  /// Returns a new [UserRewardsExpired] instance.
-  UserRewardsExpired({
-    this.basic = const [],
-    this.credit = const [],
-    this.offerCode = const [],
-    this.revenuecatEntitlement = const [],
-    this.revenuecatOffering = const [],
-  });
-
+/// UserRewardsExpired
+///
+/// Properties:
+/// * [basic] - The referral user basic rewards
+/// * [credit] - The referral user credit rewards
+/// * [offerCode] - The referral user offer code rewards
+/// * [revenuecatEntitlement] - The referral user RevenueCat entitlement rewards
+/// * [revenuecatOffering] - The referral user RevenueCat offering rewards
+@BuiltValue()
+abstract class UserRewardsExpired implements Built<UserRewardsExpired, UserRewardsExpiredBuilder> {
   /// The referral user basic rewards
-  List<UserBasicRewardExpired> basic;
+  @BuiltValueField(wireName: r'basic')
+  BuiltList<UserBasicRewardExpired> get basic;
 
   /// The referral user credit rewards
-  List<UserCreditRewardExpired> credit;
+  @BuiltValueField(wireName: r'credit')
+  BuiltList<UserCreditRewardExpired> get credit;
 
   /// The referral user offer code rewards
-  List<UserOfferCodeRewardExpired> offerCode;
+  @BuiltValueField(wireName: r'offer_code')
+  BuiltList<UserOfferCodeRewardExpired> get offerCode;
 
   /// The referral user RevenueCat entitlement rewards
-  List<UserRevenueCatEntitlementRewardExpired> revenuecatEntitlement;
+  @BuiltValueField(wireName: r'revenuecat_entitlement')
+  BuiltList<UserRevenueCatEntitlementRewardExpired> get revenuecatEntitlement;
 
   /// The referral user RevenueCat offering rewards
-  List<UserRevenueCatOfferingRewardExpired> revenuecatOffering;
+  @BuiltValueField(wireName: r'revenuecat_offering')
+  BuiltList<UserRevenueCatOfferingRewardExpired> get revenuecatOffering;
+
+  UserRewardsExpired._();
+
+  factory UserRewardsExpired([void updates(UserRewardsExpiredBuilder b)]) = _$UserRewardsExpired;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(UserRewardsExpiredBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<UserRewardsExpired> get serializer => _$UserRewardsExpiredSerializer();
+}
+
+class _$UserRewardsExpiredSerializer implements PrimitiveSerializer<UserRewardsExpired> {
+  @override
+  final Iterable<Type> types = const [UserRewardsExpired, _$UserRewardsExpired];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UserRewardsExpired &&
-    _deepEquality.equals(other.basic, basic) &&
-    _deepEquality.equals(other.credit, credit) &&
-    _deepEquality.equals(other.offerCode, offerCode) &&
-    _deepEquality.equals(other.revenuecatEntitlement, revenuecatEntitlement) &&
-    _deepEquality.equals(other.revenuecatOffering, revenuecatOffering);
+  final String wireName = r'UserRewardsExpired';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    UserRewardsExpired object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'basic';
+    yield serializers.serialize(
+      object.basic,
+      specifiedType: const FullType(BuiltList, [FullType(UserBasicRewardExpired)]),
+    );
+    yield r'credit';
+    yield serializers.serialize(
+      object.credit,
+      specifiedType: const FullType(BuiltList, [FullType(UserCreditRewardExpired)]),
+    );
+    yield r'offer_code';
+    yield serializers.serialize(
+      object.offerCode,
+      specifiedType: const FullType(BuiltList, [FullType(UserOfferCodeRewardExpired)]),
+    );
+    yield r'revenuecat_entitlement';
+    yield serializers.serialize(
+      object.revenuecatEntitlement,
+      specifiedType: const FullType(BuiltList, [FullType(UserRevenueCatEntitlementRewardExpired)]),
+    );
+    yield r'revenuecat_offering';
+    yield serializers.serialize(
+      object.revenuecatOffering,
+      specifiedType: const FullType(BuiltList, [FullType(UserRevenueCatOfferingRewardExpired)]),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (basic.hashCode) +
-    (credit.hashCode) +
-    (offerCode.hashCode) +
-    (revenuecatEntitlement.hashCode) +
-    (revenuecatOffering.hashCode);
+  Object serialize(
+    Serializers serializers,
+    UserRewardsExpired object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required UserRewardsExpiredBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'basic':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UserBasicRewardExpired)]),
+          ) as BuiltList<UserBasicRewardExpired>;
+          result.basic.replace(valueDes);
+          break;
+        case r'credit':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UserCreditRewardExpired)]),
+          ) as BuiltList<UserCreditRewardExpired>;
+          result.credit.replace(valueDes);
+          break;
+        case r'offer_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UserOfferCodeRewardExpired)]),
+          ) as BuiltList<UserOfferCodeRewardExpired>;
+          result.offerCode.replace(valueDes);
+          break;
+        case r'revenuecat_entitlement':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UserRevenueCatEntitlementRewardExpired)]),
+          ) as BuiltList<UserRevenueCatEntitlementRewardExpired>;
+          result.revenuecatEntitlement.replace(valueDes);
+          break;
+        case r'revenuecat_offering':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UserRevenueCatOfferingRewardExpired)]),
+          ) as BuiltList<UserRevenueCatOfferingRewardExpired>;
+          result.revenuecatOffering.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'UserRewardsExpired[basic=$basic, credit=$credit, offerCode=$offerCode, revenuecatEntitlement=$revenuecatEntitlement, revenuecatOffering=$revenuecatOffering]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'basic'] = this.basic;
-      json[r'credit'] = this.credit;
-      json[r'offer_code'] = this.offerCode;
-      json[r'revenuecat_entitlement'] = this.revenuecatEntitlement;
-      json[r'revenuecat_offering'] = this.revenuecatOffering;
-    return json;
+  UserRewardsExpired deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = UserRewardsExpiredBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [UserRewardsExpired] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static UserRewardsExpired? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserRewardsExpired[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserRewardsExpired[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return UserRewardsExpired(
-        basic: UserBasicRewardExpired.listFromJson(json[r'basic']),
-        credit: UserCreditRewardExpired.listFromJson(json[r'credit']),
-        offerCode: UserOfferCodeRewardExpired.listFromJson(json[r'offer_code']),
-        revenuecatEntitlement: UserRevenueCatEntitlementRewardExpired.listFromJson(json[r'revenuecat_entitlement']),
-        revenuecatOffering: UserRevenueCatOfferingRewardExpired.listFromJson(json[r'revenuecat_offering']),
-      );
-    }
-    return null;
-  }
-
-  static List<UserRewardsExpired> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <UserRewardsExpired>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = UserRewardsExpired.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, UserRewardsExpired> mapFromJson(dynamic json) {
-    final map = <String, UserRewardsExpired>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = UserRewardsExpired.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of UserRewardsExpired-objects as value to a dart map
-  static Map<String, List<UserRewardsExpired>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<UserRewardsExpired>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = UserRewardsExpired.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'basic',
-    'credit',
-    'offer_code',
-    'revenuecat_entitlement',
-    'revenuecat_offering',
-  };
 }
 

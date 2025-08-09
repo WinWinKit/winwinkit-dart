@@ -1,123 +1,125 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'user_claim_code_eligibility.g.dart';
 
-class UserClaimCodeEligibility {
-  /// Returns a new [UserClaimCodeEligibility] instance.
-  UserClaimCodeEligibility({
-    required this.eligible,
-    required this.eligibleUntil,
-  });
-
+/// User's eligibility to claim referral code.
+///
+/// Properties:
+/// * [eligible] - The claim code eligibility flag.
+/// * [eligibleUntil] - The claim code eligibility until date.
+@BuiltValue()
+abstract class UserClaimCodeEligibility implements Built<UserClaimCodeEligibility, UserClaimCodeEligibilityBuilder> {
   /// The claim code eligibility flag.
-  bool eligible;
+  @BuiltValueField(wireName: r'eligible')
+  bool get eligible;
 
   /// The claim code eligibility until date.
-  DateTime? eligibleUntil;
+  @BuiltValueField(wireName: r'eligible_until')
+  DateTime? get eligibleUntil;
+
+  UserClaimCodeEligibility._();
+
+  factory UserClaimCodeEligibility([void updates(UserClaimCodeEligibilityBuilder b)]) = _$UserClaimCodeEligibility;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(UserClaimCodeEligibilityBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<UserClaimCodeEligibility> get serializer => _$UserClaimCodeEligibilitySerializer();
+}
+
+class _$UserClaimCodeEligibilitySerializer implements PrimitiveSerializer<UserClaimCodeEligibility> {
+  @override
+  final Iterable<Type> types = const [UserClaimCodeEligibility, _$UserClaimCodeEligibility];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UserClaimCodeEligibility &&
-    other.eligible == eligible &&
-    other.eligibleUntil == eligibleUntil;
+  final String wireName = r'UserClaimCodeEligibility';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    UserClaimCodeEligibility object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'eligible';
+    yield serializers.serialize(
+      object.eligible,
+      specifiedType: const FullType(bool),
+    );
+    yield r'eligible_until';
+    yield object.eligibleUntil == null ? null : serializers.serialize(
+      object.eligibleUntil,
+      specifiedType: const FullType.nullable(DateTime),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (eligible.hashCode) +
-    (eligibleUntil == null ? 0 : eligibleUntil!.hashCode);
+  Object serialize(
+    Serializers serializers,
+    UserClaimCodeEligibility object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required UserClaimCodeEligibilityBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'eligible':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.eligible = valueDes;
+          break;
+        case r'eligible_until':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
+          result.eligibleUntil = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'UserClaimCodeEligibility[eligible=$eligible, eligibleUntil=$eligibleUntil]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'eligible'] = this.eligible;
-    if (this.eligibleUntil != null) {
-      json[r'eligible_until'] = this.eligibleUntil!.toUtc().toIso8601String();
-    } else {
-      json[r'eligible_until'] = null;
-    }
-    return json;
+  UserClaimCodeEligibility deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = UserClaimCodeEligibilityBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [UserClaimCodeEligibility] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static UserClaimCodeEligibility? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserClaimCodeEligibility[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserClaimCodeEligibility[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return UserClaimCodeEligibility(
-        eligible: mapValueOfType<bool>(json, r'eligible')!,
-        eligibleUntil: mapDateTime(json, r'eligible_until', r''),
-      );
-    }
-    return null;
-  }
-
-  static List<UserClaimCodeEligibility> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <UserClaimCodeEligibility>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = UserClaimCodeEligibility.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, UserClaimCodeEligibility> mapFromJson(dynamic json) {
-    final map = <String, UserClaimCodeEligibility>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = UserClaimCodeEligibility.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of UserClaimCodeEligibility-objects as value to a dart map
-  static Map<String, List<UserClaimCodeEligibility>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<UserClaimCodeEligibility>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = UserClaimCodeEligibility.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'eligible',
-    'eligible_until',
-  };
 }
 

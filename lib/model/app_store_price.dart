@@ -1,128 +1,141 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'app_store_price.g.dart';
 
-class AppStorePrice {
-  /// Returns a new [AppStorePrice] instance.
-  AppStorePrice({
-    required this.territory,
-    required this.price,
-    required this.currency,
-  });
-
+/// The price
+///
+/// Properties:
+/// * [territory] - The price territory.
+/// * [price] - The price amount.
+/// * [currency] - The price currency.
+@BuiltValue()
+abstract class AppStorePrice implements Built<AppStorePrice, AppStorePriceBuilder> {
   /// The price territory.
-  String territory;
+  @BuiltValueField(wireName: r'territory')
+  String get territory;
 
   /// The price amount.
-  String price;
+  @BuiltValueField(wireName: r'price')
+  String get price;
 
   /// The price currency.
-  String currency;
+  @BuiltValueField(wireName: r'currency')
+  String get currency;
+
+  AppStorePrice._();
+
+  factory AppStorePrice([void updates(AppStorePriceBuilder b)]) = _$AppStorePrice;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AppStorePriceBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<AppStorePrice> get serializer => _$AppStorePriceSerializer();
+}
+
+class _$AppStorePriceSerializer implements PrimitiveSerializer<AppStorePrice> {
+  @override
+  final Iterable<Type> types = const [AppStorePrice, _$AppStorePrice];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is AppStorePrice &&
-    other.territory == territory &&
-    other.price == price &&
-    other.currency == currency;
+  final String wireName = r'AppStorePrice';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    AppStorePrice object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'territory';
+    yield serializers.serialize(
+      object.territory,
+      specifiedType: const FullType(String),
+    );
+    yield r'price';
+    yield serializers.serialize(
+      object.price,
+      specifiedType: const FullType(String),
+    );
+    yield r'currency';
+    yield serializers.serialize(
+      object.currency,
+      specifiedType: const FullType(String),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (territory.hashCode) +
-    (price.hashCode) +
-    (currency.hashCode);
+  Object serialize(
+    Serializers serializers,
+    AppStorePrice object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required AppStorePriceBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'territory':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.territory = valueDes;
+          break;
+        case r'price':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.price = valueDes;
+          break;
+        case r'currency':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currency = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'AppStorePrice[territory=$territory, price=$price, currency=$currency]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'territory'] = this.territory;
-      json[r'price'] = this.price;
-      json[r'currency'] = this.currency;
-    return json;
+  AppStorePrice deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = AppStorePriceBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [AppStorePrice] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static AppStorePrice? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AppStorePrice[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AppStorePrice[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return AppStorePrice(
-        territory: mapValueOfType<String>(json, r'territory')!,
-        price: mapValueOfType<String>(json, r'price')!,
-        currency: mapValueOfType<String>(json, r'currency')!,
-      );
-    }
-    return null;
-  }
-
-  static List<AppStorePrice> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <AppStorePrice>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = AppStorePrice.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, AppStorePrice> mapFromJson(dynamic json) {
-    final map = <String, AppStorePrice>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = AppStorePrice.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of AppStorePrice-objects as value to a dart map
-  static Map<String, List<AppStorePrice>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<AppStorePrice>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = AppStorePrice.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'territory',
-    'price',
-    'currency',
-  };
 }
 

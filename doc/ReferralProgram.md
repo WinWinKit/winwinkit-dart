@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **id** | **String** | The program id | 
 **name** | **String** | The program name | 
 **description** | **String** | The program description | 
-**metadata** | [**Object**](.md) | The program metadata | 
+**metadata** | [**JsonObject**](.md) | The program metadata | 
 **distributionPercentage** | **int** | The program distribution percentage | 
 **limit** | **int** | The program limit | 
 **rewards** | [**ReferralProgramRewards**](ReferralProgramRewards.md) | The program rewards | 

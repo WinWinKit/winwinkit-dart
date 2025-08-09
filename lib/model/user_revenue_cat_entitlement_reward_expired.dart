@@ -1,145 +1,161 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:WinWinKit/./model/revenue_cat_entitlement_reward.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'user_revenue_cat_entitlement_reward_expired.g.dart';
 
-class UserRevenueCatEntitlementRewardExpired {
-  /// Returns a new [UserRevenueCatEntitlementRewardExpired] instance.
-  UserRevenueCatEntitlementRewardExpired({
-    required this.reward,
-    required this.expiredAt,
-    required this.createdAt,
-    required this.updatedAt,
-  });
-
+/// UserRevenueCatEntitlementRewardExpired
+///
+/// Properties:
+/// * [reward] - The reward
+/// * [expiredAt] - The expiration date of the reward
+/// * [createdAt] - The created at of the reward
+/// * [updatedAt] - The updated at of the reward
+@BuiltValue()
+abstract class UserRevenueCatEntitlementRewardExpired implements Built<UserRevenueCatEntitlementRewardExpired, UserRevenueCatEntitlementRewardExpiredBuilder> {
   /// The reward
-  RevenueCatEntitlementReward reward;
+  @BuiltValueField(wireName: r'reward')
+  RevenueCatEntitlementReward get reward;
 
   /// The expiration date of the reward
-  DateTime? expiredAt;
+  @BuiltValueField(wireName: r'expired_at')
+  DateTime? get expiredAt;
 
   /// The created at of the reward
-  DateTime createdAt;
+  @BuiltValueField(wireName: r'created_at')
+  DateTime get createdAt;
 
   /// The updated at of the reward
-  DateTime? updatedAt;
+  @BuiltValueField(wireName: r'updated_at')
+  DateTime? get updatedAt;
+
+  UserRevenueCatEntitlementRewardExpired._();
+
+  factory UserRevenueCatEntitlementRewardExpired([void updates(UserRevenueCatEntitlementRewardExpiredBuilder b)]) = _$UserRevenueCatEntitlementRewardExpired;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(UserRevenueCatEntitlementRewardExpiredBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<UserRevenueCatEntitlementRewardExpired> get serializer => _$UserRevenueCatEntitlementRewardExpiredSerializer();
+}
+
+class _$UserRevenueCatEntitlementRewardExpiredSerializer implements PrimitiveSerializer<UserRevenueCatEntitlementRewardExpired> {
+  @override
+  final Iterable<Type> types = const [UserRevenueCatEntitlementRewardExpired, _$UserRevenueCatEntitlementRewardExpired];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UserRevenueCatEntitlementRewardExpired &&
-    other.reward == reward &&
-    other.expiredAt == expiredAt &&
-    other.createdAt == createdAt &&
-    other.updatedAt == updatedAt;
+  final String wireName = r'UserRevenueCatEntitlementRewardExpired';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    UserRevenueCatEntitlementRewardExpired object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'reward';
+    yield serializers.serialize(
+      object.reward,
+      specifiedType: const FullType(RevenueCatEntitlementReward),
+    );
+    yield r'expired_at';
+    yield object.expiredAt == null ? null : serializers.serialize(
+      object.expiredAt,
+      specifiedType: const FullType.nullable(DateTime),
+    );
+    yield r'created_at';
+    yield serializers.serialize(
+      object.createdAt,
+      specifiedType: const FullType(DateTime),
+    );
+    yield r'updated_at';
+    yield object.updatedAt == null ? null : serializers.serialize(
+      object.updatedAt,
+      specifiedType: const FullType.nullable(DateTime),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (reward.hashCode) +
-    (expiredAt == null ? 0 : expiredAt!.hashCode) +
-    (createdAt.hashCode) +
-    (updatedAt == null ? 0 : updatedAt!.hashCode);
+  Object serialize(
+    Serializers serializers,
+    UserRevenueCatEntitlementRewardExpired object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required UserRevenueCatEntitlementRewardExpiredBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'reward':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RevenueCatEntitlementReward),
+          ) as RevenueCatEntitlementReward;
+          result.reward.replace(valueDes);
+          break;
+        case r'expired_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
+          result.expiredAt = valueDes;
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'updated_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
+          result.updatedAt = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'UserRevenueCatEntitlementRewardExpired[reward=$reward, expiredAt=$expiredAt, createdAt=$createdAt, updatedAt=$updatedAt]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'reward'] = this.reward;
-    if (this.expiredAt != null) {
-      json[r'expired_at'] = this.expiredAt!.toUtc().toIso8601String();
-    } else {
-      json[r'expired_at'] = null;
-    }
-      json[r'created_at'] = this.createdAt.toUtc().toIso8601String();
-    if (this.updatedAt != null) {
-      json[r'updated_at'] = this.updatedAt!.toUtc().toIso8601String();
-    } else {
-      json[r'updated_at'] = null;
-    }
-    return json;
+  UserRevenueCatEntitlementRewardExpired deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = UserRevenueCatEntitlementRewardExpiredBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [UserRevenueCatEntitlementRewardExpired] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static UserRevenueCatEntitlementRewardExpired? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserRevenueCatEntitlementRewardExpired[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserRevenueCatEntitlementRewardExpired[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return UserRevenueCatEntitlementRewardExpired(
-        reward: RevenueCatEntitlementReward.fromJson(json[r'reward'])!,
-        expiredAt: mapDateTime(json, r'expired_at', r''),
-        createdAt: mapDateTime(json, r'created_at', r'')!,
-        updatedAt: mapDateTime(json, r'updated_at', r''),
-      );
-    }
-    return null;
-  }
-
-  static List<UserRevenueCatEntitlementRewardExpired> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <UserRevenueCatEntitlementRewardExpired>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = UserRevenueCatEntitlementRewardExpired.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, UserRevenueCatEntitlementRewardExpired> mapFromJson(dynamic json) {
-    final map = <String, UserRevenueCatEntitlementRewardExpired>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = UserRevenueCatEntitlementRewardExpired.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of UserRevenueCatEntitlementRewardExpired-objects as value to a dart map
-  static Map<String, List<UserRevenueCatEntitlementRewardExpired>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<UserRevenueCatEntitlementRewardExpired>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = UserRevenueCatEntitlementRewardExpired.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'reward',
-    'expired_at',
-    'created_at',
-    'updated_at',
-  };
 }
 

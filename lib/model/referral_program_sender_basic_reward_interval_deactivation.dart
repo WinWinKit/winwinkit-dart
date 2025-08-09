@@ -1,276 +1,178 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'referral_program_sender_basic_reward_interval_deactivation.g.dart';
 
-class ReferralProgramSenderBasicRewardIntervalDeactivation {
-  /// Returns a new [ReferralProgramSenderBasicRewardIntervalDeactivation] instance.
-  ReferralProgramSenderBasicRewardIntervalDeactivation({
-    required this.variant,
-    required this.duration,
-    required this.period,
-  });
-
+/// ReferralProgramSenderBasicRewardIntervalDeactivation
+///
+/// Properties:
+/// * [variant] - The variant of the deactivation configuration
+/// * [duration] - The duration of the deactivation configuration
+/// * [period] - The period of the deactivation configuration
+@BuiltValue()
+abstract class ReferralProgramSenderBasicRewardIntervalDeactivation implements Built<ReferralProgramSenderBasicRewardIntervalDeactivation, ReferralProgramSenderBasicRewardIntervalDeactivationBuilder> {
   /// The variant of the deactivation configuration
-  ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum variant;
+  @BuiltValueField(wireName: r'variant')
+  ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum get variant;
+  // enum variantEnum {  interval,  };
 
   /// The duration of the deactivation configuration
-  int duration;
+  @BuiltValueField(wireName: r'duration')
+  int get duration;
 
   /// The period of the deactivation configuration
-  ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum period;
+  @BuiltValueField(wireName: r'period')
+  ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum get period;
+  // enum periodEnum {  days,  months,  years,  };
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is ReferralProgramSenderBasicRewardIntervalDeactivation &&
-    other.variant == variant &&
-    other.duration == duration &&
-    other.period == period;
+  ReferralProgramSenderBasicRewardIntervalDeactivation._();
 
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (variant.hashCode) +
-    (duration.hashCode) +
-    (period.hashCode);
+  factory ReferralProgramSenderBasicRewardIntervalDeactivation([void updates(ReferralProgramSenderBasicRewardIntervalDeactivationBuilder b)]) = _$ReferralProgramSenderBasicRewardIntervalDeactivation;
 
-  @override
-  String toString() => 'ReferralProgramSenderBasicRewardIntervalDeactivation[variant=$variant, duration=$duration, period=$period]';
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferralProgramSenderBasicRewardIntervalDeactivationBuilder b) => b;
 
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'variant'] = this.variant;
-      json[r'duration'] = this.duration;
-      json[r'period'] = this.period;
-    return json;
-  }
-
-  /// Returns a new [ReferralProgramSenderBasicRewardIntervalDeactivation] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static ReferralProgramSenderBasicRewardIntervalDeactivation? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReferralProgramSenderBasicRewardIntervalDeactivation[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReferralProgramSenderBasicRewardIntervalDeactivation[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return ReferralProgramSenderBasicRewardIntervalDeactivation(
-        variant: ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum.fromJson(json[r'variant'])!,
-        duration: mapValueOfType<int>(json, r'duration')!,
-        period: ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum.fromJson(json[r'period'])!,
-      );
-    }
-    return null;
-  }
-
-  static List<ReferralProgramSenderBasicRewardIntervalDeactivation> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderBasicRewardIntervalDeactivation>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderBasicRewardIntervalDeactivation.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, ReferralProgramSenderBasicRewardIntervalDeactivation> mapFromJson(dynamic json) {
-    final map = <String, ReferralProgramSenderBasicRewardIntervalDeactivation>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = ReferralProgramSenderBasicRewardIntervalDeactivation.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of ReferralProgramSenderBasicRewardIntervalDeactivation-objects as value to a dart map
-  static Map<String, List<ReferralProgramSenderBasicRewardIntervalDeactivation>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ReferralProgramSenderBasicRewardIntervalDeactivation>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = ReferralProgramSenderBasicRewardIntervalDeactivation.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'variant',
-    'duration',
-    'period',
-  };
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ReferralProgramSenderBasicRewardIntervalDeactivation> get serializer => _$ReferralProgramSenderBasicRewardIntervalDeactivationSerializer();
 }
 
-/// The variant of the deactivation configuration
-class ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum {
-  /// Instantiate a new enum with the provided [value].
-  const ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final String value;
+class _$ReferralProgramSenderBasicRewardIntervalDeactivationSerializer implements PrimitiveSerializer<ReferralProgramSenderBasicRewardIntervalDeactivation> {
+  @override
+  final Iterable<Type> types = const [ReferralProgramSenderBasicRewardIntervalDeactivation, _$ReferralProgramSenderBasicRewardIntervalDeactivation];
 
   @override
-  String toString() => value;
+  final String wireName = r'ReferralProgramSenderBasicRewardIntervalDeactivation';
 
-  String toJson() => value;
-
-  static const interval = ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum._(r'interval');
-
-  /// List of all possible values in this [enum][ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum].
-  static const values = <ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum>[
-    interval,
-  ];
-
-  static ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum? fromJson(dynamic value) => ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnumTypeTransformer().decode(value);
-
-  static List<ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ReferralProgramSenderBasicRewardIntervalDeactivation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'variant';
+    yield serializers.serialize(
+      object.variant,
+      specifiedType: const FullType(ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum),
+    );
+    yield r'duration';
+    yield serializers.serialize(
+      object.duration,
+      specifiedType: const FullType(int),
+    );
+    yield r'period';
+    yield serializers.serialize(
+      object.period,
+      specifiedType: const FullType(ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum),
+    );
   }
-}
 
-/// Transformation class that can [encode] an instance of [ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum] to String,
-/// and [decode] dynamic data back to [ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum].
-class ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnumTypeTransformer {
-  factory ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnumTypeTransformer() => _instance ??= const ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnumTypeTransformer._();
+  @override
+  Object serialize(
+    Serializers serializers,
+    ReferralProgramSenderBasicRewardIntervalDeactivation object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
 
-  const ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnumTypeTransformer._();
-
-  String encode(ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum data) => data.value;
-
-  /// Decodes a [dynamic value][data] to a ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        case r'interval': return ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum.interval;
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ReferralProgramSenderBasicRewardIntervalDeactivationBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'variant':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum),
+          ) as ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum;
+          result.variant = valueDes;
+          break;
+        case r'duration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.duration = valueDes;
+          break;
+        case r'period':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum),
+          ) as ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum;
+          result.period = valueDes;
+          break;
         default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
       }
     }
-    return null;
   }
-
-  /// Singleton [ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnumTypeTransformer] instance.
-  static ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnumTypeTransformer? _instance;
-}
-
-
-/// The period of the deactivation configuration
-class ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum {
-  /// Instantiate a new enum with the provided [value].
-  const ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final String value;
 
   @override
-  String toString() => value;
-
-  String toJson() => value;
-
-  static const days = ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum._(r'days');
-  static const months = ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum._(r'months');
-  static const years = ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum._(r'years');
-
-  /// List of all possible values in this [enum][ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum].
-  static const values = <ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum>[
-    days,
-    months,
-    years,
-  ];
-
-  static ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum? fromJson(dynamic value) => ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnumTypeTransformer().decode(value);
-
-  static List<ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
+  ReferralProgramSenderBasicRewardIntervalDeactivation deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ReferralProgramSenderBasicRewardIntervalDeactivationBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
 }
 
-/// Transformation class that can [encode] an instance of [ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum] to String,
-/// and [decode] dynamic data back to [ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum].
-class ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnumTypeTransformer {
-  factory ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnumTypeTransformer() => _instance ??= const ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnumTypeTransformer._();
+class ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum extends EnumClass {
 
-  const ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnumTypeTransformer._();
+  /// The variant of the deactivation configuration
+  @BuiltValueEnumConst(wireName: r'interval')
+  static const ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum interval = _$referralProgramSenderBasicRewardIntervalDeactivationVariantEnum_interval;
 
-  String encode(ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum data) => data.value;
+  static Serializer<ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum> get serializer => _$referralProgramSenderBasicRewardIntervalDeactivationVariantEnumSerializer;
 
-  /// Decodes a [dynamic value][data] to a ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        case r'days': return ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum.days;
-        case r'months': return ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum.months;
-        case r'years': return ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum.years;
-        default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
-      }
-    }
-    return null;
-  }
+  const ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum._(String name): super(name);
 
-  /// Singleton [ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnumTypeTransformer] instance.
-  static ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnumTypeTransformer? _instance;
+  static BuiltSet<ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum> get values => _$referralProgramSenderBasicRewardIntervalDeactivationVariantEnumValues;
+  static ReferralProgramSenderBasicRewardIntervalDeactivationVariantEnum valueOf(String name) => _$referralProgramSenderBasicRewardIntervalDeactivationVariantEnumValueOf(name);
 }
 
+class ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum extends EnumClass {
+
+  /// The period of the deactivation configuration
+  @BuiltValueEnumConst(wireName: r'days')
+  static const ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum days = _$referralProgramSenderBasicRewardIntervalDeactivationPeriodEnum_days;
+  /// The period of the deactivation configuration
+  @BuiltValueEnumConst(wireName: r'months')
+  static const ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum months = _$referralProgramSenderBasicRewardIntervalDeactivationPeriodEnum_months;
+  /// The period of the deactivation configuration
+  @BuiltValueEnumConst(wireName: r'years')
+  static const ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum years = _$referralProgramSenderBasicRewardIntervalDeactivationPeriodEnum_years;
+
+  static Serializer<ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum> get serializer => _$referralProgramSenderBasicRewardIntervalDeactivationPeriodEnumSerializer;
+
+  const ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum._(String name): super(name);
+
+  static BuiltSet<ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum> get values => _$referralProgramSenderBasicRewardIntervalDeactivationPeriodEnumValues;
+  static ReferralProgramSenderBasicRewardIntervalDeactivationPeriodEnum valueOf(String name) => _$referralProgramSenderBasicRewardIntervalDeactivationPeriodEnumValueOf(name);
+}
 

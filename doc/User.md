@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **isPremium** | **bool** | Whether the user is a premium user. | 
 **firstSeenAt** | [**DateTime**](DateTime.md) | The date when the user was first seen at. | 
 **lastSeenAt** | [**DateTime**](DateTime.md) | The date when the user was last seen at. | 
-**metadata** | [**Object**](.md) | The metadata of the user. | 
+**metadata** | [**JsonObject**](.md) | The metadata of the user. | 
 **claimCodeEligibility** | [**UserClaimCodeEligibility**](UserClaimCodeEligibility.md) | The claim code eligibility of the user. | 
 **stats** | [**UserStats**](UserStats.md) | The stats of the user. | 
 **rewards** | [**UserRewards**](UserRewards.md) | The rewards of the user. | 

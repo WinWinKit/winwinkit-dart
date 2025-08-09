@@ -1,127 +1,143 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:WinWinKit/./model/referral_program_receiver_revenue_cat_offering_reward_deactivation.dart';
+import 'package:WinWinKit/./model/referral_program_receiver_revenue_cat_offering_reward_activation.dart';
+import 'package:WinWinKit/./model/revenue_cat_offering_reward.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'referral_program_receiver_revenue_cat_offering_reward.g.dart';
 
-class ReferralProgramReceiverRevenueCatOfferingReward {
-  /// Returns a new [ReferralProgramReceiverRevenueCatOfferingReward] instance.
-  ReferralProgramReceiverRevenueCatOfferingReward({
-    required this.reward,
-    required this.activation,
-    required this.deactivation,
-  });
-
+/// ReferralProgramReceiverRevenueCatOfferingReward
+///
+/// Properties:
+/// * [reward] - The reward
+/// * [activation] - The activation configuration
+/// * [deactivation] 
+@BuiltValue()
+abstract class ReferralProgramReceiverRevenueCatOfferingReward implements Built<ReferralProgramReceiverRevenueCatOfferingReward, ReferralProgramReceiverRevenueCatOfferingRewardBuilder> {
   /// The reward
-  RevenueCatOfferingReward reward;
+  @BuiltValueField(wireName: r'reward')
+  RevenueCatOfferingReward get reward;
 
   /// The activation configuration
-  ReferralProgramReceiverRevenueCatOfferingRewardActivation activation;
+  @BuiltValueField(wireName: r'activation')
+  ReferralProgramReceiverRevenueCatOfferingRewardActivation get activation;
 
-  ReferralProgramReceiverRevenueCatOfferingRewardDeactivation deactivation;
+  @BuiltValueField(wireName: r'deactivation')
+  ReferralProgramReceiverRevenueCatOfferingRewardDeactivation get deactivation;
+
+  ReferralProgramReceiverRevenueCatOfferingReward._();
+
+  factory ReferralProgramReceiverRevenueCatOfferingReward([void updates(ReferralProgramReceiverRevenueCatOfferingRewardBuilder b)]) = _$ReferralProgramReceiverRevenueCatOfferingReward;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferralProgramReceiverRevenueCatOfferingRewardBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ReferralProgramReceiverRevenueCatOfferingReward> get serializer => _$ReferralProgramReceiverRevenueCatOfferingRewardSerializer();
+}
+
+class _$ReferralProgramReceiverRevenueCatOfferingRewardSerializer implements PrimitiveSerializer<ReferralProgramReceiverRevenueCatOfferingReward> {
+  @override
+  final Iterable<Type> types = const [ReferralProgramReceiverRevenueCatOfferingReward, _$ReferralProgramReceiverRevenueCatOfferingReward];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ReferralProgramReceiverRevenueCatOfferingReward &&
-    other.reward == reward &&
-    other.activation == activation &&
-    other.deactivation == deactivation;
+  final String wireName = r'ReferralProgramReceiverRevenueCatOfferingReward';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ReferralProgramReceiverRevenueCatOfferingReward object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'reward';
+    yield serializers.serialize(
+      object.reward,
+      specifiedType: const FullType(RevenueCatOfferingReward),
+    );
+    yield r'activation';
+    yield serializers.serialize(
+      object.activation,
+      specifiedType: const FullType(ReferralProgramReceiverRevenueCatOfferingRewardActivation),
+    );
+    yield r'deactivation';
+    yield serializers.serialize(
+      object.deactivation,
+      specifiedType: const FullType(ReferralProgramReceiverRevenueCatOfferingRewardDeactivation),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (reward.hashCode) +
-    (activation.hashCode) +
-    (deactivation.hashCode);
+  Object serialize(
+    Serializers serializers,
+    ReferralProgramReceiverRevenueCatOfferingReward object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ReferralProgramReceiverRevenueCatOfferingRewardBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'reward':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RevenueCatOfferingReward),
+          ) as RevenueCatOfferingReward;
+          result.reward.replace(valueDes);
+          break;
+        case r'activation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramReceiverRevenueCatOfferingRewardActivation),
+          ) as ReferralProgramReceiverRevenueCatOfferingRewardActivation;
+          result.activation.replace(valueDes);
+          break;
+        case r'deactivation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramReceiverRevenueCatOfferingRewardDeactivation),
+          ) as ReferralProgramReceiverRevenueCatOfferingRewardDeactivation;
+          result.deactivation.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'ReferralProgramReceiverRevenueCatOfferingReward[reward=$reward, activation=$activation, deactivation=$deactivation]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'reward'] = this.reward;
-      json[r'activation'] = this.activation;
-      json[r'deactivation'] = this.deactivation;
-    return json;
+  ReferralProgramReceiverRevenueCatOfferingReward deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ReferralProgramReceiverRevenueCatOfferingRewardBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [ReferralProgramReceiverRevenueCatOfferingReward] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static ReferralProgramReceiverRevenueCatOfferingReward? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReferralProgramReceiverRevenueCatOfferingReward[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReferralProgramReceiverRevenueCatOfferingReward[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return ReferralProgramReceiverRevenueCatOfferingReward(
-        reward: RevenueCatOfferingReward.fromJson(json[r'reward'])!,
-        activation: ReferralProgramReceiverRevenueCatOfferingRewardActivation.fromJson(json[r'activation'])!,
-        deactivation: ReferralProgramReceiverRevenueCatOfferingRewardDeactivation.fromJson(json[r'deactivation'])!,
-      );
-    }
-    return null;
-  }
-
-  static List<ReferralProgramReceiverRevenueCatOfferingReward> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramReceiverRevenueCatOfferingReward>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramReceiverRevenueCatOfferingReward.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, ReferralProgramReceiverRevenueCatOfferingReward> mapFromJson(dynamic json) {
-    final map = <String, ReferralProgramReceiverRevenueCatOfferingReward>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = ReferralProgramReceiverRevenueCatOfferingReward.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of ReferralProgramReceiverRevenueCatOfferingReward-objects as value to a dart map
-  static Map<String, List<ReferralProgramReceiverRevenueCatOfferingReward>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ReferralProgramReceiverRevenueCatOfferingReward>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = ReferralProgramReceiverRevenueCatOfferingReward.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'reward',
-    'activation',
-    'deactivation',
-  };
 }
 

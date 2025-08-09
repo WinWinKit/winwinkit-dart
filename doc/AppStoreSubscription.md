@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **productId** | **String** | The product id. | 
 **name** | **String** | The subscription name. | 
 **subscriptionPeriod** | **String** | The subscription period. | 
-**prices** | [**List<AppStorePrice>**](AppStorePrice.md) | The prices of the subscription. | [default to const []]
+**prices** | [**BuiltList&lt;AppStorePrice&gt;**](AppStorePrice.md) | The prices of the subscription. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

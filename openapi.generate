@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Generate the OpenAPI client
-openapi-generator generate -i openapi.yaml -g dart -o . --additional-properties=pubName=WinWinKit,pubDescription="WinWinKit API Client for Dart",pubVersion=0.1.0,pubHomepage=https://winwinkit.com,pubRepository=https://github.com/WinWinKit/winwinkit-dart
+openapi-generator generate -i openapi.yaml -g dart-dio -o . --additional-properties=pubName=WinWinKit,pubDescription="WinWinKit API Client for Dart",pubVersion=0.1.0,pubHomepage=https://winwinkit.com,pubRepository=https://github.com/WinWinKit/winwinkit-dart,sourceFolder=.

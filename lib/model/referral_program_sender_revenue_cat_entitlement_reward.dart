@@ -1,127 +1,143 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.18
 
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: unused_element
+import 'package:WinWinKit/./model/revenue_cat_entitlement_reward.dart';
+import 'package:WinWinKit/./model/referral_program_sender_revenue_cat_entitlement_reward_deactivation.dart';
+import 'package:WinWinKit/./model/referral_program_sender_revenue_cat_entitlement_reward_activation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-part of openapi.api;
+part 'referral_program_sender_revenue_cat_entitlement_reward.g.dart';
 
-class ReferralProgramSenderRevenueCatEntitlementReward {
-  /// Returns a new [ReferralProgramSenderRevenueCatEntitlementReward] instance.
-  ReferralProgramSenderRevenueCatEntitlementReward({
-    required this.reward,
-    required this.activation,
-    required this.deactivation,
-  });
-
+/// ReferralProgramSenderRevenueCatEntitlementReward
+///
+/// Properties:
+/// * [reward] - The reward
+/// * [activation] - The activation configuration
+/// * [deactivation] 
+@BuiltValue()
+abstract class ReferralProgramSenderRevenueCatEntitlementReward implements Built<ReferralProgramSenderRevenueCatEntitlementReward, ReferralProgramSenderRevenueCatEntitlementRewardBuilder> {
   /// The reward
-  RevenueCatEntitlementReward reward;
+  @BuiltValueField(wireName: r'reward')
+  RevenueCatEntitlementReward get reward;
 
   /// The activation configuration
-  ReferralProgramSenderRevenueCatEntitlementRewardActivation activation;
+  @BuiltValueField(wireName: r'activation')
+  ReferralProgramSenderRevenueCatEntitlementRewardActivation get activation;
 
-  ReferralProgramSenderRevenueCatEntitlementRewardDeactivation deactivation;
+  @BuiltValueField(wireName: r'deactivation')
+  ReferralProgramSenderRevenueCatEntitlementRewardDeactivation get deactivation;
+
+  ReferralProgramSenderRevenueCatEntitlementReward._();
+
+  factory ReferralProgramSenderRevenueCatEntitlementReward([void updates(ReferralProgramSenderRevenueCatEntitlementRewardBuilder b)]) = _$ReferralProgramSenderRevenueCatEntitlementReward;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferralProgramSenderRevenueCatEntitlementRewardBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ReferralProgramSenderRevenueCatEntitlementReward> get serializer => _$ReferralProgramSenderRevenueCatEntitlementRewardSerializer();
+}
+
+class _$ReferralProgramSenderRevenueCatEntitlementRewardSerializer implements PrimitiveSerializer<ReferralProgramSenderRevenueCatEntitlementReward> {
+  @override
+  final Iterable<Type> types = const [ReferralProgramSenderRevenueCatEntitlementReward, _$ReferralProgramSenderRevenueCatEntitlementReward];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ReferralProgramSenderRevenueCatEntitlementReward &&
-    other.reward == reward &&
-    other.activation == activation &&
-    other.deactivation == deactivation;
+  final String wireName = r'ReferralProgramSenderRevenueCatEntitlementReward';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ReferralProgramSenderRevenueCatEntitlementReward object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'reward';
+    yield serializers.serialize(
+      object.reward,
+      specifiedType: const FullType(RevenueCatEntitlementReward),
+    );
+    yield r'activation';
+    yield serializers.serialize(
+      object.activation,
+      specifiedType: const FullType(ReferralProgramSenderRevenueCatEntitlementRewardActivation),
+    );
+    yield r'deactivation';
+    yield serializers.serialize(
+      object.deactivation,
+      specifiedType: const FullType(ReferralProgramSenderRevenueCatEntitlementRewardDeactivation),
+    );
+  }
 
   @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (reward.hashCode) +
-    (activation.hashCode) +
-    (deactivation.hashCode);
+  Object serialize(
+    Serializers serializers,
+    ReferralProgramSenderRevenueCatEntitlementReward object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ReferralProgramSenderRevenueCatEntitlementRewardBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'reward':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(RevenueCatEntitlementReward),
+          ) as RevenueCatEntitlementReward;
+          result.reward.replace(valueDes);
+          break;
+        case r'activation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramSenderRevenueCatEntitlementRewardActivation),
+          ) as ReferralProgramSenderRevenueCatEntitlementRewardActivation;
+          result.activation.replace(valueDes);
+          break;
+        case r'deactivation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReferralProgramSenderRevenueCatEntitlementRewardDeactivation),
+          ) as ReferralProgramSenderRevenueCatEntitlementRewardDeactivation;
+          result.deactivation.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
 
   @override
-  String toString() => 'ReferralProgramSenderRevenueCatEntitlementReward[reward=$reward, activation=$activation, deactivation=$deactivation]';
-
-  Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'reward'] = this.reward;
-      json[r'activation'] = this.activation;
-      json[r'deactivation'] = this.deactivation;
-    return json;
+  ReferralProgramSenderRevenueCatEntitlementReward deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ReferralProgramSenderRevenueCatEntitlementRewardBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
   }
-
-  /// Returns a new [ReferralProgramSenderRevenueCatEntitlementReward] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static ReferralProgramSenderRevenueCatEntitlementReward? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReferralProgramSenderRevenueCatEntitlementReward[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReferralProgramSenderRevenueCatEntitlementReward[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return ReferralProgramSenderRevenueCatEntitlementReward(
-        reward: RevenueCatEntitlementReward.fromJson(json[r'reward'])!,
-        activation: ReferralProgramSenderRevenueCatEntitlementRewardActivation.fromJson(json[r'activation'])!,
-        deactivation: ReferralProgramSenderRevenueCatEntitlementRewardDeactivation.fromJson(json[r'deactivation'])!,
-      );
-    }
-    return null;
-  }
-
-  static List<ReferralProgramSenderRevenueCatEntitlementReward> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ReferralProgramSenderRevenueCatEntitlementReward>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = ReferralProgramSenderRevenueCatEntitlementReward.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, ReferralProgramSenderRevenueCatEntitlementReward> mapFromJson(dynamic json) {
-    final map = <String, ReferralProgramSenderRevenueCatEntitlementReward>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = ReferralProgramSenderRevenueCatEntitlementReward.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  // maps a json object with a list of ReferralProgramSenderRevenueCatEntitlementReward-objects as value to a dart map
-  static Map<String, List<ReferralProgramSenderRevenueCatEntitlementReward>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ReferralProgramSenderRevenueCatEntitlementReward>>{};
-    if (json is Map && json.isNotEmpty) {
-      // ignore: parameter_assignments
-      json = json.cast<String, dynamic>();
-      for (final entry in json.entries) {
-        map[entry.key] = ReferralProgramSenderRevenueCatEntitlementReward.listFromJson(entry.value, growable: growable,);
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'reward',
-    'activation',
-    'deactivation',
-  };
 }
 
