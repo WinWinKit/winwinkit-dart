@@ -15,7 +15,7 @@ part 'user_create_request.g.dart';
 /// * [appUserId] - The unique identifier of the referral user in your app.
 /// * [isPremium] - Whether the user is a premium user.
 /// * [firstSeenAt] - The date when the user was first seen at.
-/// * [lastSeenAt] - The date when the user was last seen at.
+/// * [lastSeenAt] - The date when the user was last seen at. Deprecated and will be removed in the future.
 /// * [metadata] - The metadata of the user.
 @BuiltValue()
 abstract class UserCreateRequest implements Built<UserCreateRequest, UserCreateRequestBuilder> {
@@ -31,7 +31,8 @@ abstract class UserCreateRequest implements Built<UserCreateRequest, UserCreateR
   @BuiltValueField(wireName: r'first_seen_at')
   DateTime? get firstSeenAt;
 
-  /// The date when the user was last seen at.
+  /// The date when the user was last seen at. Deprecated and will be removed in the future.
+  @Deprecated('lastSeenAt has been deprecated')
   @BuiltValueField(wireName: r'last_seen_at')
   DateTime? get lastSeenAt;
 

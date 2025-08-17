@@ -21,7 +21,7 @@ part 'user.g.dart';
 /// * [referralCodeLink] - The referral code link of the user.
 /// * [isPremium] - Whether the user is a premium user.
 /// * [firstSeenAt] - The date when the user was first seen at.
-/// * [lastSeenAt] - The date when the user was last seen at.
+/// * [lastSeenAt] - The date when the user was last seen at. Deprecated, always returns null and will be removed in the future.
 /// * [metadata] - The metadata of the user.
 /// * [claimCodeEligibility] - The claim code eligibility of the user.
 /// * [stats] - The stats of the user.
@@ -49,7 +49,8 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'first_seen_at')
   DateTime? get firstSeenAt;
 
-  /// The date when the user was last seen at.
+  /// The date when the user was last seen at. Deprecated, always returns null and will be removed in the future.
+  @Deprecated('lastSeenAt has been deprecated')
   @BuiltValueField(wireName: r'last_seen_at')
   DateTime? get lastSeenAt;
 

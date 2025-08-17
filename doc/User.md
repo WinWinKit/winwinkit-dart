@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **referralCodeLink** | **String** | The referral code link of the user. | 
 **isPremium** | **bool** | Whether the user is a premium user. | 
 **firstSeenAt** | [**DateTime**](DateTime.md) | The date when the user was first seen at. | 
-**lastSeenAt** | [**DateTime**](DateTime.md) | The date when the user was last seen at. | 
+**lastSeenAt** | [**DateTime**](DateTime.md) | The date when the user was last seen at. Deprecated, always returns null and will be removed in the future. | 
 **metadata** | [**JsonObject**](.md) | The metadata of the user. | 
 **claimCodeEligibility** | [**UserClaimCodeEligibility**](UserClaimCodeEligibility.md) | The claim code eligibility of the user. | 
 **stats** | [**UserStats**](UserStats.md) | The stats of the user. | 
