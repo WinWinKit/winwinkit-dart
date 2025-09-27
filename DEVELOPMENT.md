@@ -8,4 +8,4 @@ From local file:
 
 Dependency:
 https://openapi-generator.tech/
-https://openapi-generator.tech/docs/generators/dart/
+https://openapi-generator.tech/docs/generators/dart-dio

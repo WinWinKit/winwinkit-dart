@@ -21,6 +21,8 @@ import 'package:WinWinKit/./model/basic_reward.dart';
 import 'package:WinWinKit/./model/credit_reward.dart';
 import 'package:WinWinKit/./model/error_object.dart';
 import 'package:WinWinKit/./model/errors_response.dart';
+import 'package:WinWinKit/./model/google_play_promo_code_reward.dart';
+import 'package:WinWinKit/./model/google_play_promo_code_value.dart';
 import 'package:WinWinKit/./model/offer_code_response.dart';
 import 'package:WinWinKit/./model/offer_code_response_data.dart';
 import 'package:WinWinKit/./model/offer_code_reward.dart';
@@ -36,6 +38,11 @@ import 'package:WinWinKit/./model/referral_program_receiver_credit_reward_activa
 import 'package:WinWinKit/./model/referral_program_receiver_credit_reward_deactivation.dart';
 import 'package:WinWinKit/./model/referral_program_receiver_credit_reward_interval_deactivation.dart';
 import 'package:WinWinKit/./model/referral_program_receiver_credit_reward_never_deactivation.dart';
+import 'package:WinWinKit/./model/referral_program_receiver_google_play_promo_code_reward.dart';
+import 'package:WinWinKit/./model/referral_program_receiver_google_play_promo_code_reward_activation.dart';
+import 'package:WinWinKit/./model/referral_program_receiver_google_play_promo_code_reward_deactivation.dart';
+import 'package:WinWinKit/./model/referral_program_receiver_google_play_promo_code_reward_interval_deactivation.dart';
+import 'package:WinWinKit/./model/referral_program_receiver_google_play_promo_code_reward_never_deactivation.dart';
 import 'package:WinWinKit/./model/referral_program_receiver_offer_code_reward.dart';
 import 'package:WinWinKit/./model/referral_program_receiver_offer_code_reward_activation.dart';
 import 'package:WinWinKit/./model/referral_program_receiver_offer_code_reward_deactivation.dart';
@@ -63,6 +70,11 @@ import 'package:WinWinKit/./model/referral_program_sender_credit_reward_activati
 import 'package:WinWinKit/./model/referral_program_sender_credit_reward_deactivation.dart';
 import 'package:WinWinKit/./model/referral_program_sender_credit_reward_interval_deactivation.dart';
 import 'package:WinWinKit/./model/referral_program_sender_credit_reward_never_deactivation.dart';
+import 'package:WinWinKit/./model/referral_program_sender_google_play_promo_code_reward.dart';
+import 'package:WinWinKit/./model/referral_program_sender_google_play_promo_code_reward_activation.dart';
+import 'package:WinWinKit/./model/referral_program_sender_google_play_promo_code_reward_deactivation.dart';
+import 'package:WinWinKit/./model/referral_program_sender_google_play_promo_code_reward_interval_deactivation.dart';
+import 'package:WinWinKit/./model/referral_program_sender_google_play_promo_code_reward_never_deactivation.dart';
 import 'package:WinWinKit/./model/referral_program_sender_offer_code_reward.dart';
 import 'package:WinWinKit/./model/referral_program_sender_offer_code_reward_activation.dart';
 import 'package:WinWinKit/./model/referral_program_sender_offer_code_reward_deactivation.dart';
@@ -91,6 +103,8 @@ import 'package:WinWinKit/./model/user_claim_code_response_data.dart';
 import 'package:WinWinKit/./model/user_create_request.dart';
 import 'package:WinWinKit/./model/user_credit_reward_active.dart';
 import 'package:WinWinKit/./model/user_credit_reward_expired.dart';
+import 'package:WinWinKit/./model/user_google_play_promo_code_reward_active.dart';
+import 'package:WinWinKit/./model/user_google_play_promo_code_reward_expired.dart';
 import 'package:WinWinKit/./model/user_offer_code_reward_active.dart';
 import 'package:WinWinKit/./model/user_offer_code_reward_expired.dart';
 import 'package:WinWinKit/./model/user_response.dart';
@@ -119,6 +133,8 @@ part 'serializers.g.dart';
   CreditReward,
   ErrorObject,
   ErrorsResponse,
+  GooglePlayPromoCodeReward,
+  GooglePlayPromoCodeValue,
   OfferCodeResponse,
   OfferCodeResponseData,
   OfferCodeReward,
@@ -134,6 +150,11 @@ part 'serializers.g.dart';
   ReferralProgramReceiverCreditRewardDeactivation,
   ReferralProgramReceiverCreditRewardIntervalDeactivation,
   ReferralProgramReceiverCreditRewardNeverDeactivation,
+  ReferralProgramReceiverGooglePlayPromoCodeReward,
+  ReferralProgramReceiverGooglePlayPromoCodeRewardActivation,
+  ReferralProgramReceiverGooglePlayPromoCodeRewardDeactivation,
+  ReferralProgramReceiverGooglePlayPromoCodeRewardIntervalDeactivation,
+  ReferralProgramReceiverGooglePlayPromoCodeRewardNeverDeactivation,
   ReferralProgramReceiverOfferCodeReward,
   ReferralProgramReceiverOfferCodeRewardActivation,
   ReferralProgramReceiverOfferCodeRewardDeactivation,
@@ -161,6 +182,11 @@ part 'serializers.g.dart';
   ReferralProgramSenderCreditRewardDeactivation,
   ReferralProgramSenderCreditRewardIntervalDeactivation,
   ReferralProgramSenderCreditRewardNeverDeactivation,
+  ReferralProgramSenderGooglePlayPromoCodeReward,
+  ReferralProgramSenderGooglePlayPromoCodeRewardActivation,
+  ReferralProgramSenderGooglePlayPromoCodeRewardDeactivation,
+  ReferralProgramSenderGooglePlayPromoCodeRewardIntervalDeactivation,
+  ReferralProgramSenderGooglePlayPromoCodeRewardNeverDeactivation,
   ReferralProgramSenderOfferCodeReward,
   ReferralProgramSenderOfferCodeRewardActivation,
   ReferralProgramSenderOfferCodeRewardDeactivation,
@@ -189,6 +215,8 @@ part 'serializers.g.dart';
   UserCreateRequest,
   UserCreditRewardActive,
   UserCreditRewardExpired,
+  UserGooglePlayPromoCodeRewardActive,
+  UserGooglePlayPromoCodeRewardExpired,
   UserOfferCodeRewardActive,
   UserOfferCodeRewardExpired,
   UserResponse,

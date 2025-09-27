@@ -7,37 +7,22 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'offer_code_reward.g.dart';
+part 'google_play_promo_code_reward.g.dart';
 
-/// OfferCodeReward
+/// GooglePlayPromoCodeReward
 ///
 /// Properties:
 /// * [key] - The key of the reward
-/// * [offerCodeId] - The offer code id
-/// * [offerCodeRefName] - The offer code reference name that is set in the App Store Connect
-/// * [subscriptionProductId] - The subscription product id of the offer code
 /// * [name] - The name of the reward
 /// * [description] - The description of the reward
 /// * [metadata] - The metadata of the reward
 /// * [createdAt] - The created at of the reward
 /// * [updatedAt] - The updated at of the reward
 @BuiltValue()
-abstract class OfferCodeReward implements Built<OfferCodeReward, OfferCodeRewardBuilder> {
+abstract class GooglePlayPromoCodeReward implements Built<GooglePlayPromoCodeReward, GooglePlayPromoCodeRewardBuilder> {
   /// The key of the reward
   @BuiltValueField(wireName: r'key')
   String get key;
-
-  /// The offer code id
-  @BuiltValueField(wireName: r'offer_code_id')
-  String get offerCodeId;
-
-  /// The offer code reference name that is set in the App Store Connect
-  @BuiltValueField(wireName: r'offer_code_ref_name')
-  String get offerCodeRefName;
-
-  /// The subscription product id of the offer code
-  @BuiltValueField(wireName: r'subscription_product_id')
-  String get subscriptionProductId;
 
   /// The name of the reward
   @BuiltValueField(wireName: r'name')
@@ -59,47 +44,32 @@ abstract class OfferCodeReward implements Built<OfferCodeReward, OfferCodeReward
   @BuiltValueField(wireName: r'updated_at')
   DateTime? get updatedAt;
 
-  OfferCodeReward._();
+  GooglePlayPromoCodeReward._();
 
-  factory OfferCodeReward([void updates(OfferCodeRewardBuilder b)]) = _$OfferCodeReward;
+  factory GooglePlayPromoCodeReward([void updates(GooglePlayPromoCodeRewardBuilder b)]) = _$GooglePlayPromoCodeReward;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(OfferCodeRewardBuilder b) => b;
+  static void _defaults(GooglePlayPromoCodeRewardBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<OfferCodeReward> get serializer => _$OfferCodeRewardSerializer();
+  static Serializer<GooglePlayPromoCodeReward> get serializer => _$GooglePlayPromoCodeRewardSerializer();
 }
 
-class _$OfferCodeRewardSerializer implements PrimitiveSerializer<OfferCodeReward> {
+class _$GooglePlayPromoCodeRewardSerializer implements PrimitiveSerializer<GooglePlayPromoCodeReward> {
   @override
-  final Iterable<Type> types = const [OfferCodeReward, _$OfferCodeReward];
+  final Iterable<Type> types = const [GooglePlayPromoCodeReward, _$GooglePlayPromoCodeReward];
 
   @override
-  final String wireName = r'OfferCodeReward';
+  final String wireName = r'GooglePlayPromoCodeReward';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    OfferCodeReward object, {
+    GooglePlayPromoCodeReward object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'key';
     yield serializers.serialize(
       object.key,
-      specifiedType: const FullType(String),
-    );
-    yield r'offer_code_id';
-    yield serializers.serialize(
-      object.offerCodeId,
-      specifiedType: const FullType(String),
-    );
-    yield r'offer_code_ref_name';
-    yield serializers.serialize(
-      object.offerCodeRefName,
-      specifiedType: const FullType(String),
-    );
-    yield r'subscription_product_id';
-    yield serializers.serialize(
-      object.subscriptionProductId,
       specifiedType: const FullType(String),
     );
     yield r'name';
@@ -132,7 +102,7 @@ class _$OfferCodeRewardSerializer implements PrimitiveSerializer<OfferCodeReward
   @override
   Object serialize(
     Serializers serializers,
-    OfferCodeReward object, {
+    GooglePlayPromoCodeReward object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -143,7 +113,7 @@ class _$OfferCodeRewardSerializer implements PrimitiveSerializer<OfferCodeReward
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required OfferCodeRewardBuilder result,
+    required GooglePlayPromoCodeRewardBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -156,27 +126,6 @@ class _$OfferCodeRewardSerializer implements PrimitiveSerializer<OfferCodeReward
             specifiedType: const FullType(String),
           ) as String;
           result.key = valueDes;
-          break;
-        case r'offer_code_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.offerCodeId = valueDes;
-          break;
-        case r'offer_code_ref_name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.offerCodeRefName = valueDes;
-          break;
-        case r'subscription_product_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.subscriptionProductId = valueDes;
           break;
         case r'name':
           final valueDes = serializers.deserialize(
@@ -225,12 +174,12 @@ class _$OfferCodeRewardSerializer implements PrimitiveSerializer<OfferCodeReward
   }
 
   @override
-  OfferCodeReward deserialize(
+  GooglePlayPromoCodeReward deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = OfferCodeRewardBuilder();
+    final result = GooglePlayPromoCodeRewardBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

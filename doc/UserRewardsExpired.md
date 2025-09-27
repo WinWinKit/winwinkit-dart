@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **basic** | [**BuiltList&lt;UserBasicRewardExpired&gt;**](UserBasicRewardExpired.md) | The referral user basic rewards | 
 **credit** | [**BuiltList&lt;UserCreditRewardExpired&gt;**](UserCreditRewardExpired.md) | The referral user credit rewards | 
 **offerCode** | [**BuiltList&lt;UserOfferCodeRewardExpired&gt;**](UserOfferCodeRewardExpired.md) | The referral user offer code rewards | 
+**googleplayPromoCode** | [**BuiltList&lt;UserGooglePlayPromoCodeRewardExpired&gt;**](UserGooglePlayPromoCodeRewardExpired.md) | The referral user Google Play promo code rewards | 
 **revenuecatEntitlement** | [**BuiltList&lt;UserRevenueCatEntitlementRewardExpired&gt;**](UserRevenueCatEntitlementRewardExpired.md) | The referral user RevenueCat entitlement rewards | 
 **revenuecatOffering** | [**BuiltList&lt;UserRevenueCatOfferingRewardExpired&gt;**](UserRevenueCatOfferingRewardExpired.md) | The referral user RevenueCat offering rewards | 
 

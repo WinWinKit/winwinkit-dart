@@ -6,6 +6,7 @@
 import 'package:WinWinKit/./model/user_offer_code_reward_active.dart';
 import 'package:WinWinKit/./model/user_revenue_cat_offering_reward_active.dart';
 import 'package:WinWinKit/./model/user_credit_reward_active.dart';
+import 'package:WinWinKit/./model/user_google_play_promo_code_reward_active.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:WinWinKit/./model/user_basic_reward_active.dart';
 import 'package:WinWinKit/./model/user_revenue_cat_entitlement_reward_active.dart';
@@ -20,6 +21,7 @@ part 'user_rewards_active.g.dart';
 /// * [basic] - The referral user basic rewards
 /// * [credit] - The referral user credit rewards
 /// * [offerCode] - The referral user offer code rewards
+/// * [googleplayPromoCode] - The referral user Google Play promo code rewards
 /// * [revenuecatEntitlement] - The referral user RevenueCat entitlement rewards
 /// * [revenuecatOffering] - The referral user RevenueCat offering rewards
 @BuiltValue()
@@ -35,6 +37,10 @@ abstract class UserRewardsActive implements Built<UserRewardsActive, UserRewards
   /// The referral user offer code rewards
   @BuiltValueField(wireName: r'offer_code')
   BuiltList<UserOfferCodeRewardActive> get offerCode;
+
+  /// The referral user Google Play promo code rewards
+  @BuiltValueField(wireName: r'googleplay_promo_code')
+  BuiltList<UserGooglePlayPromoCodeRewardActive> get googleplayPromoCode;
 
   /// The referral user RevenueCat entitlement rewards
   @BuiltValueField(wireName: r'revenuecat_entitlement')
@@ -81,6 +87,11 @@ class _$UserRewardsActiveSerializer implements PrimitiveSerializer<UserRewardsAc
     yield serializers.serialize(
       object.offerCode,
       specifiedType: const FullType(BuiltList, [FullType(UserOfferCodeRewardActive)]),
+    );
+    yield r'googleplay_promo_code';
+    yield serializers.serialize(
+      object.googleplayPromoCode,
+      specifiedType: const FullType(BuiltList, [FullType(UserGooglePlayPromoCodeRewardActive)]),
     );
     yield r'revenuecat_entitlement';
     yield serializers.serialize(
@@ -135,6 +146,13 @@ class _$UserRewardsActiveSerializer implements PrimitiveSerializer<UserRewardsAc
             specifiedType: const FullType(BuiltList, [FullType(UserOfferCodeRewardActive)]),
           ) as BuiltList<UserOfferCodeRewardActive>;
           result.offerCode.replace(valueDes);
+          break;
+        case r'googleplay_promo_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UserGooglePlayPromoCodeRewardActive)]),
+          ) as BuiltList<UserGooglePlayPromoCodeRewardActive>;
+          result.googleplayPromoCode.replace(valueDes);
           break;
         case r'revenuecat_entitlement':
           final valueDes = serializers.deserialize(

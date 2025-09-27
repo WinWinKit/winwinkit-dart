@@ -6,6 +6,7 @@
 import 'package:WinWinKit/./model/referral_program_sender_basic_reward.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:WinWinKit/./model/referral_program_sender_revenue_cat_entitlement_reward.dart';
+import 'package:WinWinKit/./model/referral_program_sender_google_play_promo_code_reward.dart';
 import 'package:WinWinKit/./model/referral_program_sender_revenue_cat_offering_reward.dart';
 import 'package:WinWinKit/./model/referral_program_sender_offer_code_reward.dart';
 import 'package:WinWinKit/./model/referral_program_sender_credit_reward.dart';
@@ -20,6 +21,7 @@ part 'referral_program_sender_rewards.g.dart';
 /// * [basic] - The program basic rewards
 /// * [credit] - The program credit rewards
 /// * [offerCode] - The program offer code rewards
+/// * [googleplayPromoCode] - The program Google Play promo code rewards
 /// * [revenuecatEntitlement] - The program RevenueCat entitlement rewards
 /// * [revenuecatOffering] - The program RevenueCat offering rewards
 @BuiltValue()
@@ -35,6 +37,10 @@ abstract class ReferralProgramSenderRewards implements Built<ReferralProgramSend
   /// The program offer code rewards
   @BuiltValueField(wireName: r'offer_code')
   BuiltList<ReferralProgramSenderOfferCodeReward> get offerCode;
+
+  /// The program Google Play promo code rewards
+  @BuiltValueField(wireName: r'googleplay_promo_code')
+  BuiltList<ReferralProgramSenderGooglePlayPromoCodeReward> get googleplayPromoCode;
 
   /// The program RevenueCat entitlement rewards
   @BuiltValueField(wireName: r'revenuecat_entitlement')
@@ -81,6 +87,11 @@ class _$ReferralProgramSenderRewardsSerializer implements PrimitiveSerializer<Re
     yield serializers.serialize(
       object.offerCode,
       specifiedType: const FullType(BuiltList, [FullType(ReferralProgramSenderOfferCodeReward)]),
+    );
+    yield r'googleplay_promo_code';
+    yield serializers.serialize(
+      object.googleplayPromoCode,
+      specifiedType: const FullType(BuiltList, [FullType(ReferralProgramSenderGooglePlayPromoCodeReward)]),
     );
     yield r'revenuecat_entitlement';
     yield serializers.serialize(
@@ -135,6 +146,13 @@ class _$ReferralProgramSenderRewardsSerializer implements PrimitiveSerializer<Re
             specifiedType: const FullType(BuiltList, [FullType(ReferralProgramSenderOfferCodeReward)]),
           ) as BuiltList<ReferralProgramSenderOfferCodeReward>;
           result.offerCode.replace(valueDes);
+          break;
+        case r'googleplay_promo_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ReferralProgramSenderGooglePlayPromoCodeReward)]),
+          ) as BuiltList<ReferralProgramSenderGooglePlayPromoCodeReward>;
+          result.googleplayPromoCode.replace(valueDes);
           break;
         case r'revenuecat_entitlement':
           final valueDes = serializers.deserialize(

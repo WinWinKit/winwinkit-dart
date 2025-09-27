@@ -9,6 +9,7 @@ import 'package:WinWinKit/./model/user_offer_code_reward_expired.dart';
 import 'package:WinWinKit/./model/user_basic_reward_expired.dart';
 import 'package:WinWinKit/./model/user_revenue_cat_entitlement_reward_expired.dart';
 import 'package:WinWinKit/./model/user_revenue_cat_offering_reward_expired.dart';
+import 'package:WinWinKit/./model/user_google_play_promo_code_reward_expired.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,6 +21,7 @@ part 'user_rewards_expired.g.dart';
 /// * [basic] - The referral user basic rewards
 /// * [credit] - The referral user credit rewards
 /// * [offerCode] - The referral user offer code rewards
+/// * [googleplayPromoCode] - The referral user Google Play promo code rewards
 /// * [revenuecatEntitlement] - The referral user RevenueCat entitlement rewards
 /// * [revenuecatOffering] - The referral user RevenueCat offering rewards
 @BuiltValue()
@@ -35,6 +37,10 @@ abstract class UserRewardsExpired implements Built<UserRewardsExpired, UserRewar
   /// The referral user offer code rewards
   @BuiltValueField(wireName: r'offer_code')
   BuiltList<UserOfferCodeRewardExpired> get offerCode;
+
+  /// The referral user Google Play promo code rewards
+  @BuiltValueField(wireName: r'googleplay_promo_code')
+  BuiltList<UserGooglePlayPromoCodeRewardExpired> get googleplayPromoCode;
 
   /// The referral user RevenueCat entitlement rewards
   @BuiltValueField(wireName: r'revenuecat_entitlement')
@@ -81,6 +87,11 @@ class _$UserRewardsExpiredSerializer implements PrimitiveSerializer<UserRewardsE
     yield serializers.serialize(
       object.offerCode,
       specifiedType: const FullType(BuiltList, [FullType(UserOfferCodeRewardExpired)]),
+    );
+    yield r'googleplay_promo_code';
+    yield serializers.serialize(
+      object.googleplayPromoCode,
+      specifiedType: const FullType(BuiltList, [FullType(UserGooglePlayPromoCodeRewardExpired)]),
     );
     yield r'revenuecat_entitlement';
     yield serializers.serialize(
@@ -135,6 +146,13 @@ class _$UserRewardsExpiredSerializer implements PrimitiveSerializer<UserRewardsE
             specifiedType: const FullType(BuiltList, [FullType(UserOfferCodeRewardExpired)]),
           ) as BuiltList<UserOfferCodeRewardExpired>;
           result.offerCode.replace(valueDes);
+          break;
+        case r'googleplay_promo_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UserGooglePlayPromoCodeRewardExpired)]),
+          ) as BuiltList<UserGooglePlayPromoCodeRewardExpired>;
+          result.googleplayPromoCode.replace(valueDes);
           break;
         case r'revenuecat_entitlement':
           final valueDes = serializers.deserialize(

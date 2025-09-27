@@ -1,4 +1,4 @@
-# WinWinKit.model.OfferCodeReward
+# WinWinKit.model.GooglePlayPromoCodeReward
 
 ## Load the model package
 ```dart
@@ -9,9 +9,6 @@ import 'package:WinWinKit/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | **String** | The key of the reward | 
-**offerCodeId** | **String** | The offer code id | 
-**offerCodeRefName** | **String** | The offer code reference name that is set in the App Store Connect | 
-**subscriptionProductId** | **String** | The subscription product id of the offer code | 
 **name** | **String** | The name of the reward | 
 **description** | **String** | The description of the reward | 
 **metadata** | [**JsonObject**](.md) | The metadata of the reward | 
