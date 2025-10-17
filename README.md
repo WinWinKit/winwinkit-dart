@@ -6,7 +6,7 @@ The official [WinWinKit](https://winwinkit.com) SDK for Dart (Flutter).
 
 Please follow the [Dart SDK](https://docs.winwinkit.com/integrations/dart-sdk) guide for information on how to install the SDK.
 
-Our complete documentation with [Introduction](https://docs.winwinkit.com), [API Reference](https://docs.winwinkit.com/api-reference) and feature guides is available at [docs.winwinkit.com](https://docs.winwinkit.com).
+Additionally, check out our [docs](https://winwinkit.com/docs) and [guides](https://winwinkit.com/guides) for more information about the platform.
 
 ## Requirements
 
