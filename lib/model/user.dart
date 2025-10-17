@@ -19,6 +19,7 @@ part 'user.g.dart';
 /// * [appUserId] - The unique identifier of the user in your app.
 /// * [referralCode] - The referral code of the user.
 /// * [referralCodeLink] - The referral code link of the user.
+/// * [isTrial] - Whether the user is a trial user.
 /// * [isPremium] - Whether the user is a premium user.
 /// * [firstSeenAt] - The date when the user was first seen at.
 /// * [lastSeenAt] - The date when the user was last seen at. Deprecated, always returns null and will be removed in the future.
@@ -40,6 +41,10 @@ abstract class User implements Built<User, UserBuilder> {
   /// The referral code link of the user.
   @BuiltValueField(wireName: r'referral_code_link')
   String? get referralCodeLink;
+
+  /// Whether the user is a trial user.
+  @BuiltValueField(wireName: r'is_trial')
+  bool? get isTrial;
 
   /// Whether the user is a premium user.
   @BuiltValueField(wireName: r'is_premium')
@@ -111,6 +116,11 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
     yield object.referralCodeLink == null ? null : serializers.serialize(
       object.referralCodeLink,
       specifiedType: const FullType.nullable(String),
+    );
+    yield r'is_trial';
+    yield object.isTrial == null ? null : serializers.serialize(
+      object.isTrial,
+      specifiedType: const FullType.nullable(bool),
     );
     yield r'is_premium';
     yield object.isPremium == null ? null : serializers.serialize(
@@ -197,6 +207,14 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
           ) as String?;
           if (valueDes == null) continue;
           result.referralCodeLink = valueDes;
+          break;
+        case r'is_trial':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
+          result.isTrial = valueDes;
           break;
         case r'is_premium':
           final valueDes = serializers.deserialize(

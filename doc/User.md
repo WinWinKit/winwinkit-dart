@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **appUserId** | **String** | The unique identifier of the user in your app. | 
 **referralCode** | **String** | The referral code of the user. | 
 **referralCodeLink** | **String** | The referral code link of the user. | 
+**isTrial** | **bool** | Whether the user is a trial user. | 
 **isPremium** | **bool** | Whether the user is a premium user. | 
 **firstSeenAt** | [**DateTime**](DateTime.md) | The date when the user was first seen at. | 
 **lastSeenAt** | [**DateTime**](DateTime.md) | The date when the user was last seen at. Deprecated, always returns null and will be removed in the future. | 

@@ -20,7 +20,8 @@ part 'credit_reward.g.dart';
 /// * [createdAt] - The created at of the reward
 /// * [updatedAt] - The updated at of the reward
 @BuiltValue()
-abstract class CreditReward implements Built<CreditReward, CreditRewardBuilder> {
+abstract class CreditReward
+    implements Built<CreditReward, CreditRewardBuilder> {
   /// The key of the reward
   @BuiltValueField(wireName: r'key')
   String get key;
@@ -88,25 +89,31 @@ class _$CreditRewardSerializer implements PrimitiveSerializer<CreditReward> {
       specifiedType: const FullType(String),
     );
     yield r'description';
-    yield object.description == null ? null : serializers.serialize(
-      object.description,
-      specifiedType: const FullType.nullable(String),
-    );
+    yield object.description == null
+        ? null
+        : serializers.serialize(
+            object.description,
+            specifiedType: const FullType.nullable(String),
+          );
     yield r'metadata';
-    yield object.metadata == null ? null : serializers.serialize(
-      object.metadata,
-      specifiedType: const FullType.nullable(JsonObject),
-    );
+    yield object.metadata == null
+        ? null
+        : serializers.serialize(
+            object.metadata,
+            specifiedType: const FullType.nullable(JsonObject),
+          );
     yield r'created_at';
     yield serializers.serialize(
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
     yield r'updated_at';
-    yield object.updatedAt == null ? null : serializers.serialize(
-      object.updatedAt,
-      specifiedType: const FullType.nullable(DateTime),
-    );
+    yield object.updatedAt == null
+        ? null
+        : serializers.serialize(
+            object.updatedAt,
+            specifiedType: const FullType.nullable(DateTime),
+          );
   }
 
   @override
@@ -115,7 +122,9 @@ class _$CreditRewardSerializer implements PrimitiveSerializer<CreditReward> {
     CreditReward object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -210,4 +219,3 @@ class _$CreditRewardSerializer implements PrimitiveSerializer<CreditReward> {
     return result.build();
   }
 }
-

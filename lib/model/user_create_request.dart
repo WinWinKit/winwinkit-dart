@@ -13,6 +13,7 @@ part 'user_create_request.g.dart';
 ///
 /// Properties:
 /// * [appUserId] - The unique identifier of the referral user in your app.
+/// * [isTrial] - Whether the user is a trial user.
 /// * [isPremium] - Whether the user is a premium user.
 /// * [firstSeenAt] - The date when the user was first seen at.
 /// * [lastSeenAt] - The date when the user was last seen at. Deprecated and will be removed in the future.
@@ -22,6 +23,10 @@ abstract class UserCreateRequest implements Built<UserCreateRequest, UserCreateR
   /// The unique identifier of the referral user in your app.
   @BuiltValueField(wireName: r'app_user_id')
   String get appUserId;
+
+  /// Whether the user is a trial user.
+  @BuiltValueField(wireName: r'is_trial')
+  bool? get isTrial;
 
   /// Whether the user is a premium user.
   @BuiltValueField(wireName: r'is_premium')
@@ -68,6 +73,13 @@ class _$UserCreateRequestSerializer implements PrimitiveSerializer<UserCreateReq
       object.appUserId,
       specifiedType: const FullType(String),
     );
+    if (object.isTrial != null) {
+      yield r'is_trial';
+      yield serializers.serialize(
+        object.isTrial,
+        specifiedType: const FullType.nullable(bool),
+      );
+    }
     if (object.isPremium != null) {
       yield r'is_premium';
       yield serializers.serialize(
@@ -125,6 +137,14 @@ class _$UserCreateRequestSerializer implements PrimitiveSerializer<UserCreateReq
             specifiedType: const FullType(String),
           ) as String;
           result.appUserId = valueDes;
+          break;
+        case r'is_trial':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
+          result.isTrial = valueDes;
           break;
         case r'is_premium':
           final valueDes = serializers.deserialize(

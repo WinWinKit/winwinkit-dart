@@ -9,6 +9,7 @@ import 'package:WinWinKit/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appUserId** | **String** | The unique identifier of the referral user in your app. | 
+**isTrial** | **bool** | Whether the user is a trial user. | [optional] 
 **isPremium** | **bool** | Whether the user is a premium user. | [optional] 
 **firstSeenAt** | [**DateTime**](DateTime.md) | The date when the user was first seen at. | [optional] 
 **lastSeenAt** | [**DateTime**](DateTime.md) | The date when the user was last seen at. Deprecated and will be removed in the future. | [optional] 
