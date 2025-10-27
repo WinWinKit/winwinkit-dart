@@ -108,6 +108,7 @@ export 'package:WinWinKit/./model/user_google_play_promo_code_reward_active.dart
 export 'package:WinWinKit/./model/user_google_play_promo_code_reward_expired.dart';
 export 'package:WinWinKit/./model/user_offer_code_reward_active.dart';
 export 'package:WinWinKit/./model/user_offer_code_reward_expired.dart';
+export 'package:WinWinKit/./model/user_referred_by.dart';
 export 'package:WinWinKit/./model/user_response.dart';
 export 'package:WinWinKit/./model/user_response_data.dart';
 export 'package:WinWinKit/./model/user_revenue_cat_entitlement_reward_active.dart';

@@ -107,6 +107,7 @@ import 'package:WinWinKit/./model/user_google_play_promo_code_reward_active.dart
 import 'package:WinWinKit/./model/user_google_play_promo_code_reward_expired.dart';
 import 'package:WinWinKit/./model/user_offer_code_reward_active.dart';
 import 'package:WinWinKit/./model/user_offer_code_reward_expired.dart';
+import 'package:WinWinKit/./model/user_referred_by.dart';
 import 'package:WinWinKit/./model/user_response.dart';
 import 'package:WinWinKit/./model/user_response_data.dart';
 import 'package:WinWinKit/./model/user_revenue_cat_entitlement_reward_active.dart';
@@ -219,6 +220,7 @@ part 'serializers.g.dart';
   UserGooglePlayPromoCodeRewardExpired,
   UserOfferCodeRewardActive,
   UserOfferCodeRewardExpired,
+  UserReferredBy,
   UserResponse,
   UserResponseData,
   UserRevenueCatEntitlementRewardActive,

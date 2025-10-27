@@ -6,6 +6,7 @@
 import 'package:WinWinKit/./model/user_claim_code_eligibility.dart';
 import 'package:WinWinKit/./model/user_rewards.dart';
 import 'package:WinWinKit/./model/referral_program.dart';
+import 'package:WinWinKit/./model/user_referred_by.dart';
 import 'package:WinWinKit/./model/user_stats.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
@@ -25,6 +26,7 @@ part 'user.g.dart';
 /// * [lastSeenAt] - The date when the user was last seen at. Deprecated, always returns null and will be removed in the future.
 /// * [metadata] - The metadata of the user.
 /// * [claimCodeEligibility] - The claim code eligibility of the user.
+/// * [referredBy] - The referred by object of the user.
 /// * [stats] - The stats of the user.
 /// * [rewards] - The rewards of the user.
 /// * [referralProgram] - The program of the user.
@@ -66,6 +68,10 @@ abstract class User implements Built<User, UserBuilder> {
   /// The claim code eligibility of the user.
   @BuiltValueField(wireName: r'claim_code_eligibility')
   UserClaimCodeEligibility get claimCodeEligibility;
+
+  /// The referred by object of the user.
+  @BuiltValueField(wireName: r'referred_by')
+  UserReferredBy? get referredBy;
 
   /// The stats of the user.
   @BuiltValueField(wireName: r'stats')
@@ -146,6 +152,11 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
     yield serializers.serialize(
       object.claimCodeEligibility,
       specifiedType: const FullType(UserClaimCodeEligibility),
+    );
+    yield r'referred_by';
+    yield object.referredBy == null ? null : serializers.serialize(
+      object.referredBy,
+      specifiedType: const FullType.nullable(UserReferredBy),
     );
     yield r'stats';
     yield serializers.serialize(
@@ -254,6 +265,14 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
             specifiedType: const FullType(UserClaimCodeEligibility),
           ) as UserClaimCodeEligibility;
           result.claimCodeEligibility.replace(valueDes);
+          break;
+        case r'referred_by':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(UserReferredBy),
+          ) as UserReferredBy?;
+          if (valueDes == null) continue;
+          result.referredBy.replace(valueDes);
           break;
         case r'stats':
           final valueDes = serializers.deserialize(

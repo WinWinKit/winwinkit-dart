@@ -97,6 +97,7 @@ doc/UserGooglePlayPromoCodeRewardActive.md
 doc/UserGooglePlayPromoCodeRewardExpired.md
 doc/UserOfferCodeRewardActive.md
 doc/UserOfferCodeRewardExpired.md
+doc/UserReferredBy.md
 doc/UserResponse.md
 doc/UserResponseData.md
 doc/UserRevenueCatEntitlementRewardActive.md
@@ -220,6 +221,7 @@ lib/model/user_google_play_promo_code_reward_active.dart
 lib/model/user_google_play_promo_code_reward_expired.dart
 lib/model/user_offer_code_reward_active.dart
 lib/model/user_offer_code_reward_expired.dart
+lib/model/user_referred_by.dart
 lib/model/user_response.dart
 lib/model/user_response_data.dart
 lib/model/user_revenue_cat_entitlement_reward_active.dart
@@ -237,3 +239,4 @@ lib/model/user_withdraw_credits_response_data.dart
 lib/model/user_withdraw_credits_result.dart
 lib/serializers.dart
 pubspec.yaml
+test/user_referred_by_test.dart

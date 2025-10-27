@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **lastSeenAt** | [**DateTime**](DateTime.md) | The date when the user was last seen at. Deprecated, always returns null and will be removed in the future. | 
 **metadata** | [**JsonObject**](.md) | The metadata of the user. | 
 **claimCodeEligibility** | [**UserClaimCodeEligibility**](UserClaimCodeEligibility.md) | The claim code eligibility of the user. | 
+**referredBy** | [**UserReferredBy**](UserReferredBy.md) | The referred by object of the user. | 
 **stats** | [**UserStats**](UserStats.md) | The stats of the user. | 
 **rewards** | [**UserRewards**](UserRewards.md) | The rewards of the user. | 
 **referralProgram** | [**ReferralProgram**](ReferralProgram.md) | The program of the user. | 
