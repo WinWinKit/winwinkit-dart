@@ -21,7 +21,7 @@ class AppStoreApi {
   const AppStoreApi(this._dio, this._serializers);
 
   /// Get Offer Code
-  /// Get an offer code with subscription and prices by the offer code id.
+  /// Get an offer code with subscription and prices by the offer code id. Deprecated: this endpoint is deprecated and will be removed in a future release; please migrate away from it.
   ///
   /// Parameters:
   /// * [offerCodeId] - The offer code id to retrieve.
@@ -35,6 +35,7 @@ class AppStoreApi {
   ///
   /// Returns a [Future] containing a [Response] with a [OfferCodeResponse] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<OfferCodeResponse>> getOfferCode({ 
     required String offerCodeId,
     required String xApiKey,

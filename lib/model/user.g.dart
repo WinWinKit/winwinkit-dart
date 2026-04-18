@@ -24,6 +24,8 @@ class _$User extends User {
   @override
   final JsonObject? metadata;
   @override
+  final String? stripeCustomerId;
+  @override
   final UserClaimCodeEligibility claimCodeEligibility;
   @override
   final UserReferredBy? referredBy;
@@ -46,6 +48,7 @@ class _$User extends User {
       this.firstSeenAt,
       this.lastSeenAt,
       this.metadata,
+      this.stripeCustomerId,
       required this.claimCodeEligibility,
       this.referredBy,
       required this.stats,
@@ -71,6 +74,7 @@ class _$User extends User {
         firstSeenAt == other.firstSeenAt &&
         lastSeenAt == other.lastSeenAt &&
         metadata == other.metadata &&
+        stripeCustomerId == other.stripeCustomerId &&
         claimCodeEligibility == other.claimCodeEligibility &&
         referredBy == other.referredBy &&
         stats == other.stats &&
@@ -89,6 +93,7 @@ class _$User extends User {
     _$hash = $jc(_$hash, firstSeenAt.hashCode);
     _$hash = $jc(_$hash, lastSeenAt.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
+    _$hash = $jc(_$hash, stripeCustomerId.hashCode);
     _$hash = $jc(_$hash, claimCodeEligibility.hashCode);
     _$hash = $jc(_$hash, referredBy.hashCode);
     _$hash = $jc(_$hash, stats.hashCode);
@@ -109,6 +114,7 @@ class _$User extends User {
           ..add('firstSeenAt', firstSeenAt)
           ..add('lastSeenAt', lastSeenAt)
           ..add('metadata', metadata)
+          ..add('stripeCustomerId', stripeCustomerId)
           ..add('claimCodeEligibility', claimCodeEligibility)
           ..add('referredBy', referredBy)
           ..add('stats', stats)
@@ -154,6 +160,11 @@ class UserBuilder implements Builder<User, UserBuilder> {
   JsonObject? get metadata => _$this._metadata;
   set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
+  String? _stripeCustomerId;
+  String? get stripeCustomerId => _$this._stripeCustomerId;
+  set stripeCustomerId(String? stripeCustomerId) =>
+      _$this._stripeCustomerId = stripeCustomerId;
+
   UserClaimCodeEligibilityBuilder? _claimCodeEligibility;
   UserClaimCodeEligibilityBuilder get claimCodeEligibility =>
       _$this._claimCodeEligibility ??= UserClaimCodeEligibilityBuilder();
@@ -196,6 +207,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _firstSeenAt = $v.firstSeenAt;
       _lastSeenAt = $v.lastSeenAt;
       _metadata = $v.metadata;
+      _stripeCustomerId = $v.stripeCustomerId;
       _claimCodeEligibility = $v.claimCodeEligibility.toBuilder();
       _referredBy = $v.referredBy?.toBuilder();
       _stats = $v.stats.toBuilder();
@@ -233,6 +245,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
             firstSeenAt: firstSeenAt,
             lastSeenAt: lastSeenAt,
             metadata: metadata,
+            stripeCustomerId: stripeCustomerId,
             claimCodeEligibility: claimCodeEligibility.build(),
             referredBy: _referredBy?.build(),
             stats: stats.build(),

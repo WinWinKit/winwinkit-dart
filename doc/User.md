@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **firstSeenAt** | [**DateTime**](DateTime.md) | The date when the user was first seen at. | 
 **lastSeenAt** | [**DateTime**](DateTime.md) | The date when the user was last seen at. Deprecated, always returns null and will be removed in the future. | 
 **metadata** | [**JsonObject**](.md) | The metadata of the user. | 
+**stripeCustomerId** | **String** | The unique identifier of the user in Stripe. | 
 **claimCodeEligibility** | [**UserClaimCodeEligibility**](UserClaimCodeEligibility.md) | The claim code eligibility of the user. | 
 **referredBy** | [**UserReferredBy**](UserReferredBy.md) | The referred by object of the user. | 
 **stats** | [**UserStats**](UserStats.md) | The stats of the user. | 

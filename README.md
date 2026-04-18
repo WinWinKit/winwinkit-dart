@@ -19,11 +19,13 @@ All URIs are relative to *https://api.winwinkit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*AppStoreApi*](doc/AppStoreApi.md) | [**getOfferCode**](doc/AppStoreApi.md#getoffercode) | **GET** /app-store/offer-codes/{offer_code_id} | Get Offer Code
 [*ClaimActionsApi*](doc/ClaimActionsApi.md) | [**claimCode**](doc/ClaimActionsApi.md#claimcode) | **POST** /users/{app_user_id}/claim-code | Claim Code
+[*RewardsActionsApi*](doc/RewardsActionsApi.md) | [**grantReward**](doc/RewardsActionsApi.md#grantreward) | **POST** /users/{app_user_id}/rewards/grant | Grant a Reward
 [*RewardsActionsApi*](doc/RewardsActionsApi.md) | [**withdrawCredits**](doc/RewardsActionsApi.md#withdrawcredits) | **POST** /users/{app_user_id}/rewards/withdraw-credits | Withdraw Credits
 [*UsersApi*](doc/UsersApi.md) | [**createOrUpdateUser**](doc/UsersApi.md#createorupdateuser) | **POST** /users | Create or Update User
 [*UsersApi*](doc/UsersApi.md) | [**getUser**](doc/UsersApi.md#getuser) | **GET** /users/{app_user_id} | Get User
+[*UsersApi*](doc/UsersApi.md) | [**registerAppStoreTransaction**](doc/UsersApi.md#registerappstoretransaction) | **POST** /users/{app_user_id}/transactions/app-store | Register App Store Transaction
+[*UsersApi*](doc/UsersApi.md) | [**registerGooglePlayTransaction**](doc/UsersApi.md#registergoogleplaytransaction) | **POST** /users/{app_user_id}/transactions/google-play | Register Google Play Transaction
 
 
 ## Documentation For Models
@@ -119,9 +121,14 @@ Class | Method | HTTP request | Description
  - [UserCreditRewardExpired](doc/UserCreditRewardExpired.md)
  - [UserGooglePlayPromoCodeRewardActive](doc/UserGooglePlayPromoCodeRewardActive.md)
  - [UserGooglePlayPromoCodeRewardExpired](doc/UserGooglePlayPromoCodeRewardExpired.md)
+ - [UserGrantRewardRequest](doc/UserGrantRewardRequest.md)
+ - [UserGrantRewardResponse](doc/UserGrantRewardResponse.md)
+ - [UserGrantRewardResponseData](doc/UserGrantRewardResponseData.md)
  - [UserOfferCodeRewardActive](doc/UserOfferCodeRewardActive.md)
  - [UserOfferCodeRewardExpired](doc/UserOfferCodeRewardExpired.md)
  - [UserReferredBy](doc/UserReferredBy.md)
+ - [UserRegisterAppStoreTransactionRequest](doc/UserRegisterAppStoreTransactionRequest.md)
+ - [UserRegisterGooglePlayTransactionRequest](doc/UserRegisterGooglePlayTransactionRequest.md)
  - [UserResponse](doc/UserResponse.md)
  - [UserResponseData](doc/UserResponseData.md)
  - [UserRevenueCatEntitlementRewardActive](doc/UserRevenueCatEntitlementRewardActive.md)

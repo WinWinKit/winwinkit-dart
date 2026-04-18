@@ -6,65 +6,55 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user_withdraw_credits_request.g.dart';
+part 'user_register_app_store_transaction_request.g.dart';
 
-/// UserWithdrawCreditsRequest
+/// UserRegisterAppStoreTransactionRequest
 ///
 /// Properties:
-/// * [key] - The key of the credit reward to withdraw
-/// * [amount] - The amount of credits to withdraw
-/// * [operationId] - An optional operation id that ensures the same operation won't be performed again
+/// * [originalTransactionId] - Apple's originalTransactionId from StoreKit.
+/// * [appAccountToken] - StoreKit 2 appAccountToken UUID.
 @BuiltValue()
-abstract class UserWithdrawCreditsRequest implements Built<UserWithdrawCreditsRequest, UserWithdrawCreditsRequestBuilder> {
-  /// The key of the credit reward to withdraw
-  @BuiltValueField(wireName: r'key')
-  String get key;
+abstract class UserRegisterAppStoreTransactionRequest implements Built<UserRegisterAppStoreTransactionRequest, UserRegisterAppStoreTransactionRequestBuilder> {
+  /// Apple's originalTransactionId from StoreKit.
+  @BuiltValueField(wireName: r'original_transaction_id')
+  String get originalTransactionId;
 
-  /// The amount of credits to withdraw
-  @BuiltValueField(wireName: r'amount')
-  int get amount;
+  /// StoreKit 2 appAccountToken UUID.
+  @BuiltValueField(wireName: r'app_account_token')
+  String? get appAccountToken;
 
-  /// An optional operation id that ensures the same operation won't be performed again
-  @BuiltValueField(wireName: r'operation_id')
-  String? get operationId;
+  UserRegisterAppStoreTransactionRequest._();
 
-  UserWithdrawCreditsRequest._();
-
-  factory UserWithdrawCreditsRequest([void updates(UserWithdrawCreditsRequestBuilder b)]) = _$UserWithdrawCreditsRequest;
+  factory UserRegisterAppStoreTransactionRequest([void updates(UserRegisterAppStoreTransactionRequestBuilder b)]) = _$UserRegisterAppStoreTransactionRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserWithdrawCreditsRequestBuilder b) => b;
+  static void _defaults(UserRegisterAppStoreTransactionRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserWithdrawCreditsRequest> get serializer => _$UserWithdrawCreditsRequestSerializer();
+  static Serializer<UserRegisterAppStoreTransactionRequest> get serializer => _$UserRegisterAppStoreTransactionRequestSerializer();
 }
 
-class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<UserWithdrawCreditsRequest> {
+class _$UserRegisterAppStoreTransactionRequestSerializer implements PrimitiveSerializer<UserRegisterAppStoreTransactionRequest> {
   @override
-  final Iterable<Type> types = const [UserWithdrawCreditsRequest, _$UserWithdrawCreditsRequest];
+  final Iterable<Type> types = const [UserRegisterAppStoreTransactionRequest, _$UserRegisterAppStoreTransactionRequest];
 
   @override
-  final String wireName = r'UserWithdrawCreditsRequest';
+  final String wireName = r'UserRegisterAppStoreTransactionRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    UserWithdrawCreditsRequest object, {
+    UserRegisterAppStoreTransactionRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'key';
+    yield r'original_transaction_id';
     yield serializers.serialize(
-      object.key,
+      object.originalTransactionId,
       specifiedType: const FullType(String),
     );
-    yield r'amount';
-    yield serializers.serialize(
-      object.amount,
-      specifiedType: const FullType(int),
-    );
-    if (object.operationId != null) {
-      yield r'operation_id';
+    if (object.appAccountToken != null) {
+      yield r'app_account_token';
       yield serializers.serialize(
-        object.operationId,
+        object.appAccountToken,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -73,7 +63,7 @@ class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<User
   @override
   Object serialize(
     Serializers serializers,
-    UserWithdrawCreditsRequest object, {
+    UserRegisterAppStoreTransactionRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -84,34 +74,27 @@ class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<User
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserWithdrawCreditsRequestBuilder result,
+    required UserRegisterAppStoreTransactionRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'key':
+        case r'original_transaction_id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.key = valueDes;
+          result.originalTransactionId = valueDes;
           break;
-        case r'amount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.amount = valueDes;
-          break;
-        case r'operation_id':
+        case r'app_account_token':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType.nullable(String),
           ) as String?;
           if (valueDes == null) continue;
-          result.operationId = valueDes;
+          result.appAccountToken = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -122,12 +105,12 @@ class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<User
   }
 
   @override
-  UserWithdrawCreditsRequest deserialize(
+  UserRegisterAppStoreTransactionRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserWithdrawCreditsRequestBuilder();
+    final result = UserRegisterAppStoreTransactionRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -1,7 +1,3 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-
 import 'package:dio/dio.dart';
 import 'package:built_value/serializer.dart';
 import 'package:WinWinKit/./serializers.dart';
@@ -9,7 +5,6 @@ import 'package:WinWinKit/./auth/api_key_auth.dart';
 import 'package:WinWinKit/./auth/basic_auth.dart';
 import 'package:WinWinKit/./auth/bearer_auth.dart';
 import 'package:WinWinKit/./auth/oauth.dart';
-import 'package:WinWinKit/./api/app_store_api.dart';
 import 'package:WinWinKit/./api/claim_actions_api.dart';
 import 'package:WinWinKit/./api/rewards_actions_api.dart';
 import 'package:WinWinKit/./api/users_api.dart';
@@ -66,12 +61,6 @@ class WinWinKit {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor) as ApiKeyAuthInterceptor).apiKeys[name] = apiKey;
     }
-  }
-
-  /// Get AppStoreApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  AppStoreApi getAppStoreApi() {
-    return AppStoreApi(dio, serializers);
   }
 
   /// Get ClaimActionsApi instance, base route and serializer can be overridden by a given but be careful,

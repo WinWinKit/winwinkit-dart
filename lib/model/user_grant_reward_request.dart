@@ -6,60 +6,50 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user_withdraw_credits_request.g.dart';
+part 'user_grant_reward_request.g.dart';
 
-/// UserWithdrawCreditsRequest
+/// UserGrantRewardRequest
 ///
 /// Properties:
-/// * [key] - The key of the credit reward to withdraw
-/// * [amount] - The amount of credits to withdraw
+/// * [key] - The key of the reward to grant
 /// * [operationId] - An optional operation id that ensures the same operation won't be performed again
 @BuiltValue()
-abstract class UserWithdrawCreditsRequest implements Built<UserWithdrawCreditsRequest, UserWithdrawCreditsRequestBuilder> {
-  /// The key of the credit reward to withdraw
+abstract class UserGrantRewardRequest implements Built<UserGrantRewardRequest, UserGrantRewardRequestBuilder> {
+  /// The key of the reward to grant
   @BuiltValueField(wireName: r'key')
   String get key;
-
-  /// The amount of credits to withdraw
-  @BuiltValueField(wireName: r'amount')
-  int get amount;
 
   /// An optional operation id that ensures the same operation won't be performed again
   @BuiltValueField(wireName: r'operation_id')
   String? get operationId;
 
-  UserWithdrawCreditsRequest._();
+  UserGrantRewardRequest._();
 
-  factory UserWithdrawCreditsRequest([void updates(UserWithdrawCreditsRequestBuilder b)]) = _$UserWithdrawCreditsRequest;
+  factory UserGrantRewardRequest([void updates(UserGrantRewardRequestBuilder b)]) = _$UserGrantRewardRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserWithdrawCreditsRequestBuilder b) => b;
+  static void _defaults(UserGrantRewardRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserWithdrawCreditsRequest> get serializer => _$UserWithdrawCreditsRequestSerializer();
+  static Serializer<UserGrantRewardRequest> get serializer => _$UserGrantRewardRequestSerializer();
 }
 
-class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<UserWithdrawCreditsRequest> {
+class _$UserGrantRewardRequestSerializer implements PrimitiveSerializer<UserGrantRewardRequest> {
   @override
-  final Iterable<Type> types = const [UserWithdrawCreditsRequest, _$UserWithdrawCreditsRequest];
+  final Iterable<Type> types = const [UserGrantRewardRequest, _$UserGrantRewardRequest];
 
   @override
-  final String wireName = r'UserWithdrawCreditsRequest';
+  final String wireName = r'UserGrantRewardRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    UserWithdrawCreditsRequest object, {
+    UserGrantRewardRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'key';
     yield serializers.serialize(
       object.key,
       specifiedType: const FullType(String),
-    );
-    yield r'amount';
-    yield serializers.serialize(
-      object.amount,
-      specifiedType: const FullType(int),
     );
     if (object.operationId != null) {
       yield r'operation_id';
@@ -73,7 +63,7 @@ class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<User
   @override
   Object serialize(
     Serializers serializers,
-    UserWithdrawCreditsRequest object, {
+    UserGrantRewardRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -84,7 +74,7 @@ class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<User
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserWithdrawCreditsRequestBuilder result,
+    required UserGrantRewardRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -97,13 +87,6 @@ class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<User
             specifiedType: const FullType(String),
           ) as String;
           result.key = valueDes;
-          break;
-        case r'amount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.amount = valueDes;
           break;
         case r'operation_id':
           final valueDes = serializers.deserialize(
@@ -122,12 +105,12 @@ class _$UserWithdrawCreditsRequestSerializer implements PrimitiveSerializer<User
   }
 
   @override
-  UserWithdrawCreditsRequest deserialize(
+  UserGrantRewardRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserWithdrawCreditsRequestBuilder();
+    final result = UserGrantRewardRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
