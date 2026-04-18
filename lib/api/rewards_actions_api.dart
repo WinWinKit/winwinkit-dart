@@ -10,6 +10,8 @@ import 'package:dio/dio.dart';
 
 import 'package:WinWinKit/./api_util.dart';
 import 'package:WinWinKit/./model/errors_response.dart';
+import 'package:WinWinKit/./model/user_grant_reward_request.dart';
+import 'package:WinWinKit/./model/user_grant_reward_response.dart';
 import 'package:WinWinKit/./model/user_withdraw_credits_request.dart';
 import 'package:WinWinKit/./model/user_withdraw_credits_response.dart';
 
@@ -20,6 +22,106 @@ class RewardsActionsApi {
   final Serializers _serializers;
 
   const RewardsActionsApi(this._dio, this._serializers);
+
+  /// Grant a Reward
+  /// Grants a reward for a user. Note 1: currently only granting of credit rewards is supported. Note 2: this endpoint is only accessible with a secret API key.
+  ///
+  /// Parameters:
+  /// * [appUserId] - The app user id of the user to grant a reward to.
+  /// * [xApiKey] - The secret API key.
+  /// * [userGrantRewardRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [UserGrantRewardResponse] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<UserGrantRewardResponse>> grantReward({ 
+    required String appUserId,
+    required String xApiKey,
+    required UserGrantRewardRequest userGrantRewardRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/users/{app_user_id}/rewards/grant'.replaceAll('{' r'app_user_id' '}', encodeQueryParameter(_serializers, appUserId, const FullType(String)).toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        r'x-api-key': xApiKey,
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(UserGrantRewardRequest);
+      _bodyData = _serializers.serialize(userGrantRewardRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    UserGrantRewardResponse? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(UserGrantRewardResponse),
+      ) as UserGrantRewardResponse;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<UserGrantRewardResponse>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
 
   /// Withdraw Credits
   /// Withdraws credits from a user.

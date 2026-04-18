@@ -21,3 +21,9 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# Hand-curated public surface — keep AppStoreApi / /app-store/offer-codes/ out of the public interface.
+lib/api.dart
+lib/WinWinKit.dart
+README.md
+doc/AppStoreApi.md

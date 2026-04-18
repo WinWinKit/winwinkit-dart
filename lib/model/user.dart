@@ -25,6 +25,7 @@ part 'user.g.dart';
 /// * [firstSeenAt] - The date when the user was first seen at.
 /// * [lastSeenAt] - The date when the user was last seen at. Deprecated, always returns null and will be removed in the future.
 /// * [metadata] - The metadata of the user.
+/// * [stripeCustomerId] - The unique identifier of the user in Stripe.
 /// * [claimCodeEligibility] - The claim code eligibility of the user.
 /// * [referredBy] - The referred by object of the user.
 /// * [stats] - The stats of the user.
@@ -64,6 +65,10 @@ abstract class User implements Built<User, UserBuilder> {
   /// The metadata of the user.
   @BuiltValueField(wireName: r'metadata')
   JsonObject? get metadata;
+
+  /// The unique identifier of the user in Stripe.
+  @BuiltValueField(wireName: r'stripe_customer_id')
+  String? get stripeCustomerId;
 
   /// The claim code eligibility of the user.
   @BuiltValueField(wireName: r'claim_code_eligibility')
@@ -147,6 +152,11 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
     yield object.metadata == null ? null : serializers.serialize(
       object.metadata,
       specifiedType: const FullType.nullable(JsonObject),
+    );
+    yield r'stripe_customer_id';
+    yield object.stripeCustomerId == null ? null : serializers.serialize(
+      object.stripeCustomerId,
+      specifiedType: const FullType.nullable(String),
     );
     yield r'claim_code_eligibility';
     yield serializers.serialize(
@@ -258,6 +268,14 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
           ) as JsonObject?;
           if (valueDes == null) continue;
           result.metadata = valueDes;
+          break;
+        case r'stripe_customer_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.stripeCustomerId = valueDes;
           break;
         case r'claim_code_eligibility':
           final valueDes = serializers.deserialize(

@@ -1,7 +1,3 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-
 export 'package:WinWinKit/./api.dart';
 export 'package:WinWinKit/./auth/api_key_auth.dart';
 export 'package:WinWinKit/./auth/basic_auth.dart';
@@ -10,7 +6,6 @@ export 'package:WinWinKit/./auth/oauth.dart';
 export 'package:WinWinKit/./serializers.dart';
 export 'package:WinWinKit/./model/date.dart';
 
-export 'package:WinWinKit/./api/app_store_api.dart';
 export 'package:WinWinKit/./api/claim_actions_api.dart';
 export 'package:WinWinKit/./api/rewards_actions_api.dart';
 export 'package:WinWinKit/./api/users_api.dart';
@@ -106,9 +101,14 @@ export 'package:WinWinKit/./model/user_credit_reward_active.dart';
 export 'package:WinWinKit/./model/user_credit_reward_expired.dart';
 export 'package:WinWinKit/./model/user_google_play_promo_code_reward_active.dart';
 export 'package:WinWinKit/./model/user_google_play_promo_code_reward_expired.dart';
+export 'package:WinWinKit/./model/user_grant_reward_request.dart';
+export 'package:WinWinKit/./model/user_grant_reward_response.dart';
+export 'package:WinWinKit/./model/user_grant_reward_response_data.dart';
 export 'package:WinWinKit/./model/user_offer_code_reward_active.dart';
 export 'package:WinWinKit/./model/user_offer_code_reward_expired.dart';
 export 'package:WinWinKit/./model/user_referred_by.dart';
+export 'package:WinWinKit/./model/user_register_app_store_transaction_request.dart';
+export 'package:WinWinKit/./model/user_register_google_play_transaction_request.dart';
 export 'package:WinWinKit/./model/user_response.dart';
 export 'package:WinWinKit/./model/user_response_data.dart';
 export 'package:WinWinKit/./model/user_revenue_cat_entitlement_reward_active.dart';

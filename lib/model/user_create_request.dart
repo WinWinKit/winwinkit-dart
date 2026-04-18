@@ -18,6 +18,7 @@ part 'user_create_request.g.dart';
 /// * [firstSeenAt] - The date when the user was first seen at.
 /// * [lastSeenAt] - The date when the user was last seen at. Deprecated and will be removed in the future.
 /// * [metadata] - The metadata of the user.
+/// * [stripeCustomerId] - The unique identifier of the user in Stripe.
 @BuiltValue()
 abstract class UserCreateRequest implements Built<UserCreateRequest, UserCreateRequestBuilder> {
   /// The unique identifier of the referral user in your app.
@@ -44,6 +45,10 @@ abstract class UserCreateRequest implements Built<UserCreateRequest, UserCreateR
   /// The metadata of the user.
   @BuiltValueField(wireName: r'metadata')
   JsonObject? get metadata;
+
+  /// The unique identifier of the user in Stripe.
+  @BuiltValueField(wireName: r'stripe_customer_id')
+  String? get stripeCustomerId;
 
   UserCreateRequest._();
 
@@ -106,6 +111,13 @@ class _$UserCreateRequestSerializer implements PrimitiveSerializer<UserCreateReq
       yield serializers.serialize(
         object.metadata,
         specifiedType: const FullType.nullable(JsonObject),
+      );
+    }
+    if (object.stripeCustomerId != null) {
+      yield r'stripe_customer_id';
+      yield serializers.serialize(
+        object.stripeCustomerId,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -177,6 +189,14 @@ class _$UserCreateRequestSerializer implements PrimitiveSerializer<UserCreateReq
           ) as JsonObject?;
           if (valueDes == null) continue;
           result.metadata = valueDes;
+          break;
+        case r'stripe_customer_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.stripeCustomerId = valueDes;
           break;
         default:
           unhandled.add(key);

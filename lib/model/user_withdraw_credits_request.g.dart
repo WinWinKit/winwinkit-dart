@@ -11,12 +11,15 @@ class _$UserWithdrawCreditsRequest extends UserWithdrawCreditsRequest {
   final String key;
   @override
   final int amount;
+  @override
+  final String? operationId;
 
   factory _$UserWithdrawCreditsRequest(
           [void Function(UserWithdrawCreditsRequestBuilder)? updates]) =>
       (UserWithdrawCreditsRequestBuilder()..update(updates))._build();
 
-  _$UserWithdrawCreditsRequest._({required this.key, required this.amount})
+  _$UserWithdrawCreditsRequest._(
+      {required this.key, required this.amount, this.operationId})
       : super._();
   @override
   UserWithdrawCreditsRequest rebuild(
@@ -32,7 +35,8 @@ class _$UserWithdrawCreditsRequest extends UserWithdrawCreditsRequest {
     if (identical(other, this)) return true;
     return other is UserWithdrawCreditsRequest &&
         key == other.key &&
-        amount == other.amount;
+        amount == other.amount &&
+        operationId == other.operationId;
   }
 
   @override
@@ -40,6 +44,7 @@ class _$UserWithdrawCreditsRequest extends UserWithdrawCreditsRequest {
     var _$hash = 0;
     _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, operationId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -48,7 +53,8 @@ class _$UserWithdrawCreditsRequest extends UserWithdrawCreditsRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'UserWithdrawCreditsRequest')
           ..add('key', key)
-          ..add('amount', amount))
+          ..add('amount', amount)
+          ..add('operationId', operationId))
         .toString();
   }
 }
@@ -66,6 +72,10 @@ class UserWithdrawCreditsRequestBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  String? _operationId;
+  String? get operationId => _$this._operationId;
+  set operationId(String? operationId) => _$this._operationId = operationId;
+
   UserWithdrawCreditsRequestBuilder() {
     UserWithdrawCreditsRequest._defaults(this);
   }
@@ -75,6 +85,7 @@ class UserWithdrawCreditsRequestBuilder
     if ($v != null) {
       _key = $v.key;
       _amount = $v.amount;
+      _operationId = $v.operationId;
       _$v = null;
     }
     return this;
@@ -100,6 +111,7 @@ class UserWithdrawCreditsRequestBuilder
               key, r'UserWithdrawCreditsRequest', 'key'),
           amount: BuiltValueNullFieldError.checkNotNull(
               amount, r'UserWithdrawCreditsRequest', 'amount'),
+          operationId: operationId,
         );
     replace(_$result);
     return _$result;

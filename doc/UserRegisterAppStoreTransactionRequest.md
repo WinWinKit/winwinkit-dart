@@ -1,4 +1,4 @@
-# WinWinKit.model.UserWithdrawCreditsRequest
+# WinWinKit.model.UserRegisterAppStoreTransactionRequest
 
 ## Load the model package
 ```dart
@@ -8,9 +8,8 @@ import 'package:WinWinKit/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **String** | The key of the credit reward to withdraw | 
-**amount** | **int** | The amount of credits to withdraw | 
-**operationId** | **String** | An optional operation id that ensures the same operation won't be performed again | [optional] 
+**originalTransactionId** | **String** | Apple's originalTransactionId from StoreKit. | 
+**appAccountToken** | **String** | StoreKit 2 appAccountToken UUID. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

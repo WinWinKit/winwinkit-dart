@@ -1,4 +1,4 @@
-# WinWinKit.model.UserWithdrawCreditsRequest
+# WinWinKit.model.UserGrantRewardResponseData
 
 ## Load the model package
 ```dart
@@ -8,9 +8,8 @@ import 'package:WinWinKit/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **String** | The key of the credit reward to withdraw | 
-**amount** | **int** | The amount of credits to withdraw | 
-**operationId** | **String** | An optional operation id that ensures the same operation won't be performed again | [optional] 
+**rewardsGranted** | [**UserRewardsGranted**](UserRewardsGranted.md) | The rewards granted to the user. | 
+**user** | [**User**](User.md) | The updated user. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

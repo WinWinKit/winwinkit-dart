@@ -19,6 +19,8 @@ class _$UserCreateRequest extends UserCreateRequest {
   final DateTime? lastSeenAt;
   @override
   final JsonObject? metadata;
+  @override
+  final String? stripeCustomerId;
 
   factory _$UserCreateRequest(
           [void Function(UserCreateRequestBuilder)? updates]) =>
@@ -30,7 +32,8 @@ class _$UserCreateRequest extends UserCreateRequest {
       this.isPremium,
       this.firstSeenAt,
       this.lastSeenAt,
-      this.metadata})
+      this.metadata,
+      this.stripeCustomerId})
       : super._();
   @override
   UserCreateRequest rebuild(void Function(UserCreateRequestBuilder) updates) =>
@@ -49,7 +52,8 @@ class _$UserCreateRequest extends UserCreateRequest {
         isPremium == other.isPremium &&
         firstSeenAt == other.firstSeenAt &&
         lastSeenAt == other.lastSeenAt &&
-        metadata == other.metadata;
+        metadata == other.metadata &&
+        stripeCustomerId == other.stripeCustomerId;
   }
 
   @override
@@ -61,6 +65,7 @@ class _$UserCreateRequest extends UserCreateRequest {
     _$hash = $jc(_$hash, firstSeenAt.hashCode);
     _$hash = $jc(_$hash, lastSeenAt.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
+    _$hash = $jc(_$hash, stripeCustomerId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -73,7 +78,8 @@ class _$UserCreateRequest extends UserCreateRequest {
           ..add('isPremium', isPremium)
           ..add('firstSeenAt', firstSeenAt)
           ..add('lastSeenAt', lastSeenAt)
-          ..add('metadata', metadata))
+          ..add('metadata', metadata)
+          ..add('stripeCustomerId', stripeCustomerId))
         .toString();
   }
 }
@@ -106,6 +112,11 @@ class UserCreateRequestBuilder
   JsonObject? get metadata => _$this._metadata;
   set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
+  String? _stripeCustomerId;
+  String? get stripeCustomerId => _$this._stripeCustomerId;
+  set stripeCustomerId(String? stripeCustomerId) =>
+      _$this._stripeCustomerId = stripeCustomerId;
+
   UserCreateRequestBuilder() {
     UserCreateRequest._defaults(this);
   }
@@ -119,6 +130,7 @@ class UserCreateRequestBuilder
       _firstSeenAt = $v.firstSeenAt;
       _lastSeenAt = $v.lastSeenAt;
       _metadata = $v.metadata;
+      _stripeCustomerId = $v.stripeCustomerId;
       _$v = null;
     }
     return this;
@@ -147,6 +159,7 @@ class UserCreateRequestBuilder
           firstSeenAt: firstSeenAt,
           lastSeenAt: lastSeenAt,
           metadata: metadata,
+          stripeCustomerId: stripeCustomerId,
         );
     replace(_$result);
     return _$result;

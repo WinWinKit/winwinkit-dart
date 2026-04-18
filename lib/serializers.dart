@@ -105,9 +105,14 @@ import 'package:WinWinKit/./model/user_credit_reward_active.dart';
 import 'package:WinWinKit/./model/user_credit_reward_expired.dart';
 import 'package:WinWinKit/./model/user_google_play_promo_code_reward_active.dart';
 import 'package:WinWinKit/./model/user_google_play_promo_code_reward_expired.dart';
+import 'package:WinWinKit/./model/user_grant_reward_request.dart';
+import 'package:WinWinKit/./model/user_grant_reward_response.dart';
+import 'package:WinWinKit/./model/user_grant_reward_response_data.dart';
 import 'package:WinWinKit/./model/user_offer_code_reward_active.dart';
 import 'package:WinWinKit/./model/user_offer_code_reward_expired.dart';
 import 'package:WinWinKit/./model/user_referred_by.dart';
+import 'package:WinWinKit/./model/user_register_app_store_transaction_request.dart';
+import 'package:WinWinKit/./model/user_register_google_play_transaction_request.dart';
 import 'package:WinWinKit/./model/user_response.dart';
 import 'package:WinWinKit/./model/user_response_data.dart';
 import 'package:WinWinKit/./model/user_revenue_cat_entitlement_reward_active.dart';
@@ -218,9 +223,14 @@ part 'serializers.g.dart';
   UserCreditRewardExpired,
   UserGooglePlayPromoCodeRewardActive,
   UserGooglePlayPromoCodeRewardExpired,
+  UserGrantRewardRequest,
+  UserGrantRewardResponse,
+  UserGrantRewardResponseData,
   UserOfferCodeRewardActive,
   UserOfferCodeRewardExpired,
   UserReferredBy,
+  UserRegisterAppStoreTransactionRequest,
+  UserRegisterGooglePlayTransactionRequest,
   UserResponse,
   UserResponseData,
   UserRevenueCatEntitlementRewardActive,
