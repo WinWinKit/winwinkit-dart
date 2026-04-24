@@ -10,17 +10,12 @@ export 'package:winwinkit/./api/claim_actions_api.dart';
 export 'package:winwinkit/./api/rewards_actions_api.dart';
 export 'package:winwinkit/./api/users_api.dart';
 
-export 'package:winwinkit/./model/app_store_offer_code.dart';
-export 'package:winwinkit/./model/app_store_price.dart';
-export 'package:winwinkit/./model/app_store_subscription.dart';
 export 'package:winwinkit/./model/basic_reward.dart';
 export 'package:winwinkit/./model/credit_reward.dart';
 export 'package:winwinkit/./model/error_object.dart';
 export 'package:winwinkit/./model/errors_response.dart';
 export 'package:winwinkit/./model/google_play_promo_code_reward.dart';
 export 'package:winwinkit/./model/google_play_promo_code_value.dart';
-export 'package:winwinkit/./model/offer_code_response.dart';
-export 'package:winwinkit/./model/offer_code_response_data.dart';
 export 'package:winwinkit/./model/offer_code_reward.dart';
 export 'package:winwinkit/./model/offer_code_value.dart';
 export 'package:winwinkit/./model/referral_program.dart';

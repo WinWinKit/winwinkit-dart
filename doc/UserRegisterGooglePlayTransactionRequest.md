@@ -1,4 +1,4 @@
-# WinWinKit.model.UserRegisterGooglePlayTransactionRequest
+# winwinkit.model.UserRegisterGooglePlayTransactionRequest
 
 ## Load the model package
 ```dart

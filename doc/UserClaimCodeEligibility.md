@@ -1,4 +1,4 @@
-# WinWinKit.model.UserClaimCodeEligibility
+# winwinkit.model.UserClaimCodeEligibility
 
 ## Load the model package
 ```dart

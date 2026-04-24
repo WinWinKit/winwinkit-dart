@@ -3,13 +3,13 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:winwinkit/./model/user_offer_code_reward_active.dart';
 import 'package:winwinkit/./model/user_revenue_cat_offering_reward_active.dart';
-import 'package:winwinkit/./model/user_credit_reward_active.dart';
-import 'package:winwinkit/./model/user_google_play_promo_code_reward_active.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:winwinkit/./model/user_basic_reward_active.dart';
+import 'package:winwinkit/./model/user_google_play_promo_code_reward_active.dart';
+import 'package:winwinkit/./model/user_offer_code_reward_active.dart';
 import 'package:winwinkit/./model/user_revenue_cat_entitlement_reward_active.dart';
+import 'package:winwinkit/./model/user_basic_reward_active.dart';
+import 'package:winwinkit/./model/user_credit_reward_active.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

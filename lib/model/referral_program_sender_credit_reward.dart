@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:winwinkit/./model/referral_program_sender_credit_reward_deactivation.dart';
 import 'package:winwinkit/./model/credit_reward.dart';
+import 'package:winwinkit/./model/referral_program_sender_credit_reward_deactivation.dart';
 import 'package:winwinkit/./model/referral_program_sender_credit_reward_activation.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';

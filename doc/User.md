@@ -1,4 +1,4 @@
-# WinWinKit.model.User
+# winwinkit.model.User
 
 ## Load the model package
 ```dart

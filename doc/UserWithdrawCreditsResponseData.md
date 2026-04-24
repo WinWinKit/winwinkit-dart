@@ -1,4 +1,4 @@
-# WinWinKit.model.UserWithdrawCreditsResponseData
+# winwinkit.model.UserWithdrawCreditsResponseData
 
 ## Load the model package
 ```dart

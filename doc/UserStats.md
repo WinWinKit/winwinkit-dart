@@ -1,4 +1,4 @@
-# WinWinKit.model.UserStats
+# winwinkit.model.UserStats
 
 ## Load the model package
 ```dart

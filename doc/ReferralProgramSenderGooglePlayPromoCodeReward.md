@@ -1,4 +1,4 @@
-# WinWinKit.model.ReferralProgramSenderGooglePlayPromoCodeReward
+# winwinkit.model.ReferralProgramSenderGooglePlayPromoCodeReward
 
 ## Load the model package
 ```dart

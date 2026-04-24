@@ -1,4 +1,4 @@
-# WinWinKit.model.OfferCodeValue
+# winwinkit.model.OfferCodeValue
 
 ## Load the model package
 ```dart

@@ -14,17 +14,12 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:winwinkit/./date_serializer.dart';
 import 'package:winwinkit/./model/date.dart';
 
-import 'package:winwinkit/./model/app_store_offer_code.dart';
-import 'package:winwinkit/./model/app_store_price.dart';
-import 'package:winwinkit/./model/app_store_subscription.dart';
 import 'package:winwinkit/./model/basic_reward.dart';
 import 'package:winwinkit/./model/credit_reward.dart';
 import 'package:winwinkit/./model/error_object.dart';
 import 'package:winwinkit/./model/errors_response.dart';
 import 'package:winwinkit/./model/google_play_promo_code_reward.dart';
 import 'package:winwinkit/./model/google_play_promo_code_value.dart';
-import 'package:winwinkit/./model/offer_code_response.dart';
-import 'package:winwinkit/./model/offer_code_response_data.dart';
 import 'package:winwinkit/./model/offer_code_reward.dart';
 import 'package:winwinkit/./model/offer_code_value.dart';
 import 'package:winwinkit/./model/referral_program.dart';
@@ -132,17 +127,12 @@ import 'package:winwinkit/./model/user_withdraw_credits_result.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
-  AppStoreOfferCode,
-  AppStorePrice,
-  AppStoreSubscription,
   BasicReward,
   CreditReward,
   ErrorObject,
   ErrorsResponse,
   GooglePlayPromoCodeReward,
   GooglePlayPromoCodeValue,
-  OfferCodeResponse,
-  OfferCodeResponseData,
   OfferCodeReward,
   OfferCodeValue,
   ReferralProgram,

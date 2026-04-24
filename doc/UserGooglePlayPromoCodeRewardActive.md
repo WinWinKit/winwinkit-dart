@@ -1,4 +1,4 @@
-# WinWinKit.model.UserGooglePlayPromoCodeRewardActive
+# winwinkit.model.UserGooglePlayPromoCodeRewardActive
 
 ## Load the model package
 ```dart

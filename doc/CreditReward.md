@@ -1,4 +1,4 @@
-# WinWinKit.model.CreditReward
+# winwinkit.model.CreditReward
 
 ## Load the model package
 ```dart

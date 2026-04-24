@@ -1,4 +1,4 @@
-# WinWinKit.model.UserCreateRequest
+# winwinkit.model.UserCreateRequest
 
 ## Load the model package
 ```dart

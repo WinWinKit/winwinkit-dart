@@ -1,4 +1,4 @@
-# WinWinKit.model.ErrorObject
+# winwinkit.model.ErrorObject
 
 ## Load the model package
 ```dart

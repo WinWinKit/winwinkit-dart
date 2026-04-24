@@ -1,4 +1,4 @@
-# WinWinKit.api.UsersApi
+# winwinkit.api.UsersApi
 
 ## Load the API package
 ```dart
@@ -26,7 +26,7 @@ Create or update a user if already exists.
 ```dart
 import 'package:winwinkit/api.dart';
 
-final api = WinWinKit().getUsersApi();
+final api = Winwinkit().getUsersApi();
 final String xApiKey = xApiKey_example; // String | The API key to authenticate with.
 final UserCreateRequest userCreateRequest = ; // UserCreateRequest | 
 
@@ -71,7 +71,7 @@ Retrieves a user by their app user id.
 ```dart
 import 'package:winwinkit/api.dart';
 
-final api = WinWinKit().getUsersApi();
+final api = Winwinkit().getUsersApi();
 final String appUserId = appUserId_example; // String | The app user id of the user to retrieve.
 final String xApiKey = xApiKey_example; // String | The API key to authenticate with.
 
@@ -116,7 +116,7 @@ Registers the mapping between a user and their Apple originalTransactionId.
 ```dart
 import 'package:winwinkit/api.dart';
 
-final api = WinWinKit().getUsersApi();
+final api = Winwinkit().getUsersApi();
 final String appUserId = appUserId_example; // String | The app user id of the user.
 final String xApiKey = xApiKey_example; // String | The API key to authenticate with.
 final UserRegisterAppStoreTransactionRequest userRegisterAppStoreTransactionRequest = ; // UserRegisterAppStoreTransactionRequest | 
@@ -162,7 +162,7 @@ Registers the mapping between a user and their Google Play purchaseToken.
 ```dart
 import 'package:winwinkit/api.dart';
 
-final api = WinWinKit().getUsersApi();
+final api = Winwinkit().getUsersApi();
 final String appUserId = appUserId_example; // String | The app user id of the user.
 final String xApiKey = xApiKey_example; // String | The API key to authenticate with.
 final UserRegisterGooglePlayTransactionRequest userRegisterGooglePlayTransactionRequest = ; // UserRegisterGooglePlayTransactionRequest | 

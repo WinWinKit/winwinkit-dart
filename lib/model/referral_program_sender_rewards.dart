@@ -3,13 +3,13 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:winwinkit/./model/referral_program_sender_basic_reward.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:winwinkit/./model/referral_program_sender_revenue_cat_entitlement_reward.dart';
+import 'package:winwinkit/./model/referral_program_sender_basic_reward.dart';
 import 'package:winwinkit/./model/referral_program_sender_google_play_promo_code_reward.dart';
-import 'package:winwinkit/./model/referral_program_sender_revenue_cat_offering_reward.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:winwinkit/./model/referral_program_sender_offer_code_reward.dart';
 import 'package:winwinkit/./model/referral_program_sender_credit_reward.dart';
+import 'package:winwinkit/./model/referral_program_sender_revenue_cat_offering_reward.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

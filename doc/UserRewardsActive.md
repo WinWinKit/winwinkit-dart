@@ -1,4 +1,4 @@
-# WinWinKit.model.UserRewardsActive
+# winwinkit.model.UserRewardsActive
 
 ## Load the model package
 ```dart

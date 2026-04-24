@@ -1,4 +1,4 @@
-# WinWinKit.api.RewardsActionsApi
+# winwinkit.api.RewardsActionsApi
 
 ## Load the API package
 ```dart
@@ -24,7 +24,7 @@ Grants a reward for a user. Note 1: currently only granting of credit rewards is
 ```dart
 import 'package:winwinkit/api.dart';
 
-final api = WinWinKit().getRewardsActionsApi();
+final api = Winwinkit().getRewardsActionsApi();
 final String appUserId = appUserId_example; // String | The app user id of the user to grant a reward to.
 final String xApiKey = xApiKey_example; // String | The secret API key.
 final UserGrantRewardRequest userGrantRewardRequest = ; // UserGrantRewardRequest | 
@@ -71,7 +71,7 @@ Withdraws credits from a user.
 ```dart
 import 'package:winwinkit/api.dart';
 
-final api = WinWinKit().getRewardsActionsApi();
+final api = Winwinkit().getRewardsActionsApi();
 final String appUserId = appUserId_example; // String | The app user id of the user to withdraw credits from.
 final String xApiKey = xApiKey_example; // String | The API key to authenticate with.
 final UserWithdrawCreditsRequest userWithdrawCreditsRequest = ; // UserWithdrawCreditsRequest | 

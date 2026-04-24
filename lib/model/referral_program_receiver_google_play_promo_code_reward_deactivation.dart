@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:winwinkit/./model/referral_program_receiver_google_play_promo_code_reward_interval_deactivation.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:winwinkit/./model/referral_program_receiver_google_play_promo_code_reward_interval_deactivation.dart';
 import 'package:winwinkit/./model/referral_program_receiver_google_play_promo_code_reward_never_deactivation.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';

@@ -1,4 +1,4 @@
-# WinWinKit.model.UserClaimCodeResponse
+# winwinkit.model.UserClaimCodeResponse
 
 ## Load the model package
 ```dart

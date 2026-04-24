@@ -1,4 +1,4 @@
-# WinWinKit.model.UserGooglePlayPromoCodeRewardExpired
+# winwinkit.model.UserGooglePlayPromoCodeRewardExpired
 
 ## Load the model package
 ```dart

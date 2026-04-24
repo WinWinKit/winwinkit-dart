@@ -1,4 +1,4 @@
-# WinWinKit.model.UserResponse
+# winwinkit.model.UserResponse
 
 ## Load the model package
 ```dart

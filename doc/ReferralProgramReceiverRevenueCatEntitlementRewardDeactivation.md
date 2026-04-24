@@ -1,4 +1,4 @@
-# WinWinKit.model.ReferralProgramReceiverRevenueCatEntitlementRewardDeactivation
+# winwinkit.model.ReferralProgramReceiverRevenueCatEntitlementRewardDeactivation
 
 ## Load the model package
 ```dart

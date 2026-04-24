@@ -1,4 +1,4 @@
-# WinWinKit.model.UserRegisterAppStoreTransactionRequest
+# winwinkit.model.UserRegisterAppStoreTransactionRequest
 
 ## Load the model package
 ```dart

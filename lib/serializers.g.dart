@@ -7,21 +7,12 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (Serializers().toBuilder()
-      ..add(AppStoreOfferCode.serializer)
-      ..add(AppStoreOfferCodeDurationEnum.serializer)
-      ..add(AppStoreOfferCodeOfferEligibilityEnum.serializer)
-      ..add(AppStoreOfferCodeOfferModeEnum.serializer)
-      ..add(AppStorePrice.serializer)
-      ..add(AppStoreSubscription.serializer)
-      ..add(AppStoreSubscriptionSubscriptionPeriodEnum.serializer)
       ..add(BasicReward.serializer)
       ..add(CreditReward.serializer)
       ..add(ErrorObject.serializer)
       ..add(ErrorsResponse.serializer)
       ..add(GooglePlayPromoCodeReward.serializer)
       ..add(GooglePlayPromoCodeValue.serializer)
-      ..add(OfferCodeResponse.serializer)
-      ..add(OfferCodeResponseData.serializer)
       ..add(OfferCodeReward.serializer)
       ..add(OfferCodeValue.serializer)
       ..add(ReferralProgram.serializer)
@@ -265,9 +256,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UserWithdrawCreditsResponseData.serializer)
       ..add(UserWithdrawCreditsResult.serializer)
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(AppStorePrice)]),
-          () => ListBuilder<AppStorePrice>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorObject)]),
           () => ListBuilder<ErrorObject>())
       ..addBuilderFactory(
@@ -325,12 +313,6 @@ Serializers _$serializers = (Serializers().toBuilder()
             const FullType(ReferralProgramSenderRevenueCatOfferingReward)
           ]),
           () => ListBuilder<ReferralProgramSenderRevenueCatOfferingReward>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(AppStorePrice)]),
-          () => ListBuilder<AppStorePrice>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(UserBasicRewardActive)]),

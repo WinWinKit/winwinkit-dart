@@ -1,4 +1,4 @@
-# WinWinKit.model.UserRevenueCatEntitlementRewardActive
+# winwinkit.model.UserRevenueCatEntitlementRewardActive
 
 ## Load the model package
 ```dart

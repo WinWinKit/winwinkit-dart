@@ -1,4 +1,4 @@
-# WinWinKit.model.UserOfferCodeRewardExpired
+# winwinkit.model.UserOfferCodeRewardExpired
 
 ## Load the model package
 ```dart

@@ -27,3 +27,6 @@ lib/api.dart
 lib/winwinkit.dart
 README.md
 doc/AppStoreApi.md
+
+# Version is bumped manually in its own commit; description/quote style hand-curated.
+pubspec.yaml

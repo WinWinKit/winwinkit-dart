@@ -1,4 +1,4 @@
-# WinWinKit.model.UserReferredBy
+# winwinkit.model.UserReferredBy
 
 ## Load the model package
 ```dart

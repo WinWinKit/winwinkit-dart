@@ -1,4 +1,4 @@
-# WinWinKit.model.UserCreditRewardExpired
+# winwinkit.model.UserCreditRewardExpired
 
 ## Load the model package
 ```dart

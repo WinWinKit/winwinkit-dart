@@ -30,17 +30,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AppStoreOfferCode](doc/AppStoreOfferCode.md)
- - [AppStorePrice](doc/AppStorePrice.md)
- - [AppStoreSubscription](doc/AppStoreSubscription.md)
  - [BasicReward](doc/BasicReward.md)
  - [CreditReward](doc/CreditReward.md)
  - [ErrorObject](doc/ErrorObject.md)
  - [ErrorsResponse](doc/ErrorsResponse.md)
  - [GooglePlayPromoCodeReward](doc/GooglePlayPromoCodeReward.md)
  - [GooglePlayPromoCodeValue](doc/GooglePlayPromoCodeValue.md)
- - [OfferCodeResponse](doc/OfferCodeResponse.md)
- - [OfferCodeResponseData](doc/OfferCodeResponseData.md)
  - [OfferCodeReward](doc/OfferCodeReward.md)
  - [OfferCodeValue](doc/OfferCodeValue.md)
  - [ReferralProgram](doc/ReferralProgram.md)

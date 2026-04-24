@@ -1,4 +1,4 @@
-# WinWinKit.model.ReferralProgramReceiverCreditRewardActivation
+# winwinkit.model.ReferralProgramReceiverCreditRewardActivation
 
 ## Load the model package
 ```dart
