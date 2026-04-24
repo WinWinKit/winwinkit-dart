@@ -3,13 +3,13 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:WinWinKit/./model/user_credit_reward_expired.dart';
+import 'package:winwinkit/./model/user_credit_reward_expired.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:WinWinKit/./model/user_offer_code_reward_expired.dart';
-import 'package:WinWinKit/./model/user_basic_reward_expired.dart';
-import 'package:WinWinKit/./model/user_revenue_cat_entitlement_reward_expired.dart';
-import 'package:WinWinKit/./model/user_revenue_cat_offering_reward_expired.dart';
-import 'package:WinWinKit/./model/user_google_play_promo_code_reward_expired.dart';
+import 'package:winwinkit/./model/user_offer_code_reward_expired.dart';
+import 'package:winwinkit/./model/user_basic_reward_expired.dart';
+import 'package:winwinkit/./model/user_revenue_cat_entitlement_reward_expired.dart';
+import 'package:winwinkit/./model/user_revenue_cat_offering_reward_expired.dart';
+import 'package:winwinkit/./model/user_google_play_promo_code_reward_expired.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

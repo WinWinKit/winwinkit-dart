@@ -3,11 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:WinWinKit/./model/user_claim_code_eligibility.dart';
-import 'package:WinWinKit/./model/user_rewards.dart';
-import 'package:WinWinKit/./model/referral_program.dart';
-import 'package:WinWinKit/./model/user_referred_by.dart';
-import 'package:WinWinKit/./model/user_stats.dart';
+import 'package:winwinkit/./model/user_claim_code_eligibility.dart';
+import 'package:winwinkit/./model/user_rewards.dart';
+import 'package:winwinkit/./model/referral_program.dart';
+import 'package:winwinkit/./model/user_referred_by.dart';
+import 'package:winwinkit/./model/user_stats.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';

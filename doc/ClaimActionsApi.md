@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:WinWinKit/api.dart';
+import 'package:winwinkit/api.dart';
 ```
 
 All URIs are relative to *https://api.winwinkit.com*
@@ -21,7 +21,7 @@ Claims a code for a user. Code can be affiliate, promo or referral code.
 
 ### Example
 ```dart
-import 'package:WinWinKit/api.dart';
+import 'package:winwinkit/api.dart';
 
 final api = WinWinKit().getClaimActionsApi();
 final String appUserId = appUserId_example; // String | The app user id of the user to claim the code for.

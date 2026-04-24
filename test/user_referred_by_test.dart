@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:WinWinKit/WinWinKit.dart';
+import 'package:winwinkit/WinWinKit.dart';
 
 // tests for UserReferredBy
 void main() {

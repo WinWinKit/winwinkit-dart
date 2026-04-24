@@ -3,13 +3,13 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:WinWinKit/./model/referral_program_receiver_google_play_promo_code_reward.dart';
-import 'package:WinWinKit/./model/referral_program_receiver_revenue_cat_offering_reward.dart';
+import 'package:winwinkit/./model/referral_program_receiver_google_play_promo_code_reward.dart';
+import 'package:winwinkit/./model/referral_program_receiver_revenue_cat_offering_reward.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:WinWinKit/./model/referral_program_receiver_revenue_cat_entitlement_reward.dart';
-import 'package:WinWinKit/./model/referral_program_receiver_offer_code_reward.dart';
-import 'package:WinWinKit/./model/referral_program_receiver_credit_reward.dart';
-import 'package:WinWinKit/./model/referral_program_receiver_basic_reward.dart';
+import 'package:winwinkit/./model/referral_program_receiver_revenue_cat_entitlement_reward.dart';
+import 'package:winwinkit/./model/referral_program_receiver_offer_code_reward.dart';
+import 'package:winwinkit/./model/referral_program_receiver_credit_reward.dart';
+import 'package:winwinkit/./model/referral_program_receiver_basic_reward.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

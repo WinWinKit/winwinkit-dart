@@ -7,20 +7,20 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:WinWinKit/./serializers.dart';
-import 'package:WinWinKit/./api/claim_actions_api.dart';
-import 'package:WinWinKit/./api/rewards_actions_api.dart';
-import 'package:WinWinKit/./api/users_api.dart';
-import 'package:WinWinKit/./model/user.dart';
-import 'package:WinWinKit/./model/user_claim_code_request.dart';
-import 'package:WinWinKit/./model/user_claim_code_response_data.dart';
-import 'package:WinWinKit/./model/user_create_request.dart';
-import 'package:WinWinKit/./model/user_grant_reward_request.dart';
-import 'package:WinWinKit/./model/user_grant_reward_response_data.dart';
-import 'package:WinWinKit/./model/user_register_app_store_transaction_request.dart';
-import 'package:WinWinKit/./model/user_register_google_play_transaction_request.dart';
-import 'package:WinWinKit/./model/user_withdraw_credits_request.dart';
-import 'package:WinWinKit/./model/user_withdraw_credits_response_data.dart';
+import 'package:winwinkit/./serializers.dart';
+import 'package:winwinkit/./api/claim_actions_api.dart';
+import 'package:winwinkit/./api/rewards_actions_api.dart';
+import 'package:winwinkit/./api/users_api.dart';
+import 'package:winwinkit/./model/user.dart';
+import 'package:winwinkit/./model/user_claim_code_request.dart';
+import 'package:winwinkit/./model/user_claim_code_response_data.dart';
+import 'package:winwinkit/./model/user_create_request.dart';
+import 'package:winwinkit/./model/user_grant_reward_request.dart';
+import 'package:winwinkit/./model/user_grant_reward_response_data.dart';
+import 'package:winwinkit/./model/user_register_app_store_transaction_request.dart';
+import 'package:winwinkit/./model/user_register_google_play_transaction_request.dart';
+import 'package:winwinkit/./model/user_withdraw_credits_request.dart';
+import 'package:winwinkit/./model/user_withdraw_credits_response_data.dart';
 
 /// Entry point for the WinWinKit Dart SDK.
 ///

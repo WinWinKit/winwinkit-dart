@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:WinWinKit/./model/offer_code_value.dart';
-import 'package:WinWinKit/./model/offer_code_reward.dart';
+import 'package:winwinkit/./model/offer_code_value.dart';
+import 'package:winwinkit/./model/offer_code_reward.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

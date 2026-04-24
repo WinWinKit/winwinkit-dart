@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:WinWinKit/./model/user.dart';
-import 'package:WinWinKit/./model/user_withdraw_credits_result.dart';
+import 'package:winwinkit/./model/user.dart';
+import 'package:winwinkit/./model/user_withdraw_credits_result.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

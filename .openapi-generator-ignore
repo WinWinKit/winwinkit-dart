@@ -24,6 +24,6 @@
 
 # Hand-curated public surface — keep AppStoreApi / /app-store/offer-codes/ out of the public interface.
 lib/api.dart
-lib/WinWinKit.dart
+lib/winwinkit.dart
 README.md
 doc/AppStoreApi.md

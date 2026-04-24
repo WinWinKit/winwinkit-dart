@@ -3,9 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:WinWinKit/./model/referral_program_sender_basic_reward_deactivation.dart';
-import 'package:WinWinKit/./model/basic_reward.dart';
-import 'package:WinWinKit/./model/referral_program_sender_basic_reward_activation.dart';
+import 'package:winwinkit/./model/referral_program_sender_basic_reward_deactivation.dart';
+import 'package:winwinkit/./model/basic_reward.dart';
+import 'package:winwinkit/./model/referral_program_sender_basic_reward_activation.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:WinWinKit/api.dart';
+import 'package:winwinkit/api.dart';
 ```
 
 All URIs are relative to *https://api.winwinkit.com*
@@ -22,7 +22,7 @@ Grants a reward for a user. Note 1: currently only granting of credit rewards is
 
 ### Example
 ```dart
-import 'package:WinWinKit/api.dart';
+import 'package:winwinkit/api.dart';
 
 final api = WinWinKit().getRewardsActionsApi();
 final String appUserId = appUserId_example; // String | The app user id of the user to grant a reward to.
@@ -69,7 +69,7 @@ Withdraws credits from a user.
 
 ### Example
 ```dart
-import 'package:WinWinKit/api.dart';
+import 'package:winwinkit/api.dart';
 
 final api = WinWinKit().getRewardsActionsApi();
 final String appUserId = appUserId_example; // String | The app user id of the user to withdraw credits from.

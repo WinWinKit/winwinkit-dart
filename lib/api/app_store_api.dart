@@ -8,9 +8,9 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:WinWinKit/./api_util.dart';
-import 'package:WinWinKit/./model/errors_response.dart';
-import 'package:WinWinKit/./model/offer_code_response.dart';
+import 'package:winwinkit/./api_util.dart';
+import 'package:winwinkit/./model/errors_response.dart';
+import 'package:winwinkit/./model/offer_code_response.dart';
 
 class AppStoreApi {
 

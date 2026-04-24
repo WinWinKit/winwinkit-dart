@@ -4,6 +4,7 @@
 
 **Breaking changes.** The SDK now exposes a hand-written, Dart-idiomatic facade instead of the raw generator output.
 
+- **Package renamed from `WinWinKit` to `winwinkit`** to satisfy pub.dev's lowercase-name requirement. Update imports from `package:WinWinKit/WinWinKit.dart` to `package:winwinkit/winwinkit.dart`. The public client class is still called `WinWinKit`.
 - Construct the client with `WinWinKit(apiKey: '…')` — the old pattern of instantiating `WinWinKit()` and calling `.setApiKey('x-api-key', …)` no longer applies.
 - Use scoped clients: `sdk.user('<id>').registerAppStoreTransaction(...)`, `.withdrawCredits(...)`, etc. The `getUsersApi()` / `getClaimActionsApi()` / `getRewardsActionsApi()` factories are gone.
 - Endpoint methods now take flat named parameters (no more hand-building request model objects) and return unwrapped domain values instead of `Response<…DataResponse>` wrappers.
@@ -18,7 +19,7 @@
 
 ### Fixed
 
-- Test files now import `package:WinWinKit/...` instead of the stale `package:openapi/...`.
+- Test files now import `package:winwinkit/...` instead of the stale `package:openapi/...`.
 
 ### Repository
 

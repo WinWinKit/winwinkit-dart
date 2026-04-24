@@ -2,7 +2,7 @@
 
 ## Load the model package
 ```dart
-import 'package:WinWinKit/api.dart';
+import 'package:winwinkit/api.dart';
 ```
 
 ## Properties

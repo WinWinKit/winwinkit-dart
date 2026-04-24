@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:WinWinKit/./model/google_play_promo_code_reward.dart';
+import 'package:winwinkit/./model/google_play_promo_code_reward.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

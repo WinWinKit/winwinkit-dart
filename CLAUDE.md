@@ -39,7 +39,7 @@ Two layers of code generation stack on top of each other:
 
 Runtime entry point is `lib/api.dart` — the `WinWinKit` class wires a `Dio` instance with four auth interceptors (`OAuth`, `Basic`, `Bearer`, `ApiKey`) and exposes factories (`getUsersApi()`, `getClaimActionsApi()`, `getRewardsActionsApi()`, `getAppStoreApi()`) that return the per-tag API classes from `lib/api/`. The SDK authenticates via the `x-api-key` header (call `setApiKey('x-api-key', ...)`).
 
-`lib/WinWinKit.dart` is a barrel file re-exporting everything so downstream code can `import 'package:WinWinKit/WinWinKit.dart'` and get the full public surface. Note the capitalized package name in `pubspec.yaml` (`name: WinWinKit`) — imports must match exactly.
+`lib/winwinkit.dart` is a barrel file re-exporting everything so downstream code can `import 'package:winwinkit/winwinkit.dart'` and get the full public surface. The package is named `winwinkit` (all lowercase — pub.dev rejects uppercase names); the public client class is still `WinWinKit`.
 
 Models use the `one_of` / `one_of_serializer` packages to represent OpenAPI `oneOf` unions (e.g. the many `ReferralProgram…Reward` variants). Custom serialization for `date`-only values lives in `lib/date_serializer.dart` and `lib/model/date.dart`, which are listed under the generator-ignore rules in `.openapi-generator-ignore` so hand-edits there survive regeneration.
 

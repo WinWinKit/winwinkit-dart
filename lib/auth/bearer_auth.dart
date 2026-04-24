@@ -3,7 +3,7 @@
 //
 
 import 'package:dio/dio.dart';
-import 'package:WinWinKit/./auth/auth.dart';
+import 'package:winwinkit/./auth/auth.dart';
 
 class BearerAuthInterceptor extends AuthInterceptor {
   final Map<String, String> tokens = {};

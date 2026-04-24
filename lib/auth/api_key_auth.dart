@@ -4,7 +4,7 @@
 
 
 import 'package:dio/dio.dart';
-import 'package:WinWinKit/./auth/auth.dart';
+import 'package:winwinkit/./auth/auth.dart';
 
 class ApiKeyAuthInterceptor extends AuthInterceptor {
   final Map<String, String> apiKeys = {};
