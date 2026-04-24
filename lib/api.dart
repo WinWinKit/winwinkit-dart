@@ -43,12 +43,26 @@ class WinWinKit {
   /// Serializers used to encode/decode request and response bodies.
   final Serializers serializers;
 
+  /// Creates a [WinWinKit] client.
+  ///
+  /// [apiKey] is sent as the `x-api-key` header on every request.
+  ///
+  /// Pass [dio] to share a Dio instance across SDKs or inject custom
+  /// interceptors (auth, logging, retry, test adapters). When [dio] is
+  /// supplied, configure its `baseUrl` yourself — [basePathOverride] is
+  /// ignored in that case, and passing both together trips an assertion
+  /// in debug builds.
   WinWinKit({
     required this.apiKey,
     Dio? dio,
     Serializers? serializers,
     String? basePathOverride,
-  })  : serializers = serializers ?? standardSerializers,
+  })  : assert(
+          dio == null || basePathOverride == null,
+          'basePathOverride is ignored when a custom Dio is supplied; '
+          'configure dio.options.baseUrl directly instead.',
+        ),
+        serializers = serializers ?? standardSerializers,
         dio = dio ??
             Dio(BaseOptions(
               baseUrl: basePathOverride ?? basePath,
@@ -104,7 +118,9 @@ class UserClient {
       xApiKey: _sdk.apiKey,
       userCreateRequest: request,
     );
-    return response.data!.data.user;
+    final body = response.data ??
+        (throw StateError('createOrUpdate: response body was empty.'));
+    return body.data.user;
   }
 
   /// Fetches the user.
@@ -113,7 +129,9 @@ class UserClient {
       appUserId: appUserId,
       xApiKey: _sdk.apiKey,
     );
-    return response.data!.data.user;
+    final body = response.data ??
+        (throw StateError('get: response body was empty for user $appUserId.'));
+    return body.data.user;
   }
 
   /// Registers the mapping between this user and an Apple `originalTransactionId`.
@@ -154,7 +172,11 @@ class UserClient {
       xApiKey: _sdk.apiKey,
       userClaimCodeRequest: request,
     );
-    return response.data!.data;
+    final body = response.data ??
+        (throw StateError(
+          'claimCode: response body was empty for user $appUserId.',
+        ));
+    return body.data;
   }
 
   /// Grants a reward to this user. Requires a secret API key.
@@ -172,7 +194,12 @@ class UserClient {
       xApiKey: _sdk.apiKey,
       userGrantRewardRequest: request,
     );
-    return response.data!.data;
+    final body = response.data ??
+        (throw StateError(
+          'grantReward: response body was empty for user $appUserId '
+          'and reward key $key.',
+        ));
+    return body.data;
   }
 
   /// Withdraws [amount] credits of the reward identified by [key].
@@ -192,6 +219,11 @@ class UserClient {
       xApiKey: _sdk.apiKey,
       userWithdrawCreditsRequest: request,
     );
-    return response.data!.data;
+    final body = response.data ??
+        (throw StateError(
+          'withdrawCredits: response body was empty for user $appUserId '
+          'and reward key $key.',
+        ));
+    return body.data;
   }
 }
