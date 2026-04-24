@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.6.1
+
+Regenerated against the latest OpenAPI spec.
+
+### Removed
+
+- `AppStoreOfferCode`, `AppStorePrice`, `AppStoreSubscription`, `OfferCodeResponse`, and `OfferCodeResponseData` models — dropped from the spec. They were reachable via the `package:winwinkit/winwinkit.dart` barrel but not through the public facade, which never exposed `AppStoreApi`.
+
+### Fixed
+
+- `pubspec.yaml` is now listed in `.openapi-generator-ignore` so re-running the generator no longer resets `version` and `description`.
+
 ## 0.6.0
 
 **Breaking changes.** The SDK now exposes a hand-written, Dart-idiomatic facade instead of the raw generator output.
